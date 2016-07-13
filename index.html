@@ -25,21 +25,21 @@
     </header>
     <div>
         <ul class="nav nav-pills">
-            <li class="active"><a href="#">About</a></li>
-            <li><a href="#">What's On</a></li>
-            <li><a href="#">Visit</a></li>
-            <li><a href="#">Cafe</a></li>
-            <li><a href="#">Box Office</a></li>
-            <li><a href="#">Support Us</a></li>
-            <li><a href="#">Film Club</a></li>
-            <li><a href="#">Contact</a></li>
+            <li role="presentation" class="active"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">What's On</a></li>
+            <li role="presentation"><a href="#">Visit</a></li>
+            <li role="presentation"><a href="#">Cafe</a></li>
+            <li role="presentation"><a href="#">Box Office</a></li>
+            <li role="presentation"><a href="#">Support Us</a></li>
+            <li role="presentation"><a href="#">Film Club</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
 
-            <li class="pull-right">
+            <li role="presentation" class="pull-right">
                 <a href="https://twitter.com/circleartscentre" target="_blank">
                     <img src="img/twitter-logo.jpg" width="28" height="28">
                 </a>
             </li>
-            <li class="pull-right">
+            <li role="presentation" class="pull-right">
                 <a href="http://www.facebook.com/circleartscentre" target="_blank">
                     <img src="img/facebook-logo.jpg" width="28" height="28">
                 </a>
@@ -50,9 +50,117 @@
             <!-- Twitter -->
         </div>
     </div>
-    <div class="well">
-        Content
-        <!-- Content -->
+    <div>
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div id="news-slides" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#news-slides" data-slide-to="0" class="active"></li>
+                        <li data-target="#news-slide" data-slide-to="1"></li>
+                        <li data-target="#news-slide" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="upload/slide-1.jpg" alt="slide-1">
+                            <div class="carousel-caption">
+                                <h3><strong>Music / </strong></h3>
+                                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
+                                <h6>Fri 22nd Jul</h6>
+                                <p>Enjoy a special evening of delicious food and wonderful music from harpist
+                                    Alexandra King. The evening will include a delicious ...</p>
+                                <p><a href="#">read more</a></p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="upload/slide-2.jpg" alt="slide-2">
+                            <div class="carousel-caption">
+                                <h3><strong>Music / </strong></h3>
+                                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
+                                <h6>Fri 22nd Jul</h6>
+                                <p>Enjoy a special evening of delicious food and wonderful music from harpist
+                                    Alexandra King. The evening will include a delicious ...</p>
+                                <p><a href="#">read more</a></p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="upload/slide-3.jpg" alt="slide-3">
+                            <div class="carousel-caption">
+                                <h3><strong>Music / </strong></h3>
+                                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
+                                <h6>Fri 22nd Jul</h6>
+                                <p>Enjoy a special evening of delicious food and wonderful music from harpist
+                                    Alexandra King. The evening will include a delicious ...</p>
+                                <p><a href="#">read more</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#news-slides" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#news-slides" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!-- Content -->
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active">
+                        <a href="#">
+                            <h5 class="text-uppercase">Volunteering
+                                <span class="glyphicon glyphicon-play"></span>
+                            </h5>
+                            <small>Get involved! You'll love it</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">
+                            <h5 class="text-uppercase">Workshops &amp; Classes
+                                <span class="glyphicon glyphicon-play"></span>
+                            </h5>
+                            <small>Come along and learn</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">
+                            <h5 class="text-uppercase">Hire Circle
+                                <span class="glyphicon glyphicon-play"></span>
+                            </h5>
+                            <small>Venue hire details</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">
+                            <h5 class="text-uppercase">Outreach
+                                <span class="glyphicon glyphicon-play"></span>
+                            </h5>
+                            <small>Circle in the community</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">
+                            <h5 class="text-uppercase">Past events
+                                <span class="glyphicon glyphicon-play"></span>
+                            </h5>
+                            <small>Who's performed at Circle</small>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="join-email" placeholder="Email Address">
+                        <button type="submit" class="btn btn-primary"> Join </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div>
         <div class="row">
@@ -129,5 +237,7 @@
         </address>
     </footer>
 </div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
