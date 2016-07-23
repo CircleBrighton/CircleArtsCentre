@@ -15,14 +15,15 @@
 ?>
 <div>
     <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">About</a></li>
+        <li role="presentation" <?php echo is_home() ? "class=active" : ""?>><a href="#">Home</a></li>
+        <li role="presentation" <?php echo is_page('About') ? "class=active" : ""?>><a href="#">About</a></li>
         <li role="presentation"><a href="#">What's On</a></li>
         <li role="presentation"><a href="#">Visit</a></li>
         <li role="presentation"><a href="#">Cafe</a></li>
         <li role="presentation"><a href="#">Box Office</a></li>
         <li role="presentation"><a href="#">Support Us</a></li>
         <li role="presentation"><a href="#">Film Club</a></li>
-        <li role="presentation"><a href="#">Contact</a></li>
+        <li role="presentation" <?php echo is_page('Contact') ? "class=active" : ""?>><a href="#">Contact</a></li>
 
         <li role="presentation" class="pull-right">
             <a href="https://twitter.com/circleartscentre" target="_blank">
