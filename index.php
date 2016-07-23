@@ -29,7 +29,7 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="upload/slide-1.jpg" alt="slide-1" style="width: 100%;">
+                        <img src="<?php bloginfo('template_url'); ?>/upload/slide-1.jpg" alt="slide-1" style="width: 100%;">
                         <div class="carousel-caption">
                             <h3><strong>Music / </strong></h3>
                             <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="upload/slide-2.jpg" alt="slide-2" style="width: 100%;">
+                        <img src="<?php bloginfo('template_url'); ?>/upload/slide-2.jpg" alt="slide-2" style="width: 100%;">
                         <div class="carousel-caption">
                             <h3><strong>Music / </strong></h3>
                             <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="upload/slide-3.jpg" alt="slide-3" style="width: 100%">
+                        <img src="<?php bloginfo('template_url'); ?>/upload/slide-3.jpg" alt="slide-3" style="width: 100%">
                         <div class="carousel-caption">
                             <h3><strong>Music / </strong></h3>
                             <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
@@ -131,7 +131,7 @@
     <div class="row">
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="upload/sample.jpg"
+                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
                      class="img-responsive"
                      alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
                 <h3>Coming soon</h3>
@@ -149,7 +149,7 @@
         </div>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="upload/sample.jpg"
+                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
                      class="img-responsive"
                      alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
                 <h3>Coming soon</h3>
@@ -167,7 +167,7 @@
         </div>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="upload/sample.jpg"
+                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
                      class="img-responsive"
                      alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
                 <h3>Coming soon</h3>
