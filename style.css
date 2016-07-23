@@ -379,8 +379,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?1469244312);
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?&1469244312#iefix) format("embedded-opentype"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff2?1469244312) format("woff2"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff?1469244312) format("woff"), url(/fonts/bootstrap/glyphicons-halflings-regular.ttf?1469244312) format("truetype"), url(/fonts/bootstrap/glyphicons-halflings-regular.svg?1469244312#glyphicons_halflingsregular) format("svg");
+  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1469244312);
+  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1469244312#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1469244312) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1469244312) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1469244312) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1469244312#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../lib/gems/2.3.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
