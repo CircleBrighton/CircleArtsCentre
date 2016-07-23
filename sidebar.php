@@ -13,17 +13,35 @@
  *
  */
 ?>
+<?php
+$about = get_page_by_title('About');
+$contact = get_page_by_title('Contact');
+?>
 <div>
     <ul class="nav nav-pills">
-        <li role="presentation" <?php echo is_home() ? "class=active" : ""?>><a href="#">Home</a></li>
-        <li role="presentation" <?php echo is_page('About') ? "class=active" : ""?>><a href="#">About</a></li>
+        <li role="presentation" class="<?php echo is_home() ? 'active' : ''?>">
+            <a href="<?php home_url(); ?>">Home</a>
+        </li>
+
+        <li role="presentation" class="<?php echo is_page('About') ? 'active' : ''?> <?php echo ! $about ? 'disabled' : '' ?>">
+            <a href="<?php echo get_page_link($about->ID); ?>">About</a>
+        </li>
+
         <li role="presentation"><a href="#">What's On</a></li>
+
         <li role="presentation"><a href="#">Visit</a></li>
+
         <li role="presentation"><a href="#">Cafe</a></li>
+
         <li role="presentation"><a href="#">Box Office</a></li>
+
         <li role="presentation"><a href="#">Support Us</a></li>
+
         <li role="presentation"><a href="#">Film Club</a></li>
-        <li role="presentation" <?php echo is_page('Contact') ? "class=active" : ""?>><a href="#">Contact</a></li>
+
+        <li role="presentation" class="<?php echo is_page('Contact') ? 'active' : ''?> <?php echo ! $contact ? 'disabled' : '' ?>">
+            <a href="<?php echo get_page_link($contact->ID); ?>">Contact</a>
+        </li>
 
         <li role="presentation" class="pull-right">
             <a href="https://twitter.com/circleartscentre" target="_blank">
