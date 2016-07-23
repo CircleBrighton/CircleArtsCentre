@@ -20,7 +20,7 @@
         <div class="col-md-8 col-xs-12">
 <?php
     if (is_home())
-        get_template_file('home')
+        get_template_part('welcome')
 ?>
         </div>
         <div class="col-md-4 col-xs-12">
