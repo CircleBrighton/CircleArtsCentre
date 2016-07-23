@@ -19,6 +19,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
+<div class="container" style="padding-top: 40px">
     <header>
         <div class="row">
             <div class="col-md-4 col-xs-6 text-left">
