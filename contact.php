@@ -14,5 +14,5 @@
  */
 ?>
 <?php
-echo get_post()->post_content;
+echo apply_filters('the_content', get_post()->post_content);
 ?>
