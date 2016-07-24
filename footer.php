@@ -31,6 +31,7 @@
 </footer>
 </div>
 <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.4.min.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
