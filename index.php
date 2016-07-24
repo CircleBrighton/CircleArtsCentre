@@ -81,6 +81,7 @@ elseif (is_page('Contact'))
         </div>
     </div>
 </div>
+<hr/>
 <div>
     <div class="row">
 <?php
