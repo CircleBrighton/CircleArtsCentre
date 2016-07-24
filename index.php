@@ -88,12 +88,12 @@ query_posts('category_name=Coming Soon');
 if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
-            <div class="thumbnail">
+            <div class="thumbnail text-justify">
 <?php if (has_post_thumbnail()) : ?>
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>Coming soon</h3>
-                <p class="text-justify">
+                <p>
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
                     </a></span>
@@ -107,12 +107,12 @@ query_posts('category_name=This Week');
 if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
-            <div class="thumbnail">
+            <div class="thumbnail text-justify">
 <?php if ( has_post_thumbnail() ) : ?>
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>This Week</h3>
-                <p class="text-justify">
+                <p>
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
                     </a></span>
@@ -126,12 +126,12 @@ query_posts('category_name=Featured');
 if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
-            <div class="thumbnail">
+            <div class="thumbnail text-justify">
 <?php if ( has_post_thumbnail() ) : ?>
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>Featured</h3>
-                <p class="text-justify">
+                <p>
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
                     </a></span>
