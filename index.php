@@ -97,9 +97,9 @@ if (have_posts()) : the_post();
 <?php endif; ?>
                 <h3>Coming soon</h3>
                 <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
-                    </a></span>
+                    </a></h4>
                 </p>
                 <?php the_excerpt(); ?>
             </div>
@@ -116,9 +116,9 @@ if (have_posts()) : the_post();
 <?php endif; ?>
                 <h3>This Week</h3>
                 <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
-                    </a></span>
+                    </a></h4>
                 </p>
                 <?php the_excerpt(); ?>
             </div>
@@ -135,9 +135,9 @@ if (have_posts()) : the_post();
 <?php endif; ?>
                 <h3>Featured</h3>
                 <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
-                    </a></span>
+                    </a></h4>
                 </p>
                 <?php the_excerpt(); ?>
             </div>
