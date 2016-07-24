@@ -14,14 +14,14 @@
  */
 ?>
 <?php
-$home = get_page_by_title('Home');
+$welcome = get_page_by_title('Welcome');
 $about = get_page_by_title('About');
 $contact = get_page_by_title('Contact');
 ?>
 <div>
     <ul class="nav nav-pills">
-        <li role="presentation" class="<?php echo is_page('Home') ? 'active' : ''?>">
-            <a href="<?php get_page_link($home->ID); ?>">Home</a>
+        <li role="presentation" class="<?php echo is_page('Welcome') ? 'active' : ''?>">
+            <a href="<?php get_page_link($welcome->ID); ?>">Home</a>
         </li>
 
         <li role="presentation" class="<?php echo is_page('About') ? 'active' : ''?> <?php echo ! $about ? 'disabled' : '' ?>">
