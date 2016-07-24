@@ -35,3 +35,18 @@ Text Domain: BehWeb
 p {
 	word-wrap: break-word;
 }
+
+.deco-none {
+	color: inherit;
+	text-decoration: inherit;
+
+	&:link {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	&:hover {
+		color: inherit;
+		text-decoration: inherit;
+	}
+}

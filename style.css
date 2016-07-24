@@ -8820,3 +8820,19 @@ button.close {
 p {
   word-wrap: break-word;
 }
+
+/* line 39, sass/style.scss */
+.deco-none {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* line 43, sass/style.scss */
+.deco-none:link {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* line 48, sass/style.scss */
+.deco-none:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
