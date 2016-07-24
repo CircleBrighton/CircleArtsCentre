@@ -18,7 +18,7 @@
 add_theme_support('post-thumbnails');
 
 /**
- * Filter the except length to 20 characters.
+ * Filter the except length to 10 words.
  *
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
@@ -35,9 +35,13 @@ add_filter('excerpt_length', 'wpdocs_custom_excerpt_length');
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function wpdocs_excerpt_more($more) {
+    /* uncomment following code in order to have button for read more. */
+    /*
     return sprintf('<div><a class="btn btn-primary" href="%1$s">%2$s</a></div>',
         get_the_permalink(),
         __('Read More', 'textdomain')
     );
+     */
+    return '';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more');
