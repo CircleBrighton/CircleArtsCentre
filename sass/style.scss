@@ -21,6 +21,8 @@ Text Domain: BehWeb
 // Import Bootstrap for Sass
 @import "bootstrap";
 
+$content-min-height: 510px;
+
 .thumbnail {
 	min-height: 500px;
 	height: 500px;
@@ -35,7 +37,7 @@ Text Domain: BehWeb
 #content {
 	overflow: auto;
 	height: 520px;
-	min-height: 500px;
+	min-height: $content-min-height;
 }
 
 p {
@@ -43,9 +45,9 @@ p {
 }
 
 .slide .item {
-	min-height: 480px;
+	min-height: $content-min-height;
 	img {
-		height: 100%;
+		height: $content-min-height;
 		width: 100%;
 	}
 }

@@ -8803,7 +8803,7 @@ button.close {
     display: none !important;
   }
 }
-/* line 24, sass/style.scss */
+/* line 26, sass/style.scss */
 .thumbnail {
   min-height: 500px;
   height: 500px;
@@ -8811,44 +8811,44 @@ button.close {
   overflow: auto;
 }
 
-/* line 31, sass/style.scss */
+/* line 33, sass/style.scss */
 #main {
   min-height: 600px;
 }
 
-/* line 35, sass/style.scss */
+/* line 37, sass/style.scss */
 #content {
   overflow: auto;
   height: 520px;
-  min-height: 500px;
+  min-height: 510px;
 }
 
-/* line 41, sass/style.scss */
+/* line 43, sass/style.scss */
 p {
   word-wrap: break-word;
 }
 
-/* line 45, sass/style.scss */
-.slide .item {
-  min-height: 480px;
-}
 /* line 47, sass/style.scss */
+.slide .item {
+  min-height: 510px;
+}
+/* line 49, sass/style.scss */
 .slide .item img {
-  height: 100%;
+  height: 510px;
   width: 100%;
 }
 
-/* line 53, sass/style.scss */
+/* line 55, sass/style.scss */
 .deco-none {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 57, sass/style.scss */
+/* line 59, sass/style.scss */
 .deco-none:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 62, sass/style.scss */
+/* line 64, sass/style.scss */
 .deco-none:hover {
   color: inherit;
   text-decoration: inherit;
