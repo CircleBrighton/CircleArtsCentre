@@ -12,4 +12,18 @@
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
  */
+/**
+ * Add support for tumbnails in posts :)
+ */
 add_theme_support('post-thumbnails');
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length($length) {
+    return 55;
+}
+add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
