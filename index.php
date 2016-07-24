@@ -81,59 +81,72 @@ elseif (is_page('Contact'))
 </div>
 <div>
     <div class="row">
+<?php
+$args = array('category_name' => 'Coming Soon');
+$posts = get_posts($args);
+$post = isset($posts[0]) ? $posts[0] : null;
+if ($post) :
+?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
-                     class="img-responsive"
-                     alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
+<?php if ( has_post_thumbnail() ) : ?>
+    <img src="<?php the_post_thumbnail_url(); ?>"/>
+<?php endif; ?>
                 <h3>Coming soon</h3>
                 <p>
-                    <span class="text-danger"><a href="#">The Man Who Fell To Earth</a></span>
-                    Ropetackle Film Club patron Richard Durrant presents: The Man Who Fell To Earth Open to
-                    everyone.
-                    Thomas
-                    Jerome Newton (David ... <br> <br>
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
+                    <?php the_content('', true); ?>
                 </p>
                 <p>
                     <a class="btn btn-primary" href="#">read more</a>
                 </p>
             </div>
         </div>
+<?php endif; ?>
+<?php
+$args = array('category_name' => 'This Week');
+$posts = get_posts($args);
+$post = isset($posts[0]) ? $posts[0] : null;
+if ($post) :
+?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
-                     class="img-responsive"
-                     alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
-                <h3>Coming soon</h3>
+<?php if ( has_post_thumbnail() ) : ?>
+    <img src="<?php the_post_thumbnail_url(); ?>"/>
+<?php endif; ?>
+                <h3>This Week</h3>
                 <p>
-                    <span class="text-danger"><a href="#">The Man Who Fell To Earth</a></span>
-                    Ropetackle Film Club patron Richard Durrant presents: The Man Who Fell To Earth Open to
-                    everyone.
-                    Thomas
-                    Jerome Newton (David ... <br> <br>
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
+                    <?php the_content('', true); ?>
                 </p>
                 <p>
                     <a class="btn btn-primary" href="#">read more</a>
                 </p>
             </div>
         </div>
+<?php endif; ?>
+<?php
+$args = array('category_name' => 'Featured');
+$posts = get_posts($args);
+$post = isset($posts[0]) ? $posts[0] : null;
+if ($post) :
+?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-                <img src="<?php bloginfo('template_url'); ?>/upload/sample.jpg"
-                     class="img-responsive"
-                     alt="Man Who Fell To Earth Film Richard Durrant Shoreham Ropetackle">
-                <h3>Coming soon</h3>
+<?php if ( has_post_thumbnail() ) : ?>
+    <img src="<?php the_post_thumbnail_url(); ?>"/>
+<?php endif; ?>
+                <h3>Featured</h3>
                 <p>
-                    <span class="text-danger"><a href="#">The Man Who Fell To Earth</a></span>
-                    Ropetackle Film Club patron Richard Durrant presents: The Man Who Fell To Earth Open to
-                    everyone.
-                    Thomas
-                    Jerome Newton (David ... <br> <br>
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
+                    <?php the_content('', true); ?>
                 </p>
                 <p>
                     <a class="btn btn-primary" href="#">read more</a>
                 </p>
             </div>
+        </div>
+<?php endif; ?>
         </div>
     </div>
 </div>
