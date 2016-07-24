@@ -15,7 +15,7 @@
 ?>
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
-<div>
+<div id="main">
     <div class="row">
         <div class="col-md-8 col-xs-12">
 <?php
