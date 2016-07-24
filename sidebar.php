@@ -16,6 +16,7 @@
 <?php
 $about = get_page_by_title('About');
 $contact = get_page_by_title('Contact');
+$visit = get_page_by_title('Visit');
 ?>
 <div>
     <ul class="nav nav-pills">
@@ -29,7 +30,9 @@ $contact = get_page_by_title('Contact');
 
         <li role="presentation"><a href="#">What's On</a></li>
 
-        <li role="presentation"><a href="#">Visit</a></li>
+        <li role="presentation" class="<?php echo is_page('Visit') ? 'active' : ''?> <?php echo ! $visit ? 'disabled' : '' ?>">
+            <a href="<?php echo get_page_link($visit->ID); ?>">Visit</a>
+        </li>
 
         <li role="presentation"><a href="#">Cafe</a></li>
 

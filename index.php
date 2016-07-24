@@ -27,6 +27,8 @@ elseif (is_page('About'))
     get_template_part('about');
 elseif (is_page('Contact'))
     get_template_part('contact');
+elseif (is_page('Contact'))
+    get_template_part('visit');
 ?>
         </div>
         <div class="col-md-4 col-xs-12">
