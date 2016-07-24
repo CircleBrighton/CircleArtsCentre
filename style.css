@@ -8807,9 +8807,11 @@ button.close {
 .thumbnail {
   min-height: 500px;
   height: 500px;
+  width: 100%;
+  overflow: auto;
 }
 
-/* line 29, sass/style.scss */
+/* line 31, sass/style.scss */
 #main {
   min-height: 600px;
 }
