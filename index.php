@@ -95,8 +95,8 @@ if (have_posts()) : the_post();
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                         <?php the_title(); ?>
                     </a></span>
-                    <?php the_content('read more'); ?>
                 </p>
+                <?php the_excerpt(); ?>
             </div>
         </div>
 <?php endif; ?>
@@ -115,7 +115,7 @@ if (have_posts()) : the_post();
                         <?php the_title(); ?>
                     </a></span>
                 </p>
-                <?php the_content('read more'); ?>
+                <?php the_excerpt(); ?>
             </div>
         </div>
 <?php endif; ?>
@@ -134,7 +134,7 @@ if (have_posts()) : the_post();
                         <?php the_title(); ?>
                     </a></span>
                 </p>
-                <?php the_content('read more'); ?>
+                <?php the_excerpt(); ?>
             </div>
         </div>
 <?php endif; ?>
