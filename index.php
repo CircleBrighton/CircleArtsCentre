@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-8 col-xs-12">
 <?php
-if (is_home())
+if (is_page('Welcome'))
     get_template_part('welcome');
 elseif (is_page('About'))
     get_template_part('about');
