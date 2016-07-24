@@ -93,13 +93,12 @@ if ($post) :
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>Coming soon</h3>
-                <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
-                    <?php the_content('', true); ?>
+                <p class="text-justify">
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                        <?php the_title_attribute(); ?>
+                    </a></span>
                 </p>
-                <p>
-                    <a class="btn btn-primary" href="#">read more</a>
-                </p>
+                <?php the_post(); the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
@@ -115,13 +114,12 @@ if ($post) :
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>This Week</h3>
-                <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
-                    <?php the_content('', true); ?>
+                <p class="text-justify">
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                        <?php the_title_attribute(); ?>
+                    </a></span>
                 </p>
-                <p>
-                    <a class="btn btn-primary" href="#">read more</a>
-                </p>
+                <?php the_post(); the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
@@ -137,13 +135,12 @@ if ($post) :
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>Featured</h3>
-                <p>
-                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php $post->post_title ?></a>
-                    <?php the_content('', true); ?>
+                <p class="text-justify">
+                    <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                        <?php the_title_attribute(); ?>
+                    </a></span>
                 </p>
-                <p>
-                    <a class="btn btn-primary" href="#">read more</a>
-                </p>
+                <?php the_post(); the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
