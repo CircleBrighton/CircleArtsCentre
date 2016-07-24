@@ -24,9 +24,9 @@ add_theme_support('post-thumbnails');
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length($length) {
-    return 55;
+    return 10;
 }
-add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+add_filter('excerpt_length', 'wpdocs_custom_excerpt_length');
 
 /**
  * Filter the excerpt "read more" string.
@@ -35,6 +35,9 @@ add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function wpdocs_excerpt_more($more) {
-    return 'Read More';
+    return sprintf('<div><a class="btn btn-primary" href="%1$s">%2$s</a></div>',
+        get_the_permalink(),
+        __('Read More', 'textdomain')
+    );
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more');
