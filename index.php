@@ -121,7 +121,7 @@ if (have_posts()) : the_post();
 <?php endif; ?>
 <?php
 query_posts('category_name=Featured');
-if (have_posts) : the_post();
+if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
