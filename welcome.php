@@ -35,7 +35,7 @@
             <img alt="<?php the_title_attribute(); ?>" src="<?php the_post_thumbnail_url(); ?>" style="width: 100%;">
             <div class="carousel-caption">
                 <h3><?php the_title(); ?></h3>
-                <?php the_content(); ?>
+                <?php the_excerpt(); ?>
             </div>
         </div>
 <?php endwhile; ?>
