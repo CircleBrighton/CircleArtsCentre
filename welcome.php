@@ -14,48 +14,31 @@
  */
 ?>
 <div id="news-slides" class="carousel slide" data-ride="carousel">
+<?php query_posts('category_name=Slide'); ?>
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#news-slides" data-slide-to="0" class="active"></li>
-        <li data-target="#news-slide" data-slide-to="1"></li>
-        <li data-target="#news-slide" data-slide-to="2"></li>
+<?php while(have_posts()): the_post(); $i = 1; ?>
+        <li data-target="#news-slides" data-slide-to="<?php $i++ ?>"></li>
+<?php endwhile; ?>
     </ol>
+
+<? rewind_posts(); ?>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="<?php bloginfo('template_url'); ?>/upload/slide-1.jpg" alt="slide-1" style="width: 100%;">
-            <div class="carousel-caption">
-                <h3><strong>Music / </strong></h3>
-                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
-                <h6>Fri 22nd Jul</h6>
-                <p>Enjoy a special evening of delicious food and wonderful music from harpist
-                    Alexandra King. The evening will include a delicious ...</p>
-                <p><a href="#">read more</a></p>
-            </div>
+            <img src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="welcome" style="width: 100%;">
         </div>
+<?php while(have_posts()): the_post(); ?>
         <div class="item">
-            <img src="<?php bloginfo('template_url'); ?>/upload/slide-2.jpg" alt="slide-2" style="width: 100%;">
+            <img alt="<?php the_title_attribute(); ?>" src="<?php the_post_thumbnail_url(); ?>" style="width: 100%;">
             <div class="carousel-caption">
-                <h3><strong>Music / </strong></h3>
-                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
-                <h6>Fri 22nd Jul</h6>
-                <p>Enjoy a special evening of delicious food and wonderful music from harpist
-                    Alexandra King. The evening will include a delicious ...</p>
-                <p><a href="#">read more</a></p>
+                <h3><?php the_title(); ?></h3>
+                <?php the_content(); ?>
             </div>
         </div>
-        <div class="item">
-            <img src="<?php bloginfo('template_url'); ?>/upload/slide-3.jpg" alt="slide-3" style="width: 100%">
-            <div class="carousel-caption">
-                <h3><strong>Music / </strong></h3>
-                <h6><a href="#">Harp Recital With Alexandra King &amp; Evening Meal</a></h6>
-                <h6>Fri 22nd Jul</h6>
-                <p>Enjoy a special evening of delicious food and wonderful music from harpist
-                    Alexandra King. The evening will include a delicious ...</p>
-                <p><a href="#">read more</a></p>
-            </div>
-        </div>
+<?php endwhile; ?>
     </div>
 
     <!-- Controls -->
@@ -63,7 +46,7 @@
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	<a class="right carousel-control" href="#news-slides" role="button" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
