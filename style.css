@@ -8819,25 +8819,36 @@ button.close {
 /* line 35, sass/style.scss */
 #content {
   overflow: auto;
-  height: 600px;
+  height: 520px;
+  min-height: 500px;
 }
 
-/* line 40, sass/style.scss */
+/* line 41, sass/style.scss */
 p {
   word-wrap: break-word;
 }
 
-/* line 44, sass/style.scss */
+/* line 45, sass/style.scss */
+.slide .item {
+  min-height: 480px;
+}
+/* line 47, sass/style.scss */
+.slide .item img {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 53, sass/style.scss */
 .deco-none {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 48, sass/style.scss */
+/* line 57, sass/style.scss */
 .deco-none:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 53, sass/style.scss */
+/* line 62, sass/style.scss */
 .deco-none:hover {
   color: inherit;
   text-decoration: inherit;

@@ -35,10 +35,19 @@ Text Domain: BehWeb
 #content {
 	overflow: auto;
 	height: 520px;
+	min-height: 500px;
 }
 
 p {
 	word-wrap: break-word;
+}
+
+.slide .item {
+	min-height: 480px;
+	img {
+		height: 100%;
+		width: 100%;
+	}
 }
 
 .deco-none {
