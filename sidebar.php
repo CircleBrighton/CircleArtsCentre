@@ -21,7 +21,7 @@ $visit = get_page_by_title('Visit');
 <div>
     <ul class="nav nav-pills">
         <li role="presentation" class="<?php echo is_home() ? 'active' : ''?>">
-            <a href="<?php echo get_home_url(); ?>">Home</a>
+            <a href="<?php echo home_url(); ?>">Home</a>
         </li>
 
         <li role="presentation" class="<?php echo is_page('About') ? 'active' : ''?> <?php echo ! $about ? 'disabled' : '' ?>">
