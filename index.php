@@ -17,7 +17,7 @@
 <?php get_sidebar(); ?>
 <div id="main">
     <div class="row">
-        <div class="col-md-8 col-xs-12">
+        <div id="content" class="col-md-8 col-xs-12">
 <?php
 if (is_home())
     get_template_part('welcome');

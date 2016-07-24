@@ -32,6 +32,11 @@ Text Domain: BehWeb
 	min-height: 600px;
 }
 
+#content {
+	overflow: auto;
+	height: 520px;
+}
+
 p {
 	word-wrap: break-word;
 }

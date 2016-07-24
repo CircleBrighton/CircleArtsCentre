@@ -8817,21 +8817,27 @@ button.close {
 }
 
 /* line 35, sass/style.scss */
+#content {
+  overflow: auto;
+  height: 600px;
+}
+
+/* line 40, sass/style.scss */
 p {
   word-wrap: break-word;
 }
 
-/* line 39, sass/style.scss */
+/* line 44, sass/style.scss */
 .deco-none {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 43, sass/style.scss */
+/* line 48, sass/style.scss */
 .deco-none:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 48, sass/style.scss */
+/* line 53, sass/style.scss */
 .deco-none:hover {
   color: inherit;
   text-decoration: inherit;
