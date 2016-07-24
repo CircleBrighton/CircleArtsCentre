@@ -82,31 +82,27 @@ elseif (is_page('Contact'))
 <div>
     <div class="row">
 <?php
-$args = array('category_name' => 'Coming Soon');
-$posts = get_posts($args);
-$post = isset($posts[0]) ? $posts[0] : null;
-if ($post) :
+query_posts('category_name=Coming Soon');
+if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
-<?php if ( has_post_thumbnail() ) : ?>
+<?php if (has_post_thumbnail()) : ?>
     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 <h3>Coming soon</h3>
                 <p class="text-justify">
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title_attribute(); ?>
+                        <?php the_title(); ?>
                     </a></span>
+                    <?php the_content('read more'); ?>
                 </p>
-                <?php the_post(); the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
 <?php
-$args = array('category_name' => 'This Week');
-$posts = get_posts($args);
-$post = isset($posts[0]) ? $posts[0] : null;
-if ($post) :
+query_posts('category_name=This Week');
+if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
@@ -116,18 +112,16 @@ if ($post) :
                 <h3>This Week</h3>
                 <p class="text-justify">
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title_attribute(); ?>
+                        <?php the_title(); ?>
                     </a></span>
                 </p>
-                <?php the_post(); the_content('read more'); ?>
+                <?php the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
 <?php
-$args = array('category_name' => 'Featured');
-$posts = get_posts($args);
-$post = isset($posts[0]) ? $posts[0] : null;
-if ($post) :
+query_posts('category_name=Featured');
+if (have_posts) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail">
@@ -137,10 +131,10 @@ if ($post) :
                 <h3>Featured</h3>
                 <p class="text-justify">
                     <span class="text-danger"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title_attribute(); ?>
+                        <?php the_title(); ?>
                     </a></span>
                 </p>
-                <?php the_post(); the_content('read more'); ?>
+                <?php the_content('read more'); ?>
             </div>
         </div>
 <?php endif; ?>
