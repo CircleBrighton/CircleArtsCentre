@@ -8815,3 +8815,8 @@ button.close {
 #main {
   min-height: 600px;
 }
+
+/* line 35, sass/style.scss */
+p {
+  word-wrap: break-word;
+}
