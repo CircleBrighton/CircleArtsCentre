@@ -98,12 +98,13 @@ if (have_posts()) : the_post();
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 </div>
-                <p>
-                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title(); ?>
-                    </a></h4>
-                </p>
+                <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <?php the_title(); ?>
+                </a></h4>
                 <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    Read More
+                </a>
             </div>
         </div>
 <?php endif; ?>
@@ -120,11 +121,14 @@ if (have_posts()) : the_post();
 <?php endif; ?>
                 </div>
                 <p>
-                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title(); ?>
-                    </a></h4>
+                <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <?php the_title(); ?>
+                </a></h4>
                 </p>
                 <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    Read More
+                </a>
             </div>
         </div>
 <?php endif; ?>
@@ -140,12 +144,13 @@ if (have_posts()) : the_post();
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 </div>
-                <p>
-                    <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                        <?php the_title(); ?>
-                    </a></h4>
-                </p>
+                <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <?php the_title(); ?>
+                </a></h4>
                 <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    Read More
+                </a>
             </div>
         </div>
 <?php endif; ?>
