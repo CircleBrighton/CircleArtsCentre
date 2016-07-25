@@ -13,6 +13,17 @@
  *
  */
 ?>
+<div class="page-header">
+    <h1><?php echo apply_filters('the_title', get_post()->post_title); echo " "; ?>
+    <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small></h1>
+<?php if (has_post_thumbnail(get_post())) : ?>
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <img class="img-rounded img-responsive" src="<?php the_post_thumbnail_url(get_post()); ?>">
+        </div>
+    </div>
+<?php endif; ?>
+</div>
 <?php
 echo apply_filters('the_content', get_post()->post_content);
 ?>
