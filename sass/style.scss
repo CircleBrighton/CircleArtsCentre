@@ -46,7 +46,7 @@ $content-min-height: 510px;
 	min-height: 500px;
 	height: 500px;
 	width: 100%;
-	overflow: none;
+	overflow: hidden;
 
 	.thumbnail {
 		@include border-radius(50px);
