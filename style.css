@@ -8803,60 +8803,71 @@ button.close {
     display: none !important;
   }
 }
-/* line 26, sass/style.scss */
+/* line 45, sass/style.scss */
 .thumbnail {
   min-height: 500px;
   height: 500px;
   width: 100%;
   overflow: auto;
 }
-
+/* line 51, sass/style.scss */
 .thumbnail .thumbnail {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
   border-radius: 50px;
-  background-color: #7AC5CD;
   height: 300px;
   min-height: 300px;
 }
 
+/* line 27, sass/style.scss */
+.bg-blue {
+  background-color: #7AC5CD;
+}
 
 /* line 33, sass/style.scss */
+.fg-white {
+  color: white;
+}
+
+/* line 61, sass/style.scss */
 #main {
   min-height: 600px;
 }
 
-/* line 37, sass/style.scss */
+/* line 65, sass/style.scss */
 #content {
   overflow: auto;
   height: 520px;
   min-height: 510px;
 }
 
-/* line 43, sass/style.scss */
+/* line 71, sass/style.scss */
 p {
   word-wrap: break-word;
 }
 
-/* line 47, sass/style.scss */
+/* line 75, sass/style.scss */
 .slide .item {
   min-height: 510px;
 }
-/* line 49, sass/style.scss */
+/* line 77, sass/style.scss */
 .slide .item img {
   height: 510px;
   width: 100%;
 }
 
-/* line 55, sass/style.scss */
+/* line 83, sass/style.scss */
 .deco-none {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 59, sass/style.scss */
+/* line 87, sass/style.scss */
 .deco-none:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 64, sass/style.scss */
+/* line 92, sass/style.scss */
 .deco-none:hover {
   color: inherit;
   text-decoration: inherit;
@@ -8864,107 +8875,124 @@ p {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
+/* line 100, sass/style.scss */
 .alignnone {
-    margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 104, sass/style.scss */
 .aligncenter,
 div.aligncenter {
-    display: block;
-    margin: 5px auto 5px auto;
+  display: block;
+  margin: 5px auto 5px auto;
 }
 
+/* line 110, sass/style.scss */
 .alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+  float: right;
+  margin: 5px 0 20px 20px;
 }
 
+/* line 115, sass/style.scss */
 .alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
+  float: left;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 120, sass/style.scss */
 a img.alignright {
-    float: right;
-    margin: 5px 0 20px 20px;
+  float: right;
+  margin: 5px 0 20px 20px;
 }
 
+/* line 125, sass/style.scss */
 a img.alignnone {
-    margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 129, sass/style.scss */
 a img.alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
+  float: left;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 134, sass/style.scss */
 a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* line 140, sass/style.scss */
 .wp-caption {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
 }
 
+/* line 148, sass/style.scss */
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 152, sass/style.scss */
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
+/* line 156, sass/style.scss */
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+  margin: 5px 0 20px 20px;
 }
 
+/* line 160, sass/style.scss */
 .wp-caption img {
-    border: 0 none;
-    height: auto;
-    margin: 0;
-    max-width: 98.5%;
-    padding: 0;
-    width: auto;
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
 }
 
+/* line 169, sass/style.scss */
 .wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
 }
 
 /* Text meant only for screen readers. */
+/* line 177, sass/style.scss */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
-
+/* line 184, sass/style.scss */
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }

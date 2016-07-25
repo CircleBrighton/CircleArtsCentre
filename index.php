@@ -92,7 +92,7 @@ if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail text-justify">
-                <div class="thumbnail">
+                <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">Comming Soon</h3>
 <?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
@@ -113,7 +113,7 @@ if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail text-justify">
-                <div class="thumbnail">
+                <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">This Week</h3>
 <?php if ( has_post_thumbnail() ) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
@@ -134,7 +134,7 @@ if (have_posts()) : the_post();
 ?>
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail text-justify">
-                <div class="thumbnail">
+                <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">Featured</h3>
 <?php if ( has_post_thumbnail() ) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
