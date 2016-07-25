@@ -28,6 +28,11 @@ $content-min-height: 510px;
 	height: 500px;
 	width: 100%;
 	overflow: auto;
+
+	img {
+		height: 250px;
+		min-height: 250px;
+	}
 }
 
 #main {
