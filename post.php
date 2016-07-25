@@ -24,6 +24,8 @@
     </div>
 <?php endif; ?>
 </div>
+<article id="post-<?php echo get_post()->ID; ?>" <?php post_class(get_post()); ?>>
 <?php
 echo apply_filters('the_content', get_post()->post_content);
 ?>
+</article>
