@@ -90,7 +90,7 @@ elseif (is_page('Visit'))
 query_posts('category_name=Coming Soon');
 if (have_posts()) : the_post();
 ?>
-        <div class="col-md-4 col-xs-6">
+        <div class="col-md-3 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">Comming Soon</h3>
@@ -112,7 +112,7 @@ if (have_posts()) : the_post();
 query_posts('category_name=This Week');
 if (have_posts()) : the_post();
 ?>
-        <div class="col-md-4 col-xs-6">
+        <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">This Week</h3>
@@ -136,7 +136,7 @@ if (have_posts()) : the_post();
 query_posts('category_name=Featured');
 if (have_posts()) : the_post();
 ?>
-        <div class="col-md-4 col-xs-6">
+        <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-blue">
                     <h3 class="fg-white text-center">Featured</h3>
