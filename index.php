@@ -91,8 +91,8 @@ elseif (is_page('Box Office'))
 <div>
     <div class="row">
 <?php
-query_posts('category_name=Coming Soon');
-if (have_posts()) : the_post();
+$q = new WP_Query(array ('category_name' => 'Coming Soon', 'post_type' => array('post', 'circle_event')));
+if ($q->have_posts()) : $q->the_post();
 ?>
         <div class="col-md-3 col-xs-4">
             <div class="thumbnail text-justify">
@@ -113,8 +113,8 @@ if (have_posts()) : the_post();
         </div>
 <?php endif; ?>
 <?php
-query_posts('category_name=This Week');
-if (have_posts()) : the_post();
+$q = new WP_Query(array ('category_name' => 'This Week', 'post_type' => array('post', 'circle_event')));
+if ($q->have_posts()) : $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
@@ -137,8 +137,8 @@ if (have_posts()) : the_post();
         </div>
 <?php endif; ?>
 <?php
-query_posts('category_name=Featured');
-if (have_posts()) : the_post();
+$q = new WP_Query(array ('category_name' => 'Featured', 'post_type' => array('post', 'circle_event')));
+if ($q->have_posts()) : $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
