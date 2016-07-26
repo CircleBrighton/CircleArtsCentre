@@ -40,7 +40,7 @@ $boffice = get_page_by_title('Box Office');
             <a href="<?php echo get_page_link($cafe->ID); ?>">Cafe</a>
         </li>
 
-        <li role="presentation" class="<?php echo is_page('Box Office') ? 'active' : ''?> <?php echo ! $boofice ? 'disabled' : '' ?>">
+        <li role="presentation" class="<?php echo is_page('Box Office') ? 'active' : ''?> <?php echo ! $boffice ? 'disabled' : '' ?>">
             <a href="<?php echo get_page_link($boffice->ID); ?>">Box Office</a>
         </li>
 
