@@ -45,3 +45,18 @@ function wpdocs_excerpt_more($more) {
     return '';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more');
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'circle_event',
+    array(
+      'labels' => array(
+        'name' => __('Events'),
+        'singular_name' => __('Event')
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'events'),
+    )
+  );
+}
