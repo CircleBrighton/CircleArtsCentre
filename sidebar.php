@@ -17,6 +17,8 @@
 $about = get_page_by_title('About');
 $contact = get_page_by_title('Contact');
 $visit = get_page_by_title('Visit');
+$cafe = get_page_by_title('Cafe');
+$boffice = get_page_by_title('Box Office');
 ?>
 <div>
     <ul class="nav nav-pills">
@@ -34,9 +36,13 @@ $visit = get_page_by_title('Visit');
             <a href="<?php echo get_page_link($visit->ID); ?>">Visit</a>
         </li>
 
-        <li role="presentation"><a href="#">Cafe</a></li>
+        <li role="presentation" class="<?php echo is_page('Cafe') ? 'active' : ''?> <?php echo ! $cafe ? 'disabled' : '' ?>">
+            <a href="<?php echo get_page_link($cafe->ID); ?>">Cafe</a>
+        </li>
 
-        <li role="presentation"><a href="#">Box Office</a></li>
+        <li role="presentation" class="<?php echo is_page('Box Office') ? 'active' : ''?> <?php echo ! $boofice ? 'disabled' : '' ?>">
+            <a href="<?php echo get_page_link($boffice->ID); ?>">Box Office</a>
+        </li>
 
         <li role="presentation"><a href="#">Support Us</a></li>
 
