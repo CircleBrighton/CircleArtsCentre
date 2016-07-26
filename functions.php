@@ -67,15 +67,6 @@ function create_post_type() {
 }
 
 /**
- * Show posts of 'post' and 'circle_event' post types on all quires.
- */
-add_action( 'pre_get_posts', 'add_circle_event_to_query');
-function add_circle_event_to_query($query) {
-	$query->set('post_type', array('post', 'circle_event'));
-	return $query;
-}
-
-/**
  * Register meta box(es).
  */
 function wpdocs_register_meta_boxes() {
