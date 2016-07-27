@@ -119,7 +119,7 @@ function wpdocs_display_event_callback($post) {
 ?>
   <p>
     <input type="date" name="circle-event-performed-date" id="circle-event-performed-date"
-         value="<?php echo esc_attr(get_post_meta($post->ID,'performed_date',true)); ?>"/>
+         value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_date', true)); ?>"/>
   </p>
 <?php
 }
