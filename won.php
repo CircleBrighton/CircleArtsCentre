@@ -23,8 +23,8 @@ echo apply_filters('the_content', get_post()->post_content);
             <th>#</th>
             <th>Date</th>
             <th>Name</th>
-            <th>Price</th>
             <th>Time</th>
+            <th>Price</th>
         </tr>
     </thead>
     <tbody>
