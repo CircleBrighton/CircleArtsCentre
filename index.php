@@ -21,8 +21,10 @@
 <?php
 if (is_home())
     get_template_part('welcome');
-elseif (is_single())
+elseif (is_singular('post'))
     get_template_part('post');
+elseif (is_singular('circle_event'))
+    get_template_part('event');
 elseif (is_page('About'))
     get_template_part('about');
 elseif (is_page('Contact'))
