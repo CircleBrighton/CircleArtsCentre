@@ -17,7 +17,7 @@
 echo apply_filters('the_content', get_post()->post_content);
 ?>
 <?php $q = new WP_Query(array ('post_type' => 'circle_event')); $i = 0; ?>
-<table class="table table-stripedi table-hover">
+<table class="table table-striped table-hover table-clickable">
     <thead>
         <tr>
             <th>#</th>
@@ -29,7 +29,7 @@ echo apply_filters('the_content', get_post()->post_content);
     </thead>
     <tbody>
 <?php while($q->have_posts()): $q->the_post(); $i++; ?>
-        <tr data-href="<?php the_permalink(); ?>">
+        <tr data-url="<?php the_permalink(); ?>">
             <td><?php echo $i ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'performed_date', true); ?>
             <td><?php the_title(); ?></td>
