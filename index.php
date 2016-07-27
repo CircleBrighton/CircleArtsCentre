@@ -33,6 +33,8 @@ elseif (is_page('Cafe'))
     get_template_part('cafe');
 elseif (is_page('Box Office'))
     get_template_part('boffice');
+elseif (is_page("What's On"))
+    get_template_part('won');
 ?>
         </div>
         <div class="col-md-4 col-xs-12">
