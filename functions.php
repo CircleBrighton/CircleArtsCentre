@@ -70,7 +70,7 @@ function create_post_type() {
  * Register meta box(es).
  */
 function wpdocs_register_meta_boxes() {
-    add_meta_box('performed-date', __('Performed Date', 'textdomain'), 'wpdocs_display_event_callback', 'circle_event' );
+    add_meta_box('event-info', __('Event Info', 'textdomain'), 'wpdocs_display_event_callback', 'circle_event' );
 }
 add_action('add_meta_boxes', 'wpdocs_register_meta_boxes');
 
@@ -86,11 +86,53 @@ function wpdocs_save_meta($post_id, $post) {
     if (!current_user_can($post_type->cap->edit_post, $post_id))
         return $post_id;
 
-    /* Get the posted data and sanitize it for use as an HTML class. */
-    $new_meta_value = (isset( $_POST['circle-event-performed-date'] ) ? sanitize_html_class( $_POST['circle-event-performed-date'] ) : '');
+    /* Get the posted data. */
+    $new_meta_value = (isset( $_POST['circle-event-performed-date'] ) ? $_POST['circle-event-performed-date'] : '');
 
     /* Get the meta key. */
     $meta_key = 'performed_date';
+
+    /* Get the meta value of the custom field key. */
+    $meta_value = get_post_meta($post_id, $meta_key, true);
+
+    /* If a new meta value was added and there was no previous value, add it. */
+    if ($new_meta_value && '' == $meta_value)
+        add_post_meta($post_id, $meta_key, $new_meta_value, true);
+
+    /* If the new meta value does not match the old value, update it. */
+    elseif ($new_meta_value && $new_meta_value != $meta_value)
+        update_post_meta($post_id, $meta_key, $new_meta_value);
+
+    /* If there is no new meta value but an old value exists, delete it. */
+    elseif ('' == $new_meta_value && $meta_value)
+        delete_post_meta($post_id, $meta_key, $meta_value);
+
+    /* Get the posted data. */
+    $new_meta_value = (isset( $_POST['circle-event-performed-time'] ) ? $_POST['circle-event-performed-time'] : '');
+
+    /* Get the meta key. */
+    $meta_key = 'performed_time';
+
+    /* Get the meta value of the custom field key. */
+    $meta_value = get_post_meta($post_id, $meta_key, true);
+
+    /* If a new meta value was added and there was no previous value, add it. */
+    if ($new_meta_value && '' == $meta_value)
+        add_post_meta($post_id, $meta_key, $new_meta_value, true);
+
+    /* If the new meta value does not match the old value, update it. */
+    elseif ($new_meta_value && $new_meta_value != $meta_value)
+        update_post_meta($post_id, $meta_key, $new_meta_value);
+
+    /* If there is no new meta value but an old value exists, delete it. */
+    elseif ('' == $new_meta_value && $meta_value)
+        delete_post_meta($post_id, $meta_key, $meta_value);
+
+    /* Get the posted data. */
+    $new_meta_value = (isset( $_POST['circle-event-price'] ) ? $_POST['circle-event-price'] : '');
+
+    /* Get the meta key. */
+    $meta_key = 'price';
 
     /* Get the meta value of the custom field key. */
     $meta_value = get_post_meta($post_id, $meta_key, true);
@@ -117,10 +159,21 @@ add_action('save_post', 'wpdocs_save_meta', 10, 2);
 function wpdocs_display_event_callback($post) {
     wp_nonce_field(basename( __FILE__ ), 'circle_event_nonce');
 ?>
-  <p>
+  <div>
+    <label for="circle-event-performed-date">Performed Date: </label>
     <input type="date" name="circle-event-performed-date" id="circle-event-performed-date"
          value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_date', true)); ?>"/>
-  </p>
+  </div>
+  <div>
+    <label for="circle-event-performed-time">Performed Time: </label>
+    <input type="time" name="circle-event-performed-time" id="circle-event-performed-time"
+         value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_time', true)); ?>"/>
+  </div>
+  <div>
+    <label for="circle-event-price">Performed Date: </label>
+    <input type="text" name="circle-event-price" id="circle-event-price"
+         value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?> $"/>
+  </div>
 <?php
 }
 
