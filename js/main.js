@@ -7,9 +7,9 @@
  * | File Name:     main.js
  * +===============================================
  */
-$(document).ready(function($) {
-  $(".table-clickable > tbody > tr").click(function() {
-    window.document.location = $(this).data("url")
-  });
-});
+$(document).ready(function ($) {
+  $('.table-clickable > tbody > tr').click(function () {
+    window.document.location = $(this).data('url')
+  })
+})
 
