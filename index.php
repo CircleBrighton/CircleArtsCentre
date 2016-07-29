@@ -96,14 +96,14 @@ if (is_home()) {
 <div>
     <div class="row">
 <?php
-$q = new WP_Query(array ('category_name' => 'Coming Soon', 'post_type' => array('post', 'circle_event')));
+$q = new WP_Query(array ('category_name' => 'Feature Left Box', 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
     $q->the_post();
 ?>
         <div class="col-md-3 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
-                    <h3 class="fg-white text-center">Comming Soon</h3>
+                <h3 class="fg-white text-center"><?php echo get_theme_mod('feature_left_box_title'); ?></h3>
 <?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
@@ -119,14 +119,14 @@ if ($q->have_posts()) :
         </div>
 <?php endif; ?>
 <?php
-$q = new WP_Query(array ('category_name' => 'This Week', 'post_type' => array('post', 'circle_event')));
+$q = new WP_Query(array ('category_name' => 'Feature Middle Box', 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
     $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
-                    <h3 class="fg-white text-center">This Week</h3>
+                    <h3 class="fg-white text-center"><?php echo get_theme_mod('feature_middle_box_title'); ?></h3>
 <?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
@@ -144,14 +144,14 @@ if ($q->have_posts()) :
         </div>
 <?php endif; ?>
 <?php
-$q = new WP_Query(array ('category_name' => 'Featured', 'post_type' => array('post', 'circle_event')));
+$q = new WP_Query(array ('category_name' => 'Feature Right Box', 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
     $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
-                    <h3 class="fg-white text-center">Featured</h3>
+                    <h3 class="fg-white text-center"><?php echo get_theme_mod('feature_right_box_title'); ?></h3>
 <?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
