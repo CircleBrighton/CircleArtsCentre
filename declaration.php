@@ -173,19 +173,24 @@ function wpdocs_display_event_callback($post)
 <?php
 }
 
+/**
+ * Meta box display callback.
+ *
+ * @param WP_Customize $wp_customize Customization object.
+ */
 function circle_customize_register($wp_customize)
 {
-    $wp_customize->add_setting('aside_row_title', array(
-        'default'     => 'Volunteering',
+    $wp_customize->add_setting('feature_left_box_title', array(
+        'default'     => 'Coming Soon',
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_section('aside_rows', array(
-        'title'      => __('Aside Rows', 'circle'),
+    $wp_customize->add_section('feature_boxes', array(
+        'title'      => __('Feature Boxes', 'circle'),
         'priority'   => 30,
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_color', array(
-        'label'        => __('Aside Row Title', 'circle'),
-        'section'    => 'aside_rows',
-        'settings'   => 'aside_row_title',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_left_box_title_c', array(
+        'label'        => __('Feature Left Box Title', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_left_box_title',
     )));
 }
