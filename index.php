@@ -25,18 +25,10 @@ if (is_home()) {
     get_template_part('post');
 } elseif (is_singular('circle_event')) {
     get_template_part('event');
-} elseif (is_page('About')) {
-    get_template_part('about');
-} elseif (is_page('Contact')) {
-    get_template_part('contact');
-} elseif (is_page('Visit')) {
-    get_template_part('visit');
-} elseif (is_page('Cafe')) {
-    get_template_part('cafe');
-} elseif (is_page('Box Office')) {
-    get_template_part('boffice');
 } elseif (is_page("What's On")) {
     get_template_part('won');
+} elseif (is_page()) {
+    get_template_part('general');
 }
 ?>
         </div>
