@@ -18,7 +18,9 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#news-slides" data-slide-to="0" class="active"></li>
-<?php while($q->have_posts()): $q->the_post(); $i = 1; ?>
+<?php while ($q->have_posts()) :
+    $q->the_post();
+    $i = 1; ?>
         <li data-target="#news-slides" data-slide-to="<?php $i++ ?>"></li>
 <?php endwhile; ?>
     </ol>
@@ -30,7 +32,8 @@
         <div class="item active">
             <img src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="welcome">
         </div>
-<?php while($q->have_posts()): $q->the_post(); ?>
+<?php while ($q->have_posts()) :
+    $q->the_post(); ?>
         <div class="item">
             <img alt="<?php the_title_attribute(); ?>" src="<?php the_post_thumbnail_url(); ?>">
             <div class="carousel-caption">
@@ -46,8 +49,8 @@
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-	<a class="right carousel-control" href="#news-slides" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a>
+    <a class="right carousel-control" href="#news-slides" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
