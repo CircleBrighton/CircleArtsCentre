@@ -177,3 +177,19 @@ function wpdocs_display_event_callback($post) {
 <?php
 }
 
+function circle_customize_register($wp_customize) {
+    $wp_customize->add_setting('aside_row_title' , array(
+        'default'     => 'Volunteering',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_section('aside_rows' , array(
+        'title'      => __( 'Aside Rows', 'circle' ),
+        'priority'   => 30,
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_color', array(
+        'label'        => __( 'Aside Row Title', 'circle' ),
+        'section'    => 'aside_rows',
+        'settings'   => 'aside_row_title',
+    )));
+}
+add_action('customize_register', 'circle_customize_register');
