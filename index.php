@@ -21,7 +21,7 @@
 <?php
 if (is_home()) {
     get_template_part('welcome');
-} elseif (is_singular('post')) {
+} elseif (is_singular('post') || is_singular('circle_aside')) {
     get_template_part('post');
 } elseif (is_singular('circle_event')) {
     get_template_part('event');
@@ -42,46 +42,22 @@ if (is_home()) {
         </div>
         <div class="col-md-4 col-xs-12">
             <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="active">
-                    <a href="#">
-                        <h5 class="text-uppercase">Volunteering
-                            <span class="glyphicon glyphicon-play"></span>
-                        </h5>
-                        <small>Get involved! You'll love it</small>
-                    </a>
-                </li>
+<?php
+$q = new WP_Query(array ('post_type' => 'circle_aside'));
+$i = 0;
+while ($q->have_posts() && $i < 5) :
+    $i++;
+    $q->the_post();
+?>
                 <li role="presentation">
-                    <a href="#">
-                        <h5 class="text-uppercase">Workshops &amp; Classes
+                    <a href="<?php the_permalink(); ?>">
+                        <h5 class="text-uppercase"><?php the_title(); ?>
                             <span class="glyphicon glyphicon-play"></span>
                         </h5>
-                        <small>Come along and learn</small>
+                        <small><?php the_excerpt(); ?></small>
                     </a>
                 </li>
-                <li role="presentation">
-                    <a href="#">
-                        <h5 class="text-uppercase">Hire Circle
-                            <span class="glyphicon glyphicon-play"></span>
-                        </h5>
-                        <small>Venue hire details</small>
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#">
-                        <h5 class="text-uppercase">Outreach
-                            <span class="glyphicon glyphicon-play"></span>
-                        </h5>
-                        <small>Circle in the community</small>
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#">
-                        <h5 class="text-uppercase">Past events
-                            <span class="glyphicon glyphicon-play"></span>
-                        </h5>
-                        <small>Who's performed at Circle</small>
-                    </a>
-                </li>
+<?php endwhile; ?>
             </ul>
             <form class="form-inline">
                 <div class="form-group">
