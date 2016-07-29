@@ -180,17 +180,35 @@ function wpdocs_display_event_callback($post)
  */
 function circle_customize_register($wp_customize)
 {
-    $wp_customize->add_setting('feature_left_box_title', array(
-        'default'     => 'Coming Soon',
-        'transport'   => 'refresh',
-    ));
     $wp_customize->add_section('feature_boxes', array(
         'title'      => __('Feature Boxes', 'circle'),
         'priority'   => 30,
+    ));
+    $wp_customize->add_setting('feature_left_box_title', array(
+        'default'     => 'Coming Soon',
+        'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_left_box_title_c', array(
         'label'        => __('Feature Left Box Title', 'circle'),
         'section'    => 'feature_boxes',
         'settings'   => 'feature_left_box_title',
+    )));
+    $wp_customize->add_setting('feature_middle_box_title', array(
+        'default'     => 'This Week',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_middle_box_title_c', array(
+        'label'        => __('Feature Middle Box Title', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_middle_box_title',
+    )));
+    $wp_customize->add_setting('feature_right_box_title', array(
+        'default'     => 'Featured',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_right_box_title_c', array(
+        'label'        => __('Feature Right Box Title', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_right_box_title',
     )));
 }
