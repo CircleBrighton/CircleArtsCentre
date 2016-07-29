@@ -31,13 +31,6 @@ function wpdocs_custom_excerpt_length($length)
  */
 function wpdocs_excerpt_more($more)
 {
-    /* uncomment following code in order to have button for read more. */
-    /*
-    return sprintf('<div><a class="btn btn-primary" href="%1$s">%2$s</a></div>',
-        get_the_permalink(),
-        __('Read More', 'textdomain')
-    );
-     */
     return '';
 }
 
@@ -58,6 +51,20 @@ function create_post_type()
             'has_archive' => true,
             'rewrite' => array('slug' => 'events'),
             'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        )
+    );
+
+    register_post_type(
+        'circle_aside',
+        array(
+            'labels' => array(
+                'name' => __('Asides'),
+                'singular_name' => __('Aside')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'asides'),
+            'supports' => array('title', 'editor', 'excerpt'),
         )
     );
 }
@@ -180,6 +187,7 @@ function wpdocs_display_event_callback($post)
  */
 function circle_customize_register($wp_customize)
 {
+    /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(
         'title'      => __('Feature Boxes', 'circle'),
         'priority'   => 30,
