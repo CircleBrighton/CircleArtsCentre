@@ -1,5 +1,6 @@
 require 'bootstrap-sass'
 require 'compass/import-once/activate'
+require 'font-awesome-sass'
 # Require any additional compass plugins here.
 
 
