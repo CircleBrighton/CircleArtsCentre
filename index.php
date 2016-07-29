@@ -19,24 +19,25 @@
     <div class="row">
         <div id="content" class="col-md-8 col-xs-12">
 <?php
-if (is_home())
+if (is_home()) {
     get_template_part('welcome');
-elseif (is_singular('post'))
+} elseif (is_singular('post')) {
     get_template_part('post');
-elseif (is_singular('circle_event'))
+} elseif (is_singular('circle_event')) {
     get_template_part('event');
-elseif (is_page('About'))
+} elseif (is_page('About')) {
     get_template_part('about');
-elseif (is_page('Contact'))
+} elseif (is_page('Contact')) {
     get_template_part('contact');
-elseif (is_page('Visit'))
+} elseif (is_page('Visit')) {
     get_template_part('visit');
-elseif (is_page('Cafe'))
+} elseif (is_page('Cafe')) {
     get_template_part('cafe');
-elseif (is_page('Box Office'))
+} elseif (is_page('Box Office')) {
     get_template_part('boffice');
-elseif (is_page("What's On"))
+} elseif (is_page("What's On")) {
     get_template_part('won');
+}
 ?>
         </div>
         <div class="col-md-4 col-xs-12">
@@ -96,7 +97,8 @@ elseif (is_page("What's On"))
     <div class="row">
 <?php
 $q = new WP_Query(array ('category_name' => 'Coming Soon', 'post_type' => array('post', 'circle_event')));
-if ($q->have_posts()) : $q->the_post();
+if ($q->have_posts()) :
+    $q->the_post();
 ?>
         <div class="col-md-3 col-xs-4">
             <div class="thumbnail text-justify">
@@ -118,13 +120,14 @@ if ($q->have_posts()) : $q->the_post();
 <?php endif; ?>
 <?php
 $q = new WP_Query(array ('category_name' => 'This Week', 'post_type' => array('post', 'circle_event')));
-if ($q->have_posts()) : $q->the_post();
+if ($q->have_posts()) :
+    $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
                     <h3 class="fg-white text-center">This Week</h3>
-<?php if ( has_post_thumbnail() ) : ?>
+<?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 </div>
@@ -142,13 +145,14 @@ if ($q->have_posts()) : $q->the_post();
 <?php endif; ?>
 <?php
 $q = new WP_Query(array ('category_name' => 'Featured', 'post_type' => array('post', 'circle_event')));
-if ($q->have_posts()) : $q->the_post();
+if ($q->have_posts()) :
+    $q->the_post();
 ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
                     <h3 class="fg-white text-center">Featured</h3>
-<?php if ( has_post_thumbnail() ) : ?>
+<?php if (has_post_thumbnail()) : ?>
                     <img src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
                 </div>
