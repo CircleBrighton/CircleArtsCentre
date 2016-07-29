@@ -181,6 +181,14 @@ function wpdocs_display_event_callback($post)
 }
 
 /**
+ * Register circle theme menu
+ */
+function register_circle_menu()
+{
+    register_nav_menu('top-menu', __('Top Menu'));
+}
+
+/**
  * Meta box display callback.
  *
  * @param WP_Customize $wp_customize Customization object.

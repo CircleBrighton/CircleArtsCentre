@@ -25,6 +25,8 @@ add_filter('excerpt_more', 'wpdocs_excerpt_more');
 
 add_action('init', 'create_post_type');
 
+add_action('init', 'register_circle_menu');
+
 add_action('add_meta_boxes', 'wpdocs_register_meta_boxes');
 
 add_action('save_post', 'wpdocs_save_meta', 10, 2);
