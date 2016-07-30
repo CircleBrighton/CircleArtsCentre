@@ -197,9 +197,17 @@ function wpdocs_submenu_enable()
 
 function wpdocs_submenu_display()
 {
+    $pages = get_pages();
 ?>
 <div class="wrap">
     <h1>Event Settings</h1>
+    <datalist id="page-list">
+<?php foreach ($pages as $page) : ?>
+        <option value="<?php echo esc_attr($page->post_title); ?>">
+            <?php echo $page->post_title; ?>
+        </option>
+<?php endforeach; ?>
+    </datalist>
     <form method="post" action="options.php"> 
 <?php
     settings_fields('circle_event_settings');
@@ -212,7 +220,7 @@ function wpdocs_submenu_display()
       </div>
       <div>
         <label for="event_page_name">Event Page Name: </label>
-        <input type="text" name="event_page_name" id="event_page_name"
+        <input type="text" name="event_page_name" id="event_page_name" list="page-list"
             value="<?php echo esc_attr(get_option('event_page_name', "What's On")); ?>"/>
       </div>
 <?php submit_button(); ?>
