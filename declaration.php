@@ -173,9 +173,37 @@ function wpdocs_display_event_callback($post)
          value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_time', true)); ?>"/>
   </div>
   <div>
-    <label for="circle-event-price">Performed Date: </label>
+    <label for="circle-event-price">Price: </label>
     <input type="text" name="circle-event-price" id="circle-event-price"
          value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?> $"/>
+  </div>
+<?php
+}
+
+function wpdocs_submenu_enable()
+{
+    add_submenu_page(
+        'edit.php?post_type=circle_event',
+        'Event Settings',
+        'Settings',
+        'edit_posts',
+        'circle_event_settings',
+        'wpdocs_submenu_display'
+    );
+}
+
+function wpdocs_submenu_display()
+{
+?>
+  <div>
+    <label for="buy-ticket-link">Buy Ticket Link: </label>
+    <input type="text" name="buy-ticket-link" id="buy-ticket-link"
+         value=""/>
+  </div>
+  <div>
+    <label for="event-page-name">Event Page Name: </label>
+    <input type="text" name="event-page-name" id="event-page-name"
+         value=""/>
   </div>
 <?php
 }
@@ -189,7 +217,7 @@ function register_circle_menu()
 }
 
 /**
- * Meta box display callback.
+ * Theme customization callback.
  *
  * @param WP_Customize $wp_customize Customization object.
  */
