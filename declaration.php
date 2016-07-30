@@ -190,21 +190,34 @@ function wpdocs_submenu_enable()
         'circle_event_settings',
         'wpdocs_submenu_display'
     );
+
+    register_setting('circle_event_settings', 'event_page_name');
+    register_setting('circle_event_settings', 'buy_ticket_link');
 }
 
 function wpdocs_submenu_display()
 {
 ?>
-  <div>
-    <label for="buy-ticket-link">Buy Ticket Link: </label>
-    <input type="text" name="buy-ticket-link" id="buy-ticket-link"
-         value=""/>
-  </div>
-  <div>
-    <label for="event-page-name">Event Page Name: </label>
-    <input type="text" name="event-page-name" id="event-page-name"
-         value=""/>
-  </div>
+<div class="wrap">
+    <h1>Event Settings</h1>
+    <form method="post" action="options.php"> 
+<?php
+    settings_fields('circle_event_settings');
+    do_settings_sections('circle_event_settings');
+?>
+      <div>
+        <label for="buy_ticket_link">Buy Ticket Link: </label>
+        <input type="text" name="buy_ticket_link" id="buy_ticket_link"
+            value="<?php echo esc_attr(get_option('buy_ticket_link', "")); ?>"/>
+      </div>
+      <div>
+        <label for="event_page_name">Event Page Name: </label>
+        <input type="text" name="event_page_name" id="event_page_name"
+            value="<?php echo esc_attr(get_option('event_page_name', "What's On")); ?>"/>
+      </div>
+      <?php submit_button(); ?>
+  </form>
+</div>
 <?php
 }
 
