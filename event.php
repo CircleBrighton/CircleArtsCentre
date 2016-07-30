@@ -16,7 +16,9 @@
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
     <br>
-    <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small></h1>
+    <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small>
+    <a class="btn btn-primary pull-right">Buy Ticket</a>
+    </h1>
 </div>
 <table class="table table-bordered">
     <tr>
