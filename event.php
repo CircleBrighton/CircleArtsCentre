@@ -18,7 +18,7 @@
     <br>
     <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small>
     <a class="btn btn-primary pull-right"
-        href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link')); ?>">
+        href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)); ?>">
         Buy Ticket
     </a>
     </h1>
