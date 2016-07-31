@@ -199,7 +199,7 @@ function wpdocs_display_event_callback($post)
   </div>
   <div>
     <label for="circle-event-buy-link">Buy Ticket Link: </label>
-    <input type="text" name="circle-event-buy-link" id="circle-event-buy-link"
+    <input type="url" name="circle-event-buy-link" id="circle-event-buy-link"
          value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
   </div>
 <?php
