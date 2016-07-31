@@ -175,7 +175,7 @@ function wpdocs_display_event_callback($post)
   <div>
     <label for="circle-event-price">Price: </label>
     <input type="text" name="circle-event-price" id="circle-event-price"
-         value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?> $"/>
+         value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?>"/>
   </div>
 <?php
 }
