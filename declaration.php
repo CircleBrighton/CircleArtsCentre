@@ -151,6 +151,26 @@ function wpdocs_save_meta($post_id, $post)
     elseif ('' == $new_meta_value && $meta_value) {
         delete_post_meta($post_id, $meta_key, $meta_value);
     }
+
+    /* Get the posted data. */
+    $new_meta_value = (isset($_POST['circle-event-buy-link']) ? $_POST['circle-event-buy-link'] : '');
+
+    /* Get the meta key. */
+    $meta_key = 'buy_link';
+
+    /* Get the meta value of the custom field key. */
+    $meta_value = get_post_meta($post_id, $meta_key, true);
+
+    /* If a new meta value was added and there was no previous value, add it. */
+    if ($new_meta_value && '' == $meta_value) {
+        add_post_meta($post_id, $meta_key, $new_meta_value, true);
+    } /* If the new meta value does not match the old value, update it. */
+    elseif ($new_meta_value && $new_meta_value != $meta_value) {
+        update_post_meta($post_id, $meta_key, $new_meta_value);
+    } /* If there is no new meta value but an old value exists, delete it. */
+    elseif ('' == $new_meta_value && $meta_value) {
+        delete_post_meta($post_id, $meta_key, $meta_value);
+    }
 }
 
 /**
@@ -177,6 +197,11 @@ function wpdocs_display_event_callback($post)
     <input type="text" name="circle-event-price" id="circle-event-price"
          value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?>"/>
   </div>
+  <div>
+    <label for="circle-event-buy-link">Buy Ticket Link: </label>
+    <input type="text" name="circle-event-buy-link" id="circle-event-buy-link"
+         value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
+  </div>
 <?php
 }
 
@@ -192,7 +217,6 @@ function wpdocs_submenu_enable()
     );
 
     register_setting('circle_event_settings', 'event_page_name');
-    register_setting('circle_event_settings', 'buy_ticket_link');
 }
 
 function wpdocs_submenu_display()
@@ -213,12 +237,7 @@ function wpdocs_submenu_display()
     settings_fields('circle_event_settings');
     do_settings_sections('circle_event_settings');
 ?>
-      <div>
-        <label for="buy_ticket_link">Buy Ticket Link: </label>
-        <input type="text" name="buy_ticket_link" id="buy_ticket_link"
-            value="<?php echo esc_attr(get_option('buy_ticket_link', '')); ?>"/>
-      </div>
-      <div>
+     <div>
         <label for="event_page_name">Event Page Name: </label>
         <input type="text" name="event_page_name" id="event_page_name" list="page-list"
             value="<?php echo esc_attr(get_option('event_page_name', "What's On")); ?>"/>
