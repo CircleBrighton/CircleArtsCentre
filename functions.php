@@ -34,3 +34,5 @@ add_action('save_post', 'wpdocs_save_meta', 10, 2);
 add_action('customize_register', 'circle_customize_register');
 
 add_action('admin_menu', 'wpdocs_submenu_enable');
+
+add_action('admin_enqueue_scripts', 'wpdocs_enqueue_admin_script');

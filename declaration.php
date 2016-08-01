@@ -296,3 +296,16 @@ function circle_customize_register($wp_customize)
         'settings'   => 'feature_right_box_title',
     )));
 }
+
+
+/**
+ * Enqueue a script in the WordPress admin, excluding edit.php.
+ *
+ * @param string $hook Hook suffix for the current admin page.
+ */
+function wpdocs_enqueue_admin_script($hook)
+{
+    wp_enqueue_script('modernizer', 'http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js');
+    wp_enqueue_script('polyfiller', 'http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js');
+    wp_enqueue_script('admin.js', get_template_directory_uri().'/js/admin.js');
+}
