@@ -305,7 +305,7 @@ function circle_customize_register($wp_customize)
  */
 function wpdocs_enqueue_admin_script($hook)
 {
-    wp_enqueue_script('modernizer', 'http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js');
-    wp_enqueue_script('polyfiller', 'http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js');
+    wp_enqueue_script('modernizer', get_template_directory_uri().'/js/webshim/extras/modernizr-custom.js');
+    wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
     wp_enqueue_script('admin.js', get_template_directory_uri().'/js/admin.js');
 }
