@@ -18,7 +18,7 @@ echo apply_filters('the_content', get_post()->post_content);
 ?>
 <?php $q = new WP_Query(array ('post_type' => 'circle_event'));
 $i = 0; ?>
-<table class="table table-striped table-hover table-clickable">
+<table class="table table-striped table-hover table-clickable table-sortable">
     <thead>
         <tr>
             <th>#</th>

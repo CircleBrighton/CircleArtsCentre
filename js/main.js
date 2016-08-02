@@ -7,9 +7,10 @@
  * | File Name:     main.js
  * +===============================================
  */
-$(document).ready(function ($) {
+$(document).ready(function () {
   $('.table-clickable > tbody > tr').click(function () {
     window.document.location = $(this).data('url')
   })
+  $('.table-sortable').tablesorter()
 })
 
