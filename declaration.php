@@ -205,49 +205,6 @@ function wpdocs_display_event_callback($post)
 <?php
 }
 
-function wpdocs_submenu_enable()
-{
-    add_submenu_page(
-        'edit.php?post_type=circle_event',
-        'Event Settings',
-        'Settings',
-        'edit_posts',
-        'circle_event_settings',
-        'wpdocs_submenu_display'
-    );
-
-    register_setting('circle_event_settings', 'event_page_name');
-}
-
-function wpdocs_submenu_display()
-{
-    $pages = get_pages();
-?>
-<div class="wrap">
-    <h1>Event Settings</h1>
-    <datalist id="page-list">
-<?php foreach ($pages as $page) : ?>
-        <option value="<?php echo esc_attr($page->post_title); ?>">
-            <?php echo $page->post_title; ?>
-        </option>
-<?php endforeach; ?>
-    </datalist>
-    <form method="post" action="options.php"> 
-<?php
-    settings_fields('circle_event_settings');
-    do_settings_sections('circle_event_settings');
-?>
-     <div>
-        <label for="event_page_name">Event Page Name: </label>
-        <input type="text" name="event_page_name" id="event_page_name" list="page-list"
-            value="<?php echo esc_attr(get_option('event_page_name', "What's On")); ?>"/>
-      </div>
-<?php submit_button(); ?>
-  </form>
-</div>
-<?php
-}
-
 /**
  * Register circle theme menu
  */
