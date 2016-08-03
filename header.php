@@ -36,12 +36,7 @@
             </div>
             <div class="col-md-offset-4 col-md-4 col-xs-6 text-right">
                 <h5>BOX OFFICE: ...</h5>
-                <form action="/" method="get" class="form-inline">
-                    <input type="text" name="search" class="form-control" placeholder="Search...">
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                </form>
+                <?php get_search_form() ?>
             </div>
         </div>
     </header>
