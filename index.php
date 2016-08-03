@@ -25,6 +25,8 @@ if (is_home()) {
     get_template_part('post');
 } elseif (is_singular('circle_event')) {
     get_template_part('event');
+} elseif (is_search()) {
+    get_template_part('searchpage');
 } elseif (is_page()) {
     get_template_part('general');
 }
