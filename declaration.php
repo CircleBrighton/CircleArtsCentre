@@ -321,5 +321,23 @@ $i = 0; ?>
     </tbody>
 </table>
 <?php
-    return ob_get_clean();
+return ob_get_clean();
+}
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function circle_widgets_init()
+{
+    register_sidebar(array(
+        'name' => 'Tweets',
+        'id' => 'tweets',
+        'before_widget' =>
+        '<div class="well well-sm cycle-slideshow" data-cycle-slides="> ul > li"'.
+        'data-cycle-center-horz="true" data-cycle-center-vert="true">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="hidden">',
+        'after_title' => '</h2>',
+    ));
 }
