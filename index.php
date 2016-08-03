@@ -25,8 +25,6 @@ if (is_home()) {
     get_template_part('post');
 } elseif (is_singular('circle_event')) {
     get_template_part('event');
-} elseif (is_page(get_option('event_page_name', "What's On"))) {
-    get_template_part('won');
 } elseif (is_page()) {
     get_template_part('general');
 }

@@ -322,6 +322,32 @@ function circle_events_shortcode($attrs)
     ), $atts)['number'];
     ob_start();
 ?>
+<?php $q = new WP_Query(array ('post_type' => 'circle_event'));
+$i = 0; ?>
+<table class="table table-striped table-hover table-clickable table-sortable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php while ($q->have_posts() && $i < $n) :
+    $q->the_post();
+    $i++; ?>
+        <tr data-url="<?php the_permalink(); ?>">
+            <td><?php echo $i ?></td>
+            <td><?php echo get_post_meta(get_the_ID(), 'performed_date', true); ?>
+            <td><?php the_title(); ?></td>
+            <td><?php echo get_post_meta(get_the_ID(), 'performed_time', true); ?>
+            <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?>
+        </tr>
+<?php endwhile; ?>
+    </tbody>
+</table>
 <?php
     return ob_get_clean();
 }
