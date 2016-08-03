@@ -30,8 +30,8 @@
             <div class="col-md-4 col-xs-6 text-left">
                 <a href="<?php echo home_url() ?>">
                     <img class="img-responsive"
-                        src="<?php bloginfo('template_url'); ?>
-                        /img/circle-logo.png" width="240" height="103" alt="Circle">
+                        src="<?php bloginfo('template_url'); ?>/img/circle-logo.png"
+                        width="240" height="103" alt="Circle">
                 </a>
             </div>
             <div class="col-md-offset-4 col-md-4 col-xs-6 text-right">
