@@ -319,7 +319,7 @@ function circle_events_shortcode($attrs)
 {
     $n = shortcode_atts(array(
         'number' => 50,
-    ), $atts)['number'];
+    ), $attrs)['number'];
     ob_start();
 ?>
 <?php $q = new WP_Query(array ('post_type' => 'circle_event'));
