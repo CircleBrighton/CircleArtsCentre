@@ -32,6 +32,8 @@
 </div>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.4.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.tablesorter.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.cycle2.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.cycle2.center.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 <?php wp_footer(); ?>
