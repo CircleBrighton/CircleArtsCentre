@@ -36,3 +36,5 @@ add_action('customize_register', 'circle_customize_register');
 add_action('admin_menu', 'wpdocs_submenu_enable');
 
 add_action('admin_enqueue_scripts', 'wpdocs_enqueue_admin_script');
+
+add_shortcode('events', 'circle_events_shortcode');

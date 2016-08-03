@@ -309,3 +309,19 @@ function wpdocs_enqueue_admin_script($hook)
     wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
     wp_enqueue_script('admin.js', get_template_directory_uri().'/js/admin.js');
 }
+
+/**
+ * Handling events shortcode
+ *
+ @ @param Array $attrs attribute passed into shortcode.
+ */
+function circle_events_shortcode($attrs)
+{
+    $n = shortcode_atts(array(
+        'number' => 50,
+    ), $atts)['number'];
+    ob_start();
+?>
+<?php
+    return ob_get_clean();
+}
