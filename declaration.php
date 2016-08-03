@@ -252,6 +252,21 @@ function circle_customize_register($wp_customize)
         'section'    => 'feature_boxes',
         'settings'   => 'feature_right_box_title',
     )));
+
+    /* SlideShow */
+    $wp_customize->add_section('slideshow', array(
+        'title'      => __('SlideShow', 'circle'),
+        'priority'   => 30,
+    ));
+    $wp_customize->add_setting('slideshow_interval', array(
+        'default'     => '5000',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_interval_c', array(
+        'label'        => __('SlideShwo Interval', 'circle'),
+        'section'    => 'slideshow',
+        'settings'   => 'slideshow_interval',
+    )));
 }
 
 
@@ -270,7 +285,7 @@ function wpdocs_enqueue_admin_script($hook)
 /**
  * Handling events shortcode
  *
- @ @param Array $attrs attribute passed into shortcode.
+ @ @param Array $attrs attributes passed into shortcode.
  */
 function circle_events_shortcode($attrs)
 {

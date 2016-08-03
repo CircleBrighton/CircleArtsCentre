@@ -13,7 +13,8 @@
  *
  */
 ?>
-<div id="news-slides" class="carousel slide" data-ride="carousel">
+<div id="news-slides" class="carousel slide" data-ride="carousel"
+    data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>">
 <?php $q = new WP_Query(array ('category_name' => 'Slide', 'post_type' => array('post', 'circle_event'))); ?>
     <!-- Indicators -->
     <ol class="carousel-indicators">
