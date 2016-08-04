@@ -311,4 +311,13 @@ function circle_widgets_init()
         'before_title' => '<h2 class="hidden">',
         'after_title' => '</h2>',
     ));
+
+    register_sidebar(array(
+        'name' => 'Newsletter',
+        'id' => 'newsletter',
+        'before_widget' => '<a>',
+        'after_widget' => '</a>',
+        'before_title' => '<h5 class="text-uppercase">',
+        'after_title' => '</h5>',
+    ));
 }

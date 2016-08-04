@@ -52,13 +52,12 @@ while ($q->have_posts() && $i < 5) :
                     </a>
                 </li>
 <?php endwhile; ?>
+                <li>
+<?php if (is_active_sidebar('newsletter')) : ?>
+                    <?php dynamic_sidebar('newsletter'); ?>
+<?php endif; ?>
+                </li>
             </ul>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="join-email" placeholder="Email Address">
-                    <button type="submit" class="btn btn-primary"> Join</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
