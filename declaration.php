@@ -77,26 +77,6 @@ function wpdocs_register_meta_boxes()
     add_meta_box('event-info', __('Event Info', 'textdomain'), 'wpdocs_display_event_callback', 'circle_event');
 }
 
-function wpodcs_save_meta($post_id, $post, $meta_key, $post_key)
-{
-    /* Get the posted data. */
-    $new_meta_value = (isset($_POST[$post_key]) ? $_POST[$post_key] : '');
-
-    /* Get the meta value of the custom field key. */
-    $meta_value = get_post_meta($post_id, $meta_key, true);
-
-    /* If a new meta value was added and there was no previous value, add it. */
-    if ($new_meta_value && '' == $meta_value) {
-        add_post_meta($post_id, $meta_key, $new_meta_value, true);
-    } /* If the new meta value does not match the old value, update it. */
-    elseif ($new_meta_value && $new_meta_value != $meta_value) {
-        update_post_meta($post_id, $meta_key, $new_meta_value);
-    } /* If there is no new meta value but an old value exists, delete it. */
-    elseif ('' == $new_meta_value && $meta_value) {
-        delete_post_meta($post_id, $meta_key, $meta_value);
-    }
-}
-
 function wpdocs_save_metas($post_id, $post)
 {
     /* Verify the nonce before proceeding. */
@@ -112,11 +92,30 @@ function wpdocs_save_metas($post_id, $post)
         return $post_id;
     }
 
-    wpdocs_save_meta($post_id, $post, 'perfomed_date', 'circle-event-performed-data');
-    wpdocs_save_meta($post_id, $post, 'perfomed_time', 'circle-event-performed-time');
-    wpdocs_save_meta($post_id, $post, 'price', 'circle-event-price');
-    wpdocs_save_meta($post_id, $post, 'buy_link', 'circle-event-buy-link');
-    wpdocs_save_meta($post_id, $post, 'status', 'circle-event-status');
+    $wpdocs_save_meta = function ($post_id, $post, $meta_key, $post_key) {
+        /* Get the posted data. */
+        $new_meta_value = (isset($_POST[$post_key]) ? $_POST[$post_key] : '');
+
+        /* Get the meta value of the custom field key. */
+        $meta_value = get_post_meta($post_id, $meta_key, true);
+
+        /* If a new meta value was added and there was no previous value, add it. */
+        if ($new_meta_value && '' == $meta_value) {
+            add_post_meta($post_id, $meta_key, $new_meta_value, true);
+        } /* If the new meta value does not match the old value, update it. */
+        elseif ($new_meta_value && $new_meta_value != $meta_value) {
+            update_post_meta($post_id, $meta_key, $new_meta_value);
+        } /* If there is no new meta value but an old value exists, delete it. */
+        elseif ('' == $new_meta_value && $meta_value) {
+            delete_post_meta($post_id, $meta_key, $meta_value);
+        }
+    };
+
+    $wpdocs_save_meta($post_id, $post, 'perfomed_date', 'circle-event-performed-data');
+    $wpdocs_save_meta($post_id, $post, 'perfomed_time', 'circle-event-performed-time');
+    $wpdocs_save_meta($post_id, $post, 'price', 'circle-event-price');
+    $wpdocs_save_meta($post_id, $post, 'buy_link', 'circle-event-buy-link');
+    $wpdocs_save_meta($post_id, $post, 'status', 'circle-event-status');
 }
 
 /**
