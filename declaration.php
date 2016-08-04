@@ -92,6 +92,7 @@ function wpdocs_save_metas($post_id, $post)
         return $post_id;
     }
 
+    /* Provide handler function as closure */
     $wpdocs_save_meta = function ($post_id, $post, $meta_key, $post_key) {
         /* Get the posted data. */
         $new_meta_value = (isset($_POST[$post_key]) ? $_POST[$post_key] : '');
@@ -100,13 +101,13 @@ function wpdocs_save_metas($post_id, $post)
         $meta_value = get_post_meta($post_id, $meta_key, true);
 
         /* If a new meta value was added and there was no previous value, add it. */
-        if ($new_meta_value && '' == $meta_value) {
+        if ($new_meta_value && $meta_value == '') {
             add_post_meta($post_id, $meta_key, $new_meta_value, true);
         } /* If the new meta value does not match the old value, update it. */
         elseif ($new_meta_value && $new_meta_value != $meta_value) {
             update_post_meta($post_id, $meta_key, $new_meta_value);
         } /* If there is no new meta value but an old value exists, delete it. */
-        elseif ('' == $new_meta_value && $meta_value) {
+        elseif ($new_meta_value == '' && $meta_value) {
             delete_post_meta($post_id, $meta_key, $meta_value);
         }
     };
@@ -150,16 +151,16 @@ function wpdocs_display_event_callback($post)
   <div>
     <label for="circle-event-status">Status: </label>
     <select name="circle-event-status" id="circle-event-status">
-        <option value="0"
-            <?php echo get_post_meta($post->ID, 'status', true) == '0' ? 'selected' : '' ?>>On Sell</option>
         <option value="1"
-            <?php echo get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>Finished</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>on Sell</option>
         <option value="2"
-            <?php echo get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Cancelled</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Finished</option>
         <option value="3"
-            <?php echo get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Free Entry</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Cancelled</option>
         <option value="4"
-            <?php echo get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Members Only</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Free Entry</option>
+        <option value="5"
+            <?php echo get_post_meta($post->ID, 'status', true) == '5' ? 'selected' : '' ?>>Members Only</option>
     </select>
   </div>
 <?php

@@ -19,23 +19,23 @@ $status = get_post_meta(get_post()->ID, 'status', true);
     <br>
     <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small>
     <a class="btn btn-primary pull-right
-        <?php echo $status == '1' || $status == '2' ? 'disabled' : '' ?>"
-        href="<?php echo $status == '0' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
+        <?php echo $status == '2' || $status == '3' ? 'disabled' : '' ?>"
+        href="<?php echo $status == '1' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
 <?php
 switch ($status) {
-    case '0':
+    case '1':
         echo "Buy Ticket";
         break;
-    case '1':
+    case '2':
         echo "Finished";
         break;
-    case '2':
+    case '3':
         echo "Cancelled";
         break;
-    case '3':
+    case '4':
         echo "Free Entry";
         break;
-    case '4':
+    case '5':
         echo "Members Only";
         break;
     default:
