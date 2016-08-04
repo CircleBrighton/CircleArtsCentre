@@ -77,7 +77,27 @@ function wpdocs_register_meta_boxes()
     add_meta_box('event-info', __('Event Info', 'textdomain'), 'wpdocs_display_event_callback', 'circle_event');
 }
 
-function wpdocs_save_meta($post_id, $post)
+function wpodcs_save_meta($post_id, $post, $meta_key, $post_key)
+{
+    /* Get the posted data. */
+    $new_meta_value = (isset($_POST[$post_key]) ? $_POST[$post_key] : '');
+
+    /* Get the meta value of the custom field key. */
+    $meta_value = get_post_meta($post_id, $meta_key, true);
+
+    /* If a new meta value was added and there was no previous value, add it. */
+    if ($new_meta_value && '' == $meta_value) {
+        add_post_meta($post_id, $meta_key, $new_meta_value, true);
+    } /* If the new meta value does not match the old value, update it. */
+    elseif ($new_meta_value && $new_meta_value != $meta_value) {
+        update_post_meta($post_id, $meta_key, $new_meta_value);
+    } /* If there is no new meta value but an old value exists, delete it. */
+    elseif ('' == $new_meta_value && $meta_value) {
+        delete_post_meta($post_id, $meta_key, $meta_value);
+    }
+}
+
+function wpdocs_save_metas($post_id, $post)
 {
     /* Verify the nonce before proceeding. */
     if (!isset($_POST['circle_event_nonce']) || !wp_verify_nonce($_POST['circle_event_nonce'], basename(__FILE__))) {
@@ -92,85 +112,11 @@ function wpdocs_save_meta($post_id, $post)
         return $post_id;
     }
 
-    /* Get the posted data. */
-    $new_meta_value = (isset($_POST['circle-event-performed-date']) ? $_POST['circle-event-performed-date'] : '');
-
-    /* Get the meta key. */
-    $meta_key = 'performed_date';
-
-    /* Get the meta value of the custom field key. */
-    $meta_value = get_post_meta($post_id, $meta_key, true);
-
-    /* If a new meta value was added and there was no previous value, add it. */
-    if ($new_meta_value && '' == $meta_value) {
-        add_post_meta($post_id, $meta_key, $new_meta_value, true);
-    } /* If the new meta value does not match the old value, update it. */
-    elseif ($new_meta_value && $new_meta_value != $meta_value) {
-        update_post_meta($post_id, $meta_key, $new_meta_value);
-    } /* If there is no new meta value but an old value exists, delete it. */
-    elseif ('' == $new_meta_value && $meta_value) {
-        delete_post_meta($post_id, $meta_key, $meta_value);
-    }
-
-    /* Get the posted data. */
-    $new_meta_value = (isset($_POST['circle-event-performed-time']) ? $_POST['circle-event-performed-time'] : '');
-
-    /* Get the meta key. */
-    $meta_key = 'performed_time';
-
-    /* Get the meta value of the custom field key. */
-    $meta_value = get_post_meta($post_id, $meta_key, true);
-
-    /* If a new meta value was added and there was no previous value, add it. */
-    if ($new_meta_value && '' == $meta_value) {
-        add_post_meta($post_id, $meta_key, $new_meta_value, true);
-    } /* If the new meta value does not match the old value, update it. */
-    elseif ($new_meta_value && $new_meta_value != $meta_value) {
-        update_post_meta($post_id, $meta_key, $new_meta_value);
-    } /* If there is no new meta value but an old value exists, delete it. */
-    elseif ('' == $new_meta_value && $meta_value) {
-        delete_post_meta($post_id, $meta_key, $meta_value);
-    }
-
-    /* Get the posted data. */
-    $new_meta_value = (isset($_POST['circle-event-price']) ? $_POST['circle-event-price'] : '');
-
-    /* Get the meta key. */
-    $meta_key = 'price';
-
-    /* Get the meta value of the custom field key. */
-    $meta_value = get_post_meta($post_id, $meta_key, true);
-
-    /* If a new meta value was added and there was no previous value, add it. */
-    if ($new_meta_value && '' == $meta_value) {
-        add_post_meta($post_id, $meta_key, $new_meta_value, true);
-    } /* If the new meta value does not match the old value, update it. */
-    elseif ($new_meta_value && $new_meta_value != $meta_value) {
-        update_post_meta($post_id, $meta_key, $new_meta_value);
-    } /* If there is no new meta value but an old value exists, delete it. */
-    elseif ('' == $new_meta_value && $meta_value) {
-        delete_post_meta($post_id, $meta_key, $meta_value);
-    }
-
-    /* Get the posted data. */
-    $new_meta_value = (isset($_POST['circle-event-buy-link']) ? $_POST['circle-event-buy-link'] : '');
-
-    /* Get the meta key. */
-    $meta_key = 'buy_link';
-
-    /* Get the meta value of the custom field key. */
-    $meta_value = get_post_meta($post_id, $meta_key, true);
-
-    /* If a new meta value was added and there was no previous value, add it. */
-    if ($new_meta_value && '' == $meta_value) {
-        add_post_meta($post_id, $meta_key, $new_meta_value, true);
-    } /* If the new meta value does not match the old value, update it. */
-    elseif ($new_meta_value && $new_meta_value != $meta_value) {
-        update_post_meta($post_id, $meta_key, $new_meta_value);
-    } /* If there is no new meta value but an old value exists, delete it. */
-    elseif ('' == $new_meta_value && $meta_value) {
-        delete_post_meta($post_id, $meta_key, $meta_value);
-    }
+    wpdocs_save_meta($post_id, $post, 'perfomed_date', 'circle-event-performed-data');
+    wpdocs_save_meta($post_id, $post, 'perfomed_time', 'circle-event-performed-time');
+    wpdocs_save_meta($post_id, $post, 'price', 'circle-event-price');
+    wpdocs_save_meta($post_id, $post, 'buy_link', 'circle-event-buy-link');
+    wpdocs_save_meta($post_id, $post, 'status', 'circle-event-status');
 }
 
 /**
@@ -201,6 +147,21 @@ function wpdocs_display_event_callback($post)
     <label for="circle-event-buy-link">Buy Ticket Link: </label>
     <input type="url" name="circle-event-buy-link" id="circle-event-buy-link"
          value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
+  </div>
+  <div>
+    <label for="circle-event-status">Buy Ticket Link: </label>
+    <select name="circle-event-status" id="circle-event-status">
+        <option value="0"
+            <?php get_post_meta($post->ID, 'status', true) == '0' ? 'selected' : '' ?>>On Sell</option>
+        <option value="1"
+            <?php get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>Finished</option>
+        <option value="2"
+            <?php get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Cancelled</option>
+        <option value="3"
+            <?php get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Free Entry</option>
+        <option value="4"
+            <?php get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Members Only</option>
+    </select>
   </div>
 <?php
 }
