@@ -19,21 +19,21 @@ add_theme_support('post-thumbnails');
 
 require('declaration.php');
 
-add_filter('excerpt_length', 'wpdocs_custom_excerpt_length');
+add_filter('excerpt_length', 'circle_excerpt_length');
 
-add_filter('excerpt_more', 'wpdocs_excerpt_more');
+add_filter('excerpt_more', 'circle_excerpt_more');
 
-add_action('init', 'create_post_type');
+add_action('init', 'circle_register_post_type');
 
-add_action('init', 'register_circle_menu');
+add_action('init', 'circle_register_menu');
 
-add_action('add_meta_boxes', 'wpdocs_register_meta_boxes');
+add_action('add_meta_boxes', 'circle_register_meta');
 
-add_action('save_post', 'wpdocs_save_metas', 10, 2);
+add_action('save_post', 'circle_save_event_meta', 10, 2);
 
 add_action('customize_register', 'circle_customize_register');
 
-add_action('admin_enqueue_scripts', 'wpdocs_enqueue_admin_script');
+add_action('admin_enqueue_scripts', 'circle_enqueue_admin_script');
 
 add_shortcode('events', 'circle_events_shortcode');
 

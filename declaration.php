@@ -18,7 +18,7 @@
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length($length)
+function circle_excerpt_length($length)
 {
     return 10;
 }
@@ -29,7 +29,7 @@ function wpdocs_custom_excerpt_length($length)
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-function wpdocs_excerpt_more($more)
+function circle_excerpt_more($more)
 {
     return '';
 }
@@ -37,7 +37,7 @@ function wpdocs_excerpt_more($more)
 /**
  * Register new post type(s).
  */
-function create_post_type()
+function circle_register_post_type()
 {
     register_post_type(
         'circle_event',
@@ -72,12 +72,12 @@ function create_post_type()
 /**
  * Register meta box(es).
  */
-function wpdocs_register_meta_boxes()
+function circle_register_meta()
 {
-    add_meta_box('event-info', __('Event Info', 'textdomain'), 'wpdocs_display_event_callback', 'circle_event');
+    add_meta_box('event-info', __('Event Info', 'textdomain'), 'circle_display_event_meta', 'circle_event');
 }
 
-function wpdocs_save_metas($post_id, $post)
+function circle_save_event_meta($post_id, $post)
 {
     /* Verify the nonce before proceeding. */
     if (!isset($_POST['circle_event_nonce']) || !wp_verify_nonce($_POST['circle_event_nonce'], basename(__FILE__))) {
@@ -124,7 +124,7 @@ function wpdocs_save_metas($post_id, $post)
  *
  * @param WP_Post $post Current post object.
  */
-function wpdocs_display_event_callback($post)
+function circle_display_event_meta($post)
 {
     wp_nonce_field(basename(__FILE__), 'circle_event_nonce');
 ?>
@@ -169,7 +169,7 @@ function wpdocs_display_event_callback($post)
 /**
  * Register circle theme menu
  */
-function register_circle_menu()
+function circle_register_menu()
 {
     register_nav_menu('top-menu', __('Top Menu'));
 }
@@ -236,7 +236,7 @@ function circle_customize_register($wp_customize)
  *
  * @param string $hook Hook suffix for the current admin page.
  */
-function wpdocs_enqueue_admin_script($hook)
+function circle_enqueue_admin_script($hook)
 {
     wp_enqueue_script('modernizer', get_template_directory_uri().'/js/webshim/extras/modernizr-custom.js');
     wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
