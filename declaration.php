@@ -148,18 +148,18 @@ function wpdocs_display_event_callback($post)
          value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
   </div>
   <div>
-    <label for="circle-event-status">Buy Ticket Link: </label>
+    <label for="circle-event-status">Status: </label>
     <select name="circle-event-status" id="circle-event-status">
         <option value="0"
-            <?php get_post_meta($post->ID, 'status', true) == '0' ? 'selected' : '' ?>>On Sell</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '0' ? 'selected' : '' ?>>On Sell</option>
         <option value="1"
-            <?php get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>Finished</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>Finished</option>
         <option value="2"
-            <?php get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Cancelled</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Cancelled</option>
         <option value="3"
-            <?php get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Free Entry</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Free Entry</option>
         <option value="4"
-            <?php get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Members Only</option>
+            <?php echo get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Members Only</option>
     </select>
   </div>
 <?php

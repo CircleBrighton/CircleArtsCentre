@@ -19,8 +19,8 @@ $status = get_post_meta(get_post()->ID, 'status', true);
     <br>
     <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small>
     <a class="btn btn-primary pull-right
-        <?php $status == '1' || $status == '2' ? 'disabled' : '' ?>"
-        href="<?php $status == '0' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
+        <?php echo $status == '1' || $status == '2' ? 'disabled' : '' ?>"
+        href="<?php echo $status == '0' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
 <?php
 switch ($status) {
     case '0':
