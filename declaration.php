@@ -181,6 +181,16 @@ function circle_register_menu()
  */
 function circle_customize_register($wp_customize)
 {
+    /* Address */
+    $wp_customize->add_setting('address_box_office', array(
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_box_office_c', array(
+        'label'        => __('Box Office', 'circle'),
+        'section'    => 'title_tagline',
+        'settings'   => 'address_box_office',
+    )));
+
     /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(
         'title'      => __('Feature Boxes', 'circle'),

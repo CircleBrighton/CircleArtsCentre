@@ -35,7 +35,7 @@
                 </a>
             </div>
             <div class="col-md-offset-4 col-md-4 col-xs-6 text-right">
-                <h5>BOX OFFICE: ...</h5>
+                <h5>BOX OFFICE: <?php echo get_theme_mod('address_box_office', true); ?></h5>
                 <?php get_search_form() ?>
             </div>
         </div>
