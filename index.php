@@ -20,15 +20,17 @@
         <div id="content" class="col-md-8 col-xs-12">
 <?php
 if (is_home()) {
-    get_template_part('welcome');
+    get_template_part('template/welcome');
 } elseif (is_singular('post') || is_singular('circle_aside')) {
-    get_template_part('post');
+    get_template_part('template/post');
 } elseif (is_singular('circle_event')) {
-    get_template_part('event');
+    get_template_part('template/event');
 } elseif (is_search()) {
-    get_template_part('searchpage');
+    get_template_part('template/searchpage');
 } elseif (is_page()) {
-    get_template_part('general');
+    get_template_part('template/general');
+} elseif (is_archive()) {
+    get_template_part('template/archive');
 }
 ?>
         </div>
