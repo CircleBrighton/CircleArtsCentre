@@ -31,7 +31,8 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="welcome">
+            <img src="<?php echo get_theme_mod('slideshow_initial', bloginfo('template_url').'/img/welcome.jpg')?>"
+                alt="welcome">
         </div>
 <?php while ($q->have_posts()) :
     $q->the_post(); ?>

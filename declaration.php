@@ -198,7 +198,7 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_lines_c', array(
-        'label'      => __('Box Office', 'circle'),
+        'label'      => __('Address', 'circle'),
         'type'       => 'textarea',
         'section'    => 'address',
         'settings'   => 'address_lines',
@@ -248,9 +248,18 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_interval_c', array(
-        'label'        => __('SlideShwo Interval', 'circle'),
+        'label'      => __('SlideShwo Interval', 'circle'),
         'section'    => 'slideshow',
         'settings'   => 'slideshow_interval',
+    )));
+    $wp_customize->add_setting('slideshow_initial', array(
+        'default'     => get_template_directory_uri().'/img/welcome.jpg',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'slideshow_initial_c', array(
+        'label'        => __('SlideShwo Initial', 'circle'),
+        'section'    => 'slideshow',
+        'settings'   => 'slideshow_initial',
     )));
 }
 
