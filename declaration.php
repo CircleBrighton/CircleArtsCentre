@@ -182,14 +182,28 @@ function circle_register_menu()
 function circle_customize_register($wp_customize)
 {
     /* Address */
+    $wp_customize->add_section('address', array(
+        'title'      => __('Address', 'circle'),
+        'priority'   => 30,
+    ));
     $wp_customize->add_setting('address_box_office', array(
-        'transport'   => 'refresh',
+        'transport' => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_box_office_c', array(
-        'label'        => __('Box Office', 'circle'),
-        'section'    => 'title_tagline',
+        'label'      => __('Box Office', 'circle'),
+        'section'    => 'address',
         'settings'   => 'address_box_office',
     )));
+    $wp_customize->add_setting('address_lines', array(
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_lines_c', array(
+        'label'      => __('Box Office', 'circle'),
+        'type'       => 'textarea',
+        'section'    => 'address',
+        'settings'   => 'address_lines',
+    )));
+
 
     /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(

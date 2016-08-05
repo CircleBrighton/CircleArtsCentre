@@ -16,8 +16,8 @@
 <hr>
 <footer>
     <address class="text-center">
-        Circle Arts Centre
-        | Address .... |
+        <?php bloginfo('description') ?>
+        | Address: <?php echo get_theme_mod('address_lines', true) ?> |
         Registered Charity No:
     </address>
     <address class="text-center">
@@ -26,7 +26,7 @@
             |
             <a href="#">Jobs &amp; Opportunities</a>
         </p>
-        <p>&copy; Circle Arts Centre</p>
+        <p>&copy; <?php bloginfo('description') ?></p>
     </address>
 </footer>
 </div>
