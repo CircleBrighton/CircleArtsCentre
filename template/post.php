@@ -16,7 +16,7 @@
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
     <br>
-    <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small></h1>
+    <h5><?php echo apply_filters('the_date', get_post()->post_date); ?></h5></h1>
 </div>
 <?php
 echo apply_filters('the_content', get_post()->post_content);
