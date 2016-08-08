@@ -16,8 +16,6 @@ $status = get_post_meta(get_post()->ID, 'status', true);
 ?>
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
-    <br>
-    <small><?php echo apply_filters('the_date', get_post()->post_date); ?></small>
     <a class="btn btn-primary pull-right
         <?php echo $status == '2' || $status == '3' ? 'disabled' : '' ?>"
         href="<?php echo $status == '1' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
@@ -44,6 +42,7 @@ switch ($status) {
 ?>
     </a>
     </h1>
+    <h5><?php echo apply_filters('the_date', get_post()->post_date); ?></h5>
 </div>
 <table class="table table-bordered">
     <tr>
