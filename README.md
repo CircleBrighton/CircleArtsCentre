@@ -9,7 +9,7 @@ This is simple and specific theme for managing theaters on wordpress.
 | Aside Section | Create **Aside** and see last five of them in aside section. Excerpt part show under title in aside section as little description of aside. |
 |  Feature Box  | Configure feature box title in theme customization page and use **Feature Left Box**, **Feature Middle Box** and **Feature Right Box** for showing posts in them. You can set featured image for your post and this image show on box for your post. |
 |      Menus    | Using menu configuration in theme customization page and personalize your navigation bar. [Remember to set menu locations to **Top Menu**] |
-|     Events    | Add events with event type and then with event settings configure event related options. Events behave just like normal post but have more settings and specific page. |
+|     Events    | Add events with event type and then with event settings configure event related options. Events behave just like normal post but have more settings and specific page. You can add events list into page with `[events]` shortcode. |
 
 ## Widgets
 This theme provide 2 widget section for special purposes:
