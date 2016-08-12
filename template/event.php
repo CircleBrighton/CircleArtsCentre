@@ -12,34 +12,15 @@
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
  */
-$status = get_post_meta(get_post()->ID, 'status', true);
 ?>
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
-    <a class="btn btn-primary pull-right
-        <?php echo $status == '2' || $status == '3' ? 'disabled' : '' ?>"
-        href="<?php echo $status == '1' ? esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) : '#' ?>">
-<?php
-switch ($status) {
-    case '1':
-        echo "Buy Ticket";
-        break;
-    case '2':
-        echo "Finished";
-        break;
-    case '3':
-        echo "Cancelled";
-        break;
-    case '4':
-        echo "Free Entry";
-        break;
-    case '5':
-        echo "Members Only";
-        break;
-    default:
-        echo "Buy Ticket";
-}
-?>
+    <a class="btn pull-right
+        <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
+        style="color: #FFF;
+            background-color: <?php echo esc_attr(get_post_meta(get_post()->ID, 'status_color', true)) ?>"
+        href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
+            <?php echo get_post_meta(get_post()->ID, 'status_label', true); ?>
     </a>
     </h1>
     <h5><?php echo apply_filters('the_date', get_post()->post_date); ?></h5>
@@ -47,11 +28,11 @@ switch ($status) {
 <table class="table table-bordered">
     <tr>
         <td>Date:</td>
-        <td><?php echo get_post_meta(get_post()->ID, 'performed_date', true); ?>
+        <td><?php echo get_post_meta(get_post()->ID, 'date', true); ?>
     </tr>
     <tr>
         <td>Time:</td>
-        <td><?php echo get_post_meta(get_post()->ID, 'performed_time', true); ?>
+        <td><?php echo get_post_meta(get_post()->ID, 'time', true); ?>
     </tr>
     <tr>
         <td>Price:</td>
