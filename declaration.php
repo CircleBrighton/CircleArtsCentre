@@ -257,7 +257,7 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_interval_c', array(
-        'label'      => __('SlideShwo Interval', 'circle'),
+        'label'      => __('SlideShow Interval', 'circle'),
         'section'    => 'slideshow',
         'settings'   => 'slideshow_interval',
     )));
@@ -266,7 +266,7 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'slideshow_initial_c', array(
-        'label'        => __('SlideShwo Initial', 'circle'),
+        'label'        => __('SlideShow Initial', 'circle'),
         'section'    => 'slideshow',
         'settings'   => 'slideshow_initial',
     )));
