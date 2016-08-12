@@ -75,9 +75,11 @@ if ($q->have_posts()) :
                 <h3 class="fg-white text-center">
                     <?php echo get_theme_mod('feature_left_box_title', 'Coming Soon'); ?>
                 </h3>
-<?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>"/>
-<?php endif; ?>
+<?php
+if (has_post_thumbnail()) {
+    the_post_thumbnail();
+}
+?>
                 </div>
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <?php the_title(); ?>
@@ -100,9 +102,11 @@ if ($q->have_posts()) :
                     <h3 class="fg-white text-center">
                         <?php echo get_theme_mod('feature_middle_box_title', 'This Week'); ?>
                     </h3>
-<?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>"/>
-<?php endif; ?>
+<?php
+if (has_post_thumbnail()) {
+    the_post_thumbnail();
+}
+?>
                 </div>
                 <p>
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -127,9 +131,11 @@ if ($q->have_posts()) :
                     <h3 class="fg-white text-center">
                         <?php echo get_theme_mod('feature_right_box_title', 'Featured'); ?>
                     </h3>
-<?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>"/>
-<?php endif; ?>
+<?php
+if (has_post_thumbnail()) {
+    the_post_thumbnail();
+}
+?>
                 </div>
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <?php the_title(); ?>
