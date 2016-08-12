@@ -273,7 +273,7 @@ function circle_enqueue_admin_script($hook)
 {
     wp_enqueue_script('modernizer', get_template_directory_uri().'/js/webshim/extras/modernizr-custom.js');
     wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
-    wp_enqueue_script('admin.js', get_template_directory_uri().'/js/admin.js');
+    wp_enqueue_script('admin', get_template_directory_uri().'/js/admin.js');
 }
 
 /**
