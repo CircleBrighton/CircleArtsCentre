@@ -112,11 +112,13 @@ function circle_save_event_meta($post_id, $post)
         }
     };
 
-    $wpdocs_save_meta($post_id, $post, 'perfomed_date', 'circle-event-performed-data');
-    $wpdocs_save_meta($post_id, $post, 'perfomed_time', 'circle-event-performed-time');
+    $wpdocs_save_meta($post_id, $post, 'date', 'circle-event-date');
+    $wpdocs_save_meta($post_id, $post, 'time', 'circle-event-time');
     $wpdocs_save_meta($post_id, $post, 'price', 'circle-event-price');
     $wpdocs_save_meta($post_id, $post, 'buy_link', 'circle-event-buy-link');
-    $wpdocs_save_meta($post_id, $post, 'status', 'circle-event-status');
+    $wpdocs_save_meta($post_id, $post, 'status_label', 'circle-event-status-label');
+    $wpdocs_save_meta($post_id, $post, 'status_color', 'circle-event-status-color');
+    $wpdocs_save_meta($post_id, $post, 'status_disabled', 'circle-event-status-disabled');
 }
 
 /**
@@ -128,41 +130,48 @@ function circle_display_event_meta($post)
 {
     wp_nonce_field(basename(__FILE__), 'circle_event_nonce');
 ?>
-  <div>
-    <label for="circle-event-performed-date">Performed Date: </label>
-    <input type="date" name="circle-event-performed-date" id="circle-event-performed-date"
-         value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_date', true)); ?>"/>
-  </div>
-  <div>
-    <label for="circle-event-performed-time">Performed Time: </label>
-    <input type="time" name="circle-event-performed-time" id="circle-event-performed-time"
-         value="<?php echo esc_attr(get_post_meta($post->ID, 'performed_time', true)); ?>"/>
-  </div>
-  <div>
+<h4>Timing</h4>
+<div>
+    <label for="circle-event-date">Date: </label>
+    <input type="date" name="circle-event-date" id="circle-event-date"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'date', true)); ?>"/>
+</div>
+<div>
+    <label for="circle-event-time">Time: </label>
+    <input type="time" name="circle-event-time" id="circle-event-time"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'time', true)); ?>"/>
+</div>
+<hr>
+<h4>Finance</h4>
+<div>
     <label for="circle-event-price">Price: </label>
     <input type="text" name="circle-event-price" id="circle-event-price"
-         value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?>"/>
-  </div>
-  <div>
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'price', true)); ?>"/>
+</div>
+<div>
     <label for="circle-event-buy-link">Buy Ticket Link: </label>
     <input type="url" name="circle-event-buy-link" id="circle-event-buy-link"
-         value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
-  </div>
-  <div>
-    <label for="circle-event-status">Status: </label>
-    <select name="circle-event-status" id="circle-event-status">
-        <option value="1"
-            <?php echo get_post_meta($post->ID, 'status', true) == '1' ? 'selected' : '' ?>>on Sell</option>
-        <option value="2"
-            <?php echo get_post_meta($post->ID, 'status', true) == '2' ? 'selected' : '' ?>>Finished</option>
-        <option value="3"
-            <?php echo get_post_meta($post->ID, 'status', true) == '3' ? 'selected' : '' ?>>Cancelled</option>
-        <option value="4"
-            <?php echo get_post_meta($post->ID, 'status', true) == '4' ? 'selected' : '' ?>>Free Entry</option>
-        <option value="5"
-            <?php echo get_post_meta($post->ID, 'status', true) == '5' ? 'selected' : '' ?>>Members Only</option>
-    </select>
-  </div>
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'buy_link', true)); ?>"/>
+</div>
+<hr>
+<h4>Status</h4>
+<div>
+    <label for="circle-event-status-label">Status Label: </label>
+    <input type="text" name="circle-event-status-label" id="circle-event-status-label"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'status_label', true)); ?>"/>
+</div>
+<div>
+    <label for="circle-event-status-color">Status Color: </label>
+    <input type="color" name="circle-event-status-color" id="circle-event-status-color"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'status_color', true)); ?>"/>
+</div>
+<div>
+    <label for="circle-event-status-disabled">Disabled: </label>
+    <input type="checkbox" name="circle-event-status-disabled" id="circle-event-status-disabled"
+        <?php echo get_post_meta($post->ID, 'status_disabled', true) ? 'checked' : '' ?>
+        value="1"/>
+</div>
+
 <?php
 }
 
