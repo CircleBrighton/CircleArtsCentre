@@ -15,3 +15,9 @@ This is simple and specific purpose theme for managing theaters on Wordpress pla
 This theme provide 2 widget section that cab be used for twitter and newsletter widget:
 1. Twitter: This section provide vertical text slide show for somethings like last tweets.
 2. Newsletter: This section provide aside box for you widget in main page.
+
+## Plugins
+It's good to use following plugins with this theme:
+1. [Newsletter](https://wordpress.org/plugins/newsletter/)
+2. [Latest Tweets Widget](https://wordpress.org/plugins/latest-tweets-widget/)
+3. [Featured Video Plus](https://wordpress.org/plugins/featured-video-plus/)
