@@ -315,9 +315,9 @@ $i = 0; ?>
     $i++; ?>
         <tr data-url="<?php the_permalink(); ?>">
             <td><?php echo $i ?></td>
-            <td><?php echo get_post_meta(get_the_ID(), 'performed_date', true); ?>
+            <td><?php echo get_post_meta(get_the_ID(), 'date', true); ?>
             <td><?php the_title(); ?></td>
-            <td><?php echo get_post_meta(get_the_ID(), 'performed_time', true); ?>
+            <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?>
             <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?>
         </tr>
 <?php endwhile; ?>
