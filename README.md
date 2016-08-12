@@ -18,6 +18,7 @@ This theme provide 2 widget section that cab be used for twitter and newsletter 
 
 ## Plugins
 It's good to use following plugins with this theme:
+
 1. [Newsletter](https://wordpress.org/plugins/newsletter/)
 2. [Latest Tweets Widget](https://wordpress.org/plugins/latest-tweets-widget/)
 3. [Featured Video Plus](https://wordpress.org/plugins/featured-video-plus/)
