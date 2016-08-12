@@ -213,7 +213,6 @@ function circle_customize_register($wp_customize)
         'settings'   => 'address_lines',
     )));
 
-
     /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(
         'title'      => __('Feature Boxes', 'circle'),
@@ -269,6 +268,16 @@ function circle_customize_register($wp_customize)
         'label'        => __('SlideShow Initial', 'circle'),
         'section'    => 'slideshow',
         'settings'   => 'slideshow_initial',
+    )));
+    $wp_customize->add_setting('slideshow_wrap', array(
+        'default'     => true,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_wrap_c', array(
+        'label'      => __('SlideShow Wrap', 'circle'),
+        'type'       => 'checkbox',
+        'section'    => 'slideshow',
+        'settings'   => 'slideshow_wrap',
     )));
 }
 

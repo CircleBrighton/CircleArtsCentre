@@ -14,7 +14,8 @@
  */
 ?>
 <div id="news-slides" class="carousel slide" data-ride="carousel"
-    data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>">
+    data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>"
+    data-wrap=<?php echo get_theme_mod('slideshow_wrap', true) ? "true" : "false" ?>>
 <?php $q = new WP_Query(array ('category_name' => 'Slide', 'post_type' => array('post', 'circle_event'))); ?>
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -31,7 +32,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="<?php echo get_theme_mod('slideshow_initial', bloginfo('template_url').'/img/welcome.jpg')?>"
+            <img src="<?php echo get_theme_mod('slideshow_initial', '%s/img/welcome.jpg') ?>"
                 alt="welcome">
         </div>
 <?php while ($q->have_posts()) :
