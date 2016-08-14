@@ -116,8 +116,7 @@ function circle_save_event_meta($post_id, $post)
     $wpdocs_save_meta($post_id, $post, 'time', 'circle-event-time');
     $wpdocs_save_meta($post_id, $post, 'price', 'circle-event-price');
     $wpdocs_save_meta($post_id, $post, 'buy_link', 'circle-event-buy-link');
-    $wpdocs_save_meta($post_id, $post, 'status_label', 'circle-event-status-label');
-    $wpdocs_save_meta($post_id, $post, 'status_color', 'circle-event-status-color');
+    $wpdocs_save_meta($post_id, $post, 'status_index', 'circle-event-status-index');
     $wpdocs_save_meta($post_id, $post, 'status_disabled', 'circle-event-status-disabled');
 }
 
@@ -156,14 +155,17 @@ function circle_display_event_meta($post)
 <hr>
 <h4>Status</h4>
 <div>
-    <label for="circle-event-status-label">Status Label: </label>
-    <input type="text" name="circle-event-status-label" id="circle-event-status-label"
-        value="<?php echo esc_attr(get_post_meta($post->ID, 'status_label', true)); ?>"/>
-</div>
-<div>
-    <label for="circle-event-status-color">Status Color: </label>
-    <input type="color" name="circle-event-status-color" id="circle-event-status-color"
-        value="<?php echo esc_attr(get_post_meta($post->ID, 'status_color', true)); ?>"/>
+    <label for="circle-event-status-index">Status: </label>
+    <select name="circle-event-status-index" id="circle-event-status-index">
+<?php
+$names = get_option('event_status_names', []);
+for ($i = 0; $i < sizeof($names); $i++) :
+?>
+        <option value=<?php echo $i ?> <?php selected(get_post_meta($post->ID, 'status_index', true), $i); ?>>
+            <?php echo $names[$i] ?>
+        </option>
+<?php endfor; ?>
+    </select>
 </div>
 <div>
     <label for="circle-event-status-disabled">Disabled: </label>
