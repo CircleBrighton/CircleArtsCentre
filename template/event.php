@@ -12,15 +12,24 @@
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
  */
+$names = get_option('event_status_names', []);
+$colors = get_option('event_status_colors', []);
+$index = (int) get_post_meta(get_post()->ID, 'status_index', true);
+$name = "";
+$color = "";
+if (is_int($index) && $index >= 0) {
+    $name = $names[$index];
+    $color = $colors[$index];
+}
 ?>
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
     <a class="btn pull-right
         <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
         style="color: #FFF;
-            background-color: <?php echo esc_attr(get_post_meta(get_post()->ID, 'status_color', true)) ?>"
+            background-color: <?php echo esc_attr($color); ?>"
         href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
-            <?php echo get_post_meta(get_post()->ID, 'status_label', true); ?>
+            <?php echo $name; ?>
     </a>
     </h1>
     <h5><?php echo apply_filters('the_date', get_post()->post_date); ?></h5>
