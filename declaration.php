@@ -363,7 +363,7 @@ function circle_widgets_init()
     ));
 }
 
-function circle_event_settings_submenu_enable()
+function circle_register_submenu()
 {
     add_submenu_page(
         'edit.php?post_type=circle_event',
@@ -374,33 +374,42 @@ function circle_event_settings_submenu_enable()
         'circle_event_settings_submenu_display'
     );
 
-    register_setting('circle_event_settings', 'event_page_name');
+    register_setting('circle_event_settings', 'event_status_names');
+    register_setting('circle_event_settings', 'event_status_colors');
 }
 
 function circle_event_settings_submenu_display()
 {
-    $pages = get_pages();
 ?>
 <div class="wrap">
     <h1>Event Settings</h1>
-    <datalist id="page-list">
-<?php foreach ($pages as $page) : ?>
-        <option value="<?php echo esc_attr($page->post_title); ?>">
-            <?php echo $page->post_title; ?>
-        </option>
-<?php endforeach; ?>
-    </datalist>
-    <form method="post" action="options.php"> 
+    <form method="post" action="options.php">
 <?php
-    settings_fields('circle_event_settings');
-    do_settings_sections('circle_event_settings');
+settings_fields('circle_event_settings');
+do_settings_sections('circle_event_settings');
+$names = get_option('event_status_names', []);
+$colors = get_option('event_status_colors', []);
+for ($i = 0; $i < sizeof($names); $i++) :
 ?>
-     <div>
-        <label for="event_page_name">Event Page Name: </label>
-        <input type="text" name="event_page_name" id="event_page_name" list="page-list"
-            value="<?php echo esc_attr(get_option('event_page_name', "What's On")); ?>"/>
-      </div>
-<?php submit_button(); ?>
+        <div>
+        <label for="event_status_names">Events Status <?php echo $i + 1 ?>: </label>
+            <input type="text" name="event_status_names[]" id="event_status_names"
+                value="<?php echo $names[$i] ?>"/>
+            <input type="color" name="event_status_colors[]" id="event_status_colors"
+                value="<?php echo $colors[$i] ?>"/>
+        </div>
+<?php
+endfor;
+?>
+        <div>
+            <label for="event_status_name">Events Status <?php echo $i + 1 ?>: </label>
+            <input type="text" name="event_status_names[]" id="event_status_name"
+                placeholder="New Status Name :)"/>
+            <input type="color" name="event_status_colors[]" id="event_status_colors"
+                placeholder="New Status Color :)"/>
+        </div>
+
+        <?php submit_button(); ?>
   </form>
 </div>
 <?php

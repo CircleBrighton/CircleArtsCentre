@@ -27,6 +27,8 @@ add_action('init', 'circle_register_post_type');
 
 add_action('init', 'circle_register_menu');
 
+add_action('admin_menu', 'circle_register_submenu');
+
 add_action('add_meta_boxes', 'circle_register_meta');
 
 add_action('save_post', 'circle_save_event_meta', 10, 2);
