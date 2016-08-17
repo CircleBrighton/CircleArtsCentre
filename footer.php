@@ -18,7 +18,7 @@
     <address class="text-center">
         <?php bloginfo('description') ?>
         | Address: <?php echo get_theme_mod('address_lines', true) ?> |
-        Registered Charity No:
+        Registered Charity No: <?php echo get_theme_mod('address_charity_no', '') ?>
     </address>
     <address class="text-center">
         <p>

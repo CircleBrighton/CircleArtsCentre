@@ -214,6 +214,14 @@ function circle_customize_register($wp_customize)
         'section'    => 'address',
         'settings'   => 'address_lines',
     )));
+    $wp_customize->add_setting('address_charity_no', array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_charity_no_c', array(
+        'label'      => __('Charity No', 'circle'),
+        'section'    => 'address',
+        'settings'   => 'address_charity_no',
+    )));
 
     /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(
