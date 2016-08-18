@@ -289,6 +289,15 @@ function circle_customize_register($wp_customize)
         'section'    => 'slideshow',
         'settings'   => 'slideshow_wrap',
     )));
+    $wp_customize->add_setting('slideshow_height', array(
+        'default'     => '510px',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_height_c', array(
+        'label'      => __('SlideShow Height', 'circle'),
+        'section'    => 'slideshow',
+        'settings'   => 'slideshow_height',
+    )));
 }
 
 
