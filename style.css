@@ -12371,7 +12371,7 @@ p {
 
 /* line 80, sass/style.scss */
 .slide .item {
-  min-height: 510px;
+  height: 510px;
 }
 /* line 82, sass/style.scss */
 .slide .item img {
