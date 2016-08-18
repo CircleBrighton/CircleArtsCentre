@@ -310,6 +310,7 @@ function circle_enqueue_admin_script($hook)
 {
     wp_enqueue_script('modernizer', get_template_directory_uri().'/js/webshim/extras/modernizr-custom.js');
     wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
+    wp_enqueue_script('vue', get_template_directory_uri().'/js/vue.min.js');
     wp_enqueue_script('admin', get_template_directory_uri().'/js/admin.js');
 }
 
@@ -420,17 +421,40 @@ for ($i = 0; $i < sizeof($names); $i++) :
 <?php
 endfor;
 ?>
-        <div>
-            <label for="event_status_name">Events Status <?php echo $i + 1 ?>: </label>
-            <input type="text" name="event_status_names[]" id="event_status_name"
-                placeholder="New Status Name :)"/>
-            <input type="color" name="event_status_colors[]" id="event_status_colors"
-                placeholder="New Status Color :)"/>
+        <div id="event-status-div">
+            <template v-for="i in n">
+                <div>
+                    <label for="event_status_name">New Events Status {{i + 1}}: </label>
+                    <input type="text" name="event_status_names[]" id="event_status_name"
+                        placeholder="New Status Name :)"/>
+                    <input type="color" name="event_status_colors[]" id="event_status_colors"/>
+                </div>
+            </template>
+            <button type="button" v-on:click="addEventStatus">+</button>
+            <button type="button" v-on:click="removeEventStatus">-</button>
         </div>
 
         <?php submit_button(); ?>
   </form>
 </div>
+<script>
+new Vue({
+  el: '#event-status-div',
+  data: {
+    n: 0
+  },
+  methods: {
+    addEventStatus: function () {
+       this.n++
+    },
+    removeEventStatus: function () {
+      if (this.n > 0) {
+        this.n--
+      }
+    }
+  }
+})
+</script>
 <?php
 }
 
