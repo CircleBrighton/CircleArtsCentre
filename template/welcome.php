@@ -31,14 +31,20 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
+        <div class="item active" style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
             <img src="<?php echo get_theme_mod('slideshow_initial', '%s/img/welcome.jpg') ?>"
+                style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;"
                 alt="welcome">
         </div>
 <?php while ($q->have_posts()) :
     $q->the_post(); ?>
-        <div class="item">
-            <?php the_post_thumbnail() ?>
+        <div class="item" style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
+<?php
+    the_post_thumbnail(
+        'post-thumbnail',
+        ['style' => 'height: '.get_theme_mod('slideshow_height', '').';']
+    );
+?>
             <div class="carousel-caption">
                 <h3><a class="deco-none" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
                 <?php the_excerpt(); ?>
