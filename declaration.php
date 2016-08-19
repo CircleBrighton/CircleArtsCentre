@@ -479,3 +479,17 @@ new Vue({
 <?php
 }
 
+/**
+ * Provides a documentation button in admin bar menu
+ *
+ * @param WP_Admin_Bar $wp_admin_bar Object can be used to add new item to the admin toolbar.
+ */
+function circle_link_to_documentation($wp_admin_bar)
+{
+    $args = array(
+        'id'    => 'circle_documentation',
+        'title' => 'Theme Documentation',
+        'href'  => get_template_directory_uri().'/doc'
+    );
+    $wp_admin_bar->add_node($args);
+}
