@@ -1,13 +1,15 @@
 <?php
 /**
  * In The Name Of God
+ * This file provides function declarations that are needed in
+ * functions.php
+ *
  *
  * PHP Version 5
  *
- * Short description for file
- *
- * @category Theme
- * @package  Wordpress\BehWeb
+ * @category CircleTheme
+ * @file declaration.php
+ * @package  \
  * @author   Parham Alvani <parham.alvani@gmail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
@@ -16,7 +18,7 @@
  * Filter the except length to 10 words.
  *
  * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
+ * @return int|null modified excerpt length.
  */
 function circle_excerpt_length($length)
 {
@@ -70,13 +72,20 @@ function circle_register_post_type()
 }
 
 /**
- * Register meta box(es).
+ * Registers circle specific meta data box for event post type.
  */
 function circle_register_meta()
 {
     add_meta_box('event-info', __('Event Info', 'textdomain'), 'circle_display_event_meta', 'circle_event');
 }
 
+/**
+ * Hanldes circle specific meta data saving process.
+ *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
+ * @param int $post_id Target event [post] id for saving circle specific meta data
+ * @param WP_Post $post Target event [post] object for saving cricle specific meta data
+ */
 function circle_save_event_meta($post_id, $post)
 {
     /* Verify the nonce before proceeding. */
@@ -121,7 +130,7 @@ function circle_save_event_meta($post_id, $post)
 }
 
 /**
- * Meta box display callback.
+ * Cicle speficic meta data box display callback.
  *
  * @param WP_Post $post Current post object.
  */
@@ -178,7 +187,8 @@ for ($i = 0; $i < sizeof($names); $i++) :
 }
 
 /**
- * Register circle theme menu
+ * Register circle theme menus. circle theme provides
+ * a menu which names Top Menu.
  */
 function circle_register_menu()
 {
@@ -186,7 +196,9 @@ function circle_register_menu()
 }
 
 /**
- * Theme customization callback.
+ * Theme customization callback that provides theme specific
+ * settings for slideshow, aside menu and your art center
+ * address.
  *
  * @param WP_Customize $wp_customize Customization object.
  */
@@ -302,7 +314,7 @@ function circle_customize_register($wp_customize)
 
 
 /**
- * Enqueue a script in the WordPress admin, excluding edit.php.
+ * Enqueue a script in the WordPress admin
  *
  * @param string $hook Hook suffix for the current admin page.
  */
@@ -315,9 +327,12 @@ function circle_enqueue_admin_script($hook)
 }
 
 /**
- * Handling events shortcode
+ * Handles events shortcode. Events shortcode provides
+ * a signle and easy to use way for showing your events
+ * time table.
  *
- @ @param Array $attrs attributes passed into shortcode.
+ * @param array $attrs attributes are passed into shortcode.
+ * @return string events time table in HTML.
  */
 function circle_events_shortcode($attrs)
 {
@@ -357,7 +372,7 @@ return ob_get_clean();
 }
 
 /**
- * Register our sidebars and widgetized areas.
+ * Registers circle theme sidebars and widgetized areas.
  *
  */
 function circle_widgets_init()
@@ -383,6 +398,9 @@ function circle_widgets_init()
     ));
 }
 
+/**
+ * Registers circle event settings submenu.
+ */
 function circle_register_submenu()
 {
     add_submenu_page(
@@ -398,6 +416,9 @@ function circle_register_submenu()
     register_setting('circle_event_settings', 'event_status_colors');
 }
 
+/**
+ * Circle event settings submenu display callback.
+ */
 function circle_event_settings_submenu_display()
 {
 ?>
