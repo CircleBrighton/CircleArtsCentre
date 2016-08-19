@@ -269,6 +269,17 @@ function circle_customize_register($wp_customize)
         'section'    => 'feature_boxes',
         'settings'   => 'feature_right_box_title',
     )));
+    $wp_customize->add_setting('feature_two_box', array(
+        'default'     => false,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_two_box_c', array(
+        'label'      => __('Feature 2 Box', 'circle'),
+        'type'       => 'checkbox',
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_two_box',
+    )));
+
 
     /* SlideShow */
     $wp_customize->add_section('slideshow', array(
