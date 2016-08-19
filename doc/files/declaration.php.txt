@@ -132,6 +132,7 @@ function circle_save_event_meta($post_id, $post)
 /**
  * Cicle speficic meta data box display callback.
  *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
  * @param WP_Post $post Current post object.
  */
 function circle_display_event_meta($post)
@@ -200,6 +201,7 @@ function circle_register_menu()
  * settings for slideshow, aside menu and your art center
  * address.
  *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Customize Documentation of WP_Customize
  * @param WP_Customize $wp_customize Customization object.
  */
 function circle_customize_register($wp_customize)
@@ -482,6 +484,7 @@ new Vue({
 /**
  * Provides a documentation button in admin bar menu
  *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Admin_Bar Documentation of WP_Admin_Bar
  * @param WP_Admin_Bar $wp_admin_bar Object can be used to add new item to the admin toolbar.
  */
 function circle_link_to_documentation($wp_admin_bar)
