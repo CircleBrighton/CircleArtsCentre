@@ -1,9 +1,10 @@
 <?php
 /**
  * In The Name Of God
- * This file provides view for archive type pages.
  *
  * PHP Version 5
+ *
+ * This file provides view for archive type pages.
  *
  * @category CircleTheme
  * @file archive.php

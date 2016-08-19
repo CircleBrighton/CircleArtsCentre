@@ -4,10 +4,11 @@
  *
  * PHP Version 5
  *
- * Short description for file
+ * This file provides a view for single-post pages.
  *
- * @category Theme
- * @package  Wordpress\BehWeb
+ * @category CircleTheme
+ * @file post.php
+ * @package
  * @author   Parham Alvani <parham.alvani@gmail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *

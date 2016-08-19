@@ -4,10 +4,11 @@
  *
  * PHP Version 5
  *
- * Short description for file
+ * This file provides a slideshow view for welcome page.
  *
- * @category Theme
- * @package  Wordpress\BehWeb
+ * @category CircleTheme
+ * @file welcome.php
+ * @package
  * @author   Parham Alvani <parham.alvani@gmail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *

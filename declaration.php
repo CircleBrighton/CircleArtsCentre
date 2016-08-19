@@ -1,11 +1,11 @@
 <?php
 /**
  * In The Name Of God
- * This file provides function declarations that are needed in
- * functions.php
- *
  *
  * PHP Version 5
+ *
+ * This file provides function declarations that are needed in
+ * functions.php
  *
  * @category CircleTheme
  * @file declaration.php
