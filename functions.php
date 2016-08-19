@@ -1,13 +1,13 @@
 <?php
 /**
  * In The Name Of God
+ * Wordpress functions callback registration.
  *
  * PHP Version 5
  *
- * Short description for file
- *
- * @category Theme
- * @package  Wordpress\BehWeb
+ * @category CircleTheme
+ * @file functions.php
+ * @package
  * @author   Parham Alvani <parham.alvani@gmail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
@@ -28,6 +28,8 @@ add_action('init', 'circle_register_post_type');
 add_action('init', 'circle_register_menu');
 
 add_action('admin_menu', 'circle_register_submenu');
+
+add_action('admin_bar_menu', 'circle_link_to_documentation', 999);
 
 add_action('add_meta_boxes', 'circle_register_meta');
 
