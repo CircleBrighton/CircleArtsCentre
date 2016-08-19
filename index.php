@@ -69,7 +69,11 @@ $q = new WP_Query(array ('category_name' => 'Feature Left Box', 'post_type' => a
 if ($q->have_posts()) :
     $q->the_post();
 ?>
+<?php if (get_theme_mod('feature_two_box', false)) : ?>
+        <div class="col-md-5 col-xs-6">
+<?php else : ?>
         <div class="col-md-3 col-xs-4">
+<?php endif; ?>
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
                 <h3 class="fg-white text-center">
@@ -91,6 +95,7 @@ if (has_post_thumbnail()) {
             </div>
         </div>
 <?php endif; ?>
+<?php if (!get_theme_mod('feature_two_box', false)) : ?>
 <?php
 $q = new WP_Query(array ('category_name' => 'Feature Middle Box', 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
@@ -120,12 +125,17 @@ if (has_post_thumbnail()) {
             </div>
         </div>
 <?php endif; ?>
+<?php endif; ?>
 <?php
 $q = new WP_Query(array ('category_name' => 'Feature Right Box', 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
     $q->the_post();
 ?>
+<?php if (get_theme_mod('feature_two_box', false)) : ?>
+        <div class="col-md-5 col-md-offset-2 col-xs-6">
+<?php else : ?>
         <div class="col-md-3 col-md-offset-1 col-xs-4">
+<?php endif ?>
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
                     <h3 class="fg-white text-center">
