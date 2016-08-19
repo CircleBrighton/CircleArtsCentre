@@ -1,13 +1,13 @@
 <?php
 /**
  * In The Name Of God
+ * This file provides view for archive type pages.
  *
  * PHP Version 5
  *
- * Short description for file
- *
- * @category Theme
- * @package  Wordpress\BehWeb
+ * @category CircleTheme
+ * @file archive.php
+ * @package
  * @author   Parham Alvani <parham.alvani@gmail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
