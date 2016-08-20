@@ -16,7 +16,10 @@
 ?>
 <div class="list-group">
 <?php while (have_posts()) :
-    the_post(); ?>
+    the_post();
+    if (!has_category('Blog')) {
+        continue;
+    } ?>
         <a href="<?php the_permalink() ?>" class="list-group-item">
             <h4 class="list-group-item-heading"><?php the_title() ?></h4>
             <p class="list-group-item-text"><?php the_excerpt() ?></p>
