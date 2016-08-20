@@ -48,7 +48,7 @@
 ?>
             <div class="carousel-caption">
                 <h3><a class="deco-none" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-                <?php the_excerpt(); ?>
+                <?php wp_trim_words(the_excerpt(), 10); ?>
             </div>
         </div>
 <?php endwhile; ?>
