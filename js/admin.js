@@ -7,5 +7,5 @@
  * | File Name:     admin.js
  * +===============================================
  */
-webshims.setOptions('forms-ext', {types: 'date'})
+webshims.setOptions('forms-ext', {types: 'date time color'})
 webshim.polyfill('es5 mediaelement forms forms-ext')
