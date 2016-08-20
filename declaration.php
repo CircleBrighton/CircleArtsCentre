@@ -22,7 +22,7 @@
  */
 function circle_excerpt_length($length)
 {
-    return 10;
+    return 200;
 }
 
 /**
