@@ -88,7 +88,7 @@ if (has_post_thumbnail()) {
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <?php the_title(); ?>
                 </a></h4>
-                <?php the_excerpt(); ?>
+                <?php wp_trim_words(the_excerpt(), 55); ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     Read More
                 </a>
@@ -118,7 +118,7 @@ if (has_post_thumbnail()) {
                     <?php the_title(); ?>
                 </a></h4>
                 </p>
-                <?php the_excerpt(); ?>
+                <?php wp_trim_words(the_excerpt(), 55); ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     Read More
                 </a>
@@ -150,7 +150,7 @@ if (has_post_thumbnail()) {
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <?php the_title(); ?>
                 </a></h4>
-                <?php the_excerpt(); ?>
+                <?php wp_trim_words(the_excerpt(), 55); ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     Read More
                 </a>
