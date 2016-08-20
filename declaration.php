@@ -333,8 +333,7 @@ function circle_customize_register($wp_customize)
  */
 function circle_enqueue_admin_script($hook)
 {
-    wp_enqueue_script('modernizer', 'http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js');
-    wp_enqueue_script('polyfiller', 'http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js');
+    wp_enqueue_script('polyfiller', get_template_directory_uri().'/js/webshim/polyfiller.js');
     wp_enqueue_script('vue', get_template_directory_uri().'/js/vue.min.js');
     wp_enqueue_script('admin', get_template_directory_uri().'/js/admin.js');
 }
@@ -364,18 +363,34 @@ $i = 0; ?>
             <th>Name</th>
             <th>Time</th>
             <th>Price</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
 <?php while ($q->have_posts() && $i < $n) :
     $q->the_post();
-    $i++; ?>
+    $i++;
+    $names = get_option('event_status_names', []);
+    $colors = get_option('event_status_colors', []);
+    $index = (int) get_post_meta(get_post()->ID, 'status_index', true);
+    if (is_int($index) && $index >= 0) {
+        $name = $names[$index];
+        $color = $colors[$index];
+    }
+?>
         <tr data-url="<?php the_permalink(); ?>">
             <td><?php echo $i ?></td>
-            <td><?php echo get_post_meta(get_the_ID(), 'date', true); ?>
+            <td><?php echo get_post_meta(get_the_ID(), 'date', true); ?></td>
             <td><?php the_title(); ?></td>
-            <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?>
-            <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?>
+            <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?></td>
+            <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?></td>
+            <td><a class="btn
+                    <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
+                    style="color: #FFF;
+                        background-color: <?php echo esc_attr($color); ?>"
+                    href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
+                        <?php echo $name; ?>
+            </a></td>
         </tr>
 <?php endwhile; ?>
     </tbody>
