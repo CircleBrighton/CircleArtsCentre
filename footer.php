@@ -21,11 +21,7 @@
         Registered Charity No: <?php echo get_theme_mod('address_charity_no', '') ?>
     </address>
     <address class="text-center">
-        <p>
-            <a href="#">Terms &amp; Conditions</a>
-            |
-            <a href="#">Jobs &amp; Opportunities</a>
-        </p>
+        <?php echo get_option('footer_content') ?>
         <p>&copy; <?php bloginfo('description') ?></p>
     </address>
 </footer>
