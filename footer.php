@@ -15,12 +15,7 @@
 ?>
 <hr>
 <footer>
-    <address class="text-center">
-        <?php bloginfo('description') ?>
-        | Address: <?php echo get_theme_mod('address_lines', true) ?> |
-        Registered Charity No: <?php echo get_theme_mod('address_charity_no', '') ?>
-    </address>
-    <address class="text-center">
+   <address class="text-center">
         <?php echo get_option('footer_content') ?>
         <p>&copy; <?php bloginfo('description') ?></p>
     </address>
