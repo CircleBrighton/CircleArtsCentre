@@ -27,7 +27,9 @@ add_action('init', 'circle_register_post_type');
 
 add_action('init', 'circle_register_menu');
 
-add_action('admin_menu', 'circle_register_submenu');
+add_action('admin_menu', 'circle_register_event_settings_submenu');
+
+add_action('admin_menu', 'circle_register_footer_settings_menu');
 
 add_action('admin_bar_menu', 'circle_link_to_documentation', 999);
 

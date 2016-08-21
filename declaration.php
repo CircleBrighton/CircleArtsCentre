@@ -427,9 +427,45 @@ function circle_widgets_init()
 }
 
 /**
+ * Registers circle footer settings menu
+ */
+function circle_register_footer_settings_menu()
+{
+    add_menu_page(
+        'Footer',
+        'Footer',
+        'manage_options',
+        'circle_footer_settings',
+        'circle_footer_settings_menu_display'
+    );
+    register_setting('circle_footer_settings', 'footer_content');
+}
+
+/**
+ * Circle footer settings menu display callback
+ */
+function circle_footer_settings_menu_display()
+{
+?>
+<div class="wrap">
+    <h1>Footer :)</h1>
+    <form method="post" action="options.php">
+        <?php
+                settings_fields("circle_footer_settings");
+                do_settings_sections("circle_footer_settings");
+                $content = get_option('footer_content');
+                wp_editor($content, 'footer_content', ['media_buttons' => true, 'textarea_name' => 'footer_content']);
+                submit_button();
+            ?>
+    </form>
+</div>
+<?php
+}
+
+/**
  * Registers circle event settings submenu.
  */
-function circle_register_submenu()
+function circle_register_event_settings_submenu()
 {
     add_submenu_page(
         'edit.php?post_type=circle_event',
