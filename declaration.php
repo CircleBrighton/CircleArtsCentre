@@ -236,6 +236,23 @@ function circle_customize_register($wp_customize)
         'section'    => 'address',
         'settings'   => 'address_charity_no',
     )));
+    $wp_customize->add_setting('address_facebook', array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_facebook_c', array(
+        'label'      => __('Facebook', 'circle'),
+        'section'    => 'address',
+        'settings'   => 'address_facebook',
+    )));
+    $wp_customize->add_setting('address_twitter', array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address_twitter_c', array(
+        'label'      => __('Twitter', 'circle'),
+        'section'    => 'address',
+        'settings'   => 'address_twitter',
+    )));
+
 
     /* Feature Boxes */
     $wp_customize->add_section('feature_boxes', array(

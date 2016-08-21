@@ -45,12 +45,12 @@ wp_nav_menu(array(
                         </ul>
                     </li>
                     <li>
-                        <a href="https://twitter.com/circleartscentre" target="_blank">
+                        <a href="https://twitter.com/<?php echo get_theme_mod('address_twitter', 'circleartscentre'); ?>" target="_blank">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.facebook.com/circleartscentre" target="_blank">
+                        <a href="http://www.facebook.com/<?php echo get_theme_mod('address_facebook', 'circleartscentre'); ?>" target="_blank">
                             <i class="fa fa-facebook-square"></i>
                         </a>
                     </li>
