@@ -259,42 +259,52 @@ function circle_customize_register($wp_customize)
         'title'      => __('Feature Boxes', 'circle'),
         'priority'   => 30,
     ));
-    $wp_customize->add_setting('feature_left_box_title', array(
+    $wp_customize->add_setting('feature_box_0_title', array(
         'default'     => 'Coming Soon',
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_left_box_title_c', array(
-        'label'        => __('Feature Left Box Title', 'circle'),
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_0_title_c', array(
+        'label'        => __('Feature Box 0 Title', 'circle'),
         'section'    => 'feature_boxes',
-        'settings'   => 'feature_left_box_title',
+        'settings'   => 'feature_box_0_title',
     )));
-    $wp_customize->add_setting('feature_middle_box_title', array(
+    $wp_customize->add_setting('feature_box_1_title', array(
         'default'     => 'This Week',
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_middle_box_title_c', array(
-        'label'        => __('Feature Middle Box Title', 'circle'),
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_1_title_c', array(
+        'label'        => __('Feature Box 1 Title', 'circle'),
         'section'    => 'feature_boxes',
-        'settings'   => 'feature_middle_box_title',
+        'settings'   => 'feature_box_1_title',
     )));
-    $wp_customize->add_setting('feature_right_box_title', array(
+    $wp_customize->add_setting('feature_box_2_title', array(
         'default'     => 'Featured',
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_right_box_title_c', array(
-        'label'        => __('Feature Right Box Title', 'circle'),
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_2_title_c', array(
+        'label'        => __('Feature Box 2 Title', 'circle'),
         'section'    => 'feature_boxes',
-        'settings'   => 'feature_right_box_title',
+        'settings'   => 'feature_box_2_title',
     )));
-    $wp_customize->add_setting('feature_two_box', array(
-        'default'     => false,
+    $wp_customize->add_setting('feature_box_3_title', array(
+        'default'     => 'Hot',
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_two_box_c', array(
-        'label'      => __('Feature 2 Box', 'circle'),
-        'type'       => 'checkbox',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_3_title_c', array(
+        'label'        => __('Feature Box 3 Title', 'circle'),
         'section'    => 'feature_boxes',
-        'settings'   => 'feature_two_box',
+        'settings'   => 'feature_box_3_title',
+    )));
+    $wp_customize->add_setting('feature_box_number', array(
+        'default'     => '3',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_number_c', array(
+        'label'      => __('Feature Box Number', 'circle'),
+        'type'       => 'select',
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_box_number',
+        'choices'    => ['1' => '1', '2' => '2', '3' => '3', '4' => '4'],
     )));
 
 

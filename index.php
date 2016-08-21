@@ -64,20 +64,32 @@ while ($q->have_posts() && $i < 5) :
 <hr/>
 <div>
     <div class="row">
+<?php for ($i = 0; $i < (int)get_theme_mod('feature_box_number', '3'); $i++) : ?>
 <?php
-$q = new WP_Query(array ('category_name' => 'Feature Left Box', 'post_type' => array('post', 'circle_event')));
+$q = new WP_Query(array ('category_name' => 'Feature Box '.$i, 'post_type' => array('post', 'circle_event')));
 if ($q->have_posts()) :
     $q->the_post();
 ?>
-<?php if (get_theme_mod('feature_two_box', false)) : ?>
-        <div class="col-md-5 col-xs-6">
-<?php else : ?>
-        <div class="col-md-3 col-xs-4">
-<?php endif; ?>
+<?php
+switch (get_theme_mod('feature_box_number', '3')) {
+    case '1':
+        echo '<div class="col-md-3 col-md-offset-4">';
+        break;
+    case '2':
+        echo '<div class="col-md-3 col-md-offset-2">';
+        break;
+    case '3':
+        echo '<div class="col-md-3 col-md-offset-1 col-xs-4">';
+        break;
+    case '4':
+        echo '<div class="col-md-3">';
+        break;
+}
+?>
             <div class="thumbnail text-justify">
                 <div class="thumbnail bg-primary">
                 <h3 class="fg-white text-center">
-                    <?php echo get_theme_mod('feature_left_box_title', 'Coming Soon'); ?>
+                    <?php echo get_theme_mod('feature_box_'.$i.'_title', 'Title'); ?>
                 </h3>
 <?php
 if (has_post_thumbnail()) {
@@ -95,69 +107,6 @@ if (has_post_thumbnail()) {
             </div>
         </div>
 <?php endif; ?>
-<?php if (!get_theme_mod('feature_two_box', false)) : ?>
-<?php
-$q = new WP_Query(array ('category_name' => 'Feature Middle Box', 'post_type' => array('post', 'circle_event')));
-if ($q->have_posts()) :
-    $q->the_post();
-?>
-        <div class="col-md-3 col-md-offset-1 col-xs-4">
-            <div class="thumbnail text-justify">
-                <div class="thumbnail bg-primary">
-                    <h3 class="fg-white text-center">
-                        <?php echo get_theme_mod('feature_middle_box_title', 'This Week'); ?>
-                    </h3>
-<?php
-if (has_post_thumbnail()) {
-    the_post_thumbnail();
-}
-?>
-                </div>
-                <p>
-                <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_title(); ?>
-                </a></h4>
-                </p>
-                <?php wp_trim_words(the_excerpt(), 55); ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    Read More
-                </a>
-            </div>
-        </div>
-<?php endif; ?>
-<?php endif; ?>
-<?php
-$q = new WP_Query(array ('category_name' => 'Feature Right Box', 'post_type' => array('post', 'circle_event')));
-if ($q->have_posts()) :
-    $q->the_post();
-?>
-<?php if (get_theme_mod('feature_two_box', false)) : ?>
-        <div class="col-md-5 col-md-offset-2 col-xs-6">
-<?php else : ?>
-        <div class="col-md-3 col-md-offset-1 col-xs-4">
-<?php endif ?>
-            <div class="thumbnail text-justify">
-                <div class="thumbnail bg-primary">
-                    <h3 class="fg-white text-center">
-                        <?php echo get_theme_mod('feature_right_box_title', 'Featured'); ?>
-                    </h3>
-<?php
-if (has_post_thumbnail()) {
-    the_post_thumbnail();
-}
-?>
-                </div>
-                <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_title(); ?>
-                </a></h4>
-                <?php wp_trim_words(the_excerpt(), 55); ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    Read More
-                </a>
-            </div>
-        </div>
-<?php endif; ?>
-        </div>
-    </div>
+<?php endfor; ?>
 </div>
 <?php get_footer(); ?>
