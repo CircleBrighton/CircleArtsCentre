@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand">Circle</span>
+                <a class="navbar-brand" href="<?php echo home_url(); ?>">Home</a></li>
             </div>
             <div class="collapse navbar-collapse" id="circle-navbar-collapse">
 <?php
