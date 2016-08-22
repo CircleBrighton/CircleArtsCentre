@@ -35,14 +35,10 @@ wp_nav_menu(array(
 ));
 ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">
-                                Blog <span class="caret"></span>
+                    <li>
+                        <a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>">
+                            Blog
                         </a>
-                        <ul class="dropdown-menu">
-                            <?php wp_get_archives('type=yearly') ?>
-                        </ul>
                     </li>
                     <li>
                         <a href="https://twitter.com/<?php echo get_theme_mod('address_twitter', 'circleartscentre'); ?>" target="_blank">

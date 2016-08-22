@@ -14,15 +14,34 @@
  *
  */
 ?>
-<div class="list-group">
+<div class="col-md-9">
 <?php while (have_posts()) :
     the_post();
     if (!has_category('Blog')) {
         continue;
     } ?>
-        <a href="<?php the_permalink() ?>" class="list-group-item">
-            <h4 class="list-group-item-heading"><?php the_title() ?></h4>
-            <p class="list-group-item-text"><?php the_excerpt() ?></p>
-        </a>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+        <h4><small>Posted on <?php the_date() ?></small></h4>
+        <?php the_content() ?>
 <?php endwhile; ?>
+</div>
+<div class="col-md-3">
+    Years
+    <hr>
+    <div class="list-group">
+<?php
+    $a = wp_get_archives(['type' => 'yearly', 'format' => 'custom', 'echo' => '0']);
+    $a = str_replace('href', 'class="list-group-item" href', $a);
+    echo $a;
+?>
+    </div>
+    Categories
+    <hr>
+    <div class="list-group">
+<?php
+    $a = wp_list_categories(['separator' => "\n", 'style' => '', 'echo' => '0']);
+    $a = str_replace('href', 'class="list-group-item" href', $a);
+    echo $a;
+?>
+    </div>
 </div>
