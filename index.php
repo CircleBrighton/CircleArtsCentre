@@ -29,8 +29,6 @@ if (is_home()) {
     get_template_part('template/searchpage');
 } elseif (is_page()) {
     get_template_part('template/general');
-} elseif (is_archive()) {
-    get_template_part('template/archive');
 }
 ?>
         </div>
