@@ -39,7 +39,12 @@
     <hr>
     <div class="list-group">
 <?php
-    $a = wp_list_categories(['separator' => "\n", 'style' => '', 'echo' => '0']);
+    $a = wp_list_categories(
+        ['separator' => "\n", 'style' => '', 'echo' => '0',
+        'exclude' => [get_cat_ID('Slide'), get_cat_ID('Blog'), get_cat_ID('Feature Box 0'),
+                        get_cat_ID('Feature Box 1'), get_cat_ID('Feature Box 2'),
+                        get_cat_ID('Feature Box 3')]]
+    );
     $a = str_replace('href', 'class="list-group-item" href', $a);
     echo $a;
 ?>
