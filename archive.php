@@ -45,9 +45,8 @@
 <?php
     $a = wp_list_categories(
         ['separator' => "\n", 'style' => '', 'echo' => '0',
-        'exclude' => [get_cat_ID('Slide'), get_cat_ID('Blog'), get_cat_ID('Feature Box 0'),
-                        get_cat_ID('Feature Box 1'), get_cat_ID('Feature Box 2'),
-                        get_cat_ID('Feature Box 3')]]
+        'exclude' => [get_cat_ID('Slide'), get_cat_ID('Blog'), get_cat_ID('Feature Left Box'),
+                        get_cat_ID('Feature Middle Box'), get_cat_ID('Feature Right Box')]]
     );
     $a = str_replace('href', 'class="list-group-item" href', $a);
     echo $a;
@@ -60,7 +59,8 @@
     <div class="row">
 <?php for ($i = 0; $i < (int)get_theme_mod('feature_box_number', '3'); $i++) : ?>
 <?php
-$q = new WP_Query(array ('category_name' => 'Feature Box '.$i, 'post_type' => array('post', 'circle_event')));
+$boxes = ['Left', 'Middle', 'Right'];
+$q = new WP_Query(['category_name' => 'Feature '.$boxes[$i].' Box', 'post_type' => ['post', 'circle_event']]);
 if ($q->have_posts()) :
     $q->the_post();
 ?>
@@ -74,9 +74,6 @@ switch (get_theme_mod('feature_box_number', '3')) {
         break;
     case '3':
         echo '<div class="col-md-3 col-md-offset-1 col-xs-4">';
-        break;
-    case '4':
-        echo '<div class="col-md-3">';
         break;
 }
 ?>

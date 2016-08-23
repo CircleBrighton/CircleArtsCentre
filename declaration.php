@@ -264,7 +264,7 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_0_title_c', array(
-        'label'        => __('Feature Box 0 Title', 'circle'),
+        'label'        => __('Feature Box Left Title', 'circle'),
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_0_title',
     )));
@@ -273,7 +273,7 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_1_title_c', array(
-        'label'        => __('Feature Box 1 Title', 'circle'),
+        'label'        => __('Feature Box Middle Title', 'circle'),
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_1_title',
     )));
@@ -282,18 +282,9 @@ function circle_customize_register($wp_customize)
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_2_title_c', array(
-        'label'        => __('Feature Box 2 Title', 'circle'),
+        'label'        => __('Feature Box Right Title', 'circle'),
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_2_title',
-    )));
-    $wp_customize->add_setting('feature_box_3_title', array(
-        'default'     => 'Hot',
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'feature_box_3_title_c', array(
-        'label'        => __('Feature Box 3 Title', 'circle'),
-        'section'    => 'feature_boxes',
-        'settings'   => 'feature_box_3_title',
     )));
     $wp_customize->add_setting('feature_box_number', array(
         'default'     => '3',
@@ -304,7 +295,7 @@ function circle_customize_register($wp_customize)
         'type'       => 'select',
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_number',
-        'choices'    => ['1' => '1', '2' => '2', '3' => '3', '4' => '4'],
+        'choices'    => ['1' => '1', '2' => '2', '3' => '3'],
     )));
 
 

@@ -64,7 +64,8 @@ while ($q->have_posts() && $i < 5) :
     <div class="row">
 <?php for ($i = 0; $i < (int)get_theme_mod('feature_box_number', '3'); $i++) : ?>
 <?php
-$q = new WP_Query(array ('category_name' => 'Feature Box '.$i, 'post_type' => array('post', 'circle_event')));
+$boxes = ['Left', 'Middle', 'Right'];
+$q = new WP_Query(['category_name' => 'Feature '.$boxes[$i]. ' Box', 'post_type' => ['post', 'circle_event']]);
 if ($q->have_posts()) :
     $q->the_post();
 ?>
@@ -78,9 +79,6 @@ switch (get_theme_mod('feature_box_number', '3')) {
         break;
     case '3':
         echo '<div class="col-md-3 col-md-offset-1 col-xs-4">';
-        break;
-    case '4':
-        echo '<div class="col-md-3">';
         break;
 }
 ?>
