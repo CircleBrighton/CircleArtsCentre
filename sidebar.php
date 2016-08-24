@@ -24,7 +24,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://thecirclebrighton.com/">Circle</a></li>
             </div>
             <div class="collapse navbar-collapse" id="circle-navbar-collapse">
 <?php
@@ -35,6 +34,9 @@ wp_nav_menu(array(
 ));
 ?>
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="http://thecirclebrighton.com">Circle</a>
+                    </li>
                     <li>
                         <a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>">
                             Blog
