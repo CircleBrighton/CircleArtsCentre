@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo home_url(); ?>">Home</a></li>
+                <a class="navbar-brand" href="http://thecirclebrighton.com/">Circle</a></li>
             </div>
             <div class="collapse navbar-collapse" id="circle-navbar-collapse">
 <?php
