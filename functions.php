@@ -31,8 +31,6 @@ add_action('admin_menu', 'circle_register_event_settings_submenu');
 
 add_action('admin_menu', 'circle_register_footer_settings_menu');
 
-add_action('admin_bar_menu', 'circle_link_to_documentation', 999);
-
 add_action('add_meta_boxes', 'circle_register_meta');
 
 add_action('save_post', 'circle_save_event_meta', 10, 2);
