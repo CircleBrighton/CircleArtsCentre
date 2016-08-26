@@ -18,6 +18,7 @@ $index = (int) get_post_meta(get_post()->ID, 'status_index', true);
 $name = "";
 $color = "";
 if (is_int($index) && $index >= 0) {
+    $index--;
     $name = $names[$index];
     $color = $colors[$index];
 }

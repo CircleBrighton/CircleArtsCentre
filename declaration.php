@@ -171,7 +171,7 @@ function circle_display_event_meta($post)
 $names = get_option('event_status_names', []);
 for ($i = 0; $i < sizeof($names); $i++) :
 ?>
-        <option value=<?php echo $i ?> <?php selected(get_post_meta($post->ID, 'status_index', true), $i); ?>>
+        <option value=<?php echo $i + 1 ?> <?php selected(get_post_meta($post->ID, 'status_index', true) - 1, $i); ?>>
             <?php echo $names[$i] ?>
         </option>
 <?php endfor; ?>
@@ -392,6 +392,7 @@ $i = 0; ?>
     $colors = get_option('event_status_colors', []);
     $index = (int) get_post_meta(get_post()->ID, 'status_index', true);
     if (is_int($index) && $index >= 0) {
+        $index--;
         $name = $names[$index];
         $color = $colors[$index];
     }
