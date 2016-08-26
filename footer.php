@@ -15,10 +15,7 @@
 ?>
 <hr>
 <footer>
-   <address class="text-center">
-        <?php echo get_option('footer_content') ?>
-        <p>&copy; <?php bloginfo('description') ?></p>
-    </address>
+    <?php echo apply_filters('the_content', get_option('footer_content')) ?>
 </footer>
 </div>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.4.min.js"></script>
