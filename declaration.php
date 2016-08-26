@@ -15,7 +15,7 @@
  *
  */
 /**
- * Filter the except length to 10 words.
+ * Filter the except length to 200 words.
  *
  * @param int $length Excerpt length.
  * @return int|null modified excerpt length.
