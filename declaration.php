@@ -404,7 +404,7 @@ $i = 0; ?>
             <td><?php the_title(); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?></td>
-            <td><h4><span
+            <td><h4 style="margin-top: 0px"><span
                 class="label"
                 style="color: #FFF;
                         background-color: <?php echo esc_attr($color); ?>">
