@@ -381,6 +381,7 @@ $i = 0; ?>
             <th>Name</th>
             <th>Time</th>
             <th>Price</th>
+            <th>Status</th>
             <th></th>
         </tr>
     </thead>
@@ -403,12 +404,16 @@ $i = 0; ?>
             <td><?php the_title(); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?></td>
-            <td><a class="btn
+            <td><h4><span
+                class="label"
+                style="color: #FFF;
+                        background-color: <?php echo esc_attr($color); ?>">
+                <?php echo $name; ?>
+            </span></h4></td>
+            <td><a class="btn btn-default
                     <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
-                    style="color: #FFF;
-                        background-color: <?php echo esc_attr($color); ?>"
                     href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
-                        <?php echo $name; ?>
+                        Buy Ticket
             </a></td>
         </tr>
 <?php endwhile; ?>

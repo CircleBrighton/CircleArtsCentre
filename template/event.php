@@ -25,12 +25,15 @@ if (is_int($index) && $index >= 0) {
 ?>
 <div class="page-header">
     <h1><?php echo apply_filters('the_title', get_post()->post_title); ?>
-    <a class="btn pull-right
-        <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
+    <span class="label"
         style="color: #FFF;
-            background-color: <?php echo esc_attr($color); ?>"
-        href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
+            background-color: <?php echo esc_attr($color); ?>">
             <?php echo $name; ?>
+    </span>
+    <a class="btn btn-default pull-right
+        <?php echo get_post_meta(get_post()->ID, 'status_disabled', true) ? 'disabled' : '' ?>"
+        href="<?php echo esc_attr(get_post_meta(get_post()->ID, 'buy_link', true)) ?>">
+            Buy Ticket
     </a>
     </h1>
     <h5><?php echo apply_filters('the_date', get_post()->post_date); ?></h5>
