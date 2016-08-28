@@ -69,6 +69,20 @@ function circle_register_post_type()
             'supports' => array('title', 'editor', 'excerpt'),
         )
     );
+
+    register_post_type(
+        'circle_slide',
+        array(
+            'labels' => array(
+                'name' => __('Slides'),
+                'singular_name' => __('Slide')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'slides'),
+            'supports' => array('title', 'editor'),
+        )
+    );
 }
 
 /**
