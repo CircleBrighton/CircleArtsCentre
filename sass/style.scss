@@ -71,6 +71,9 @@ $content-min-height: 510px;
 
 #content {
 	min-height: $content-min-height;
+	img {
+		width: 100%;
+	}
 }
 
 p {
