@@ -96,7 +96,9 @@ if (has_post_thumbnail()) {
                 <h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <?php the_title(); ?>
                 </a></h4>
-                <?php wp_trim_words(the_excerpt(), 55); ?>
+                <p>
+                    <?php echo wp_trim_words(get_the_excerpt(), 20, ''); ?>
+                </p>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     Read More
                 </a>
