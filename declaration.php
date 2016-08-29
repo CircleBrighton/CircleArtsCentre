@@ -282,6 +282,15 @@ function circle_customize_register($wp_customize)
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_0_title',
     )));
+    $wp_customize->add_setting('feature_box_0_color', array(
+        'default'     => '#008080',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'feature_box_0_color_c', array(
+        'label'        => __('Feature Box Left Color', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_box_0_color',
+    )));
     $wp_customize->add_setting('feature_box_1_title', array(
         'default'     => 'This Week',
         'transport'   => 'refresh',
@@ -291,6 +300,16 @@ function circle_customize_register($wp_customize)
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_1_title',
     )));
+    $wp_customize->add_setting('feature_box_1_color', array(
+        'default'     => '#008080',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'feature_box_1_color_c', array(
+        'label'        => __('Feature Box Middle Color', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_box_1_color',
+    )));
+
     $wp_customize->add_setting('feature_box_2_title', array(
         'default'     => 'Featured',
         'transport'   => 'refresh',
@@ -299,6 +318,15 @@ function circle_customize_register($wp_customize)
         'label'        => __('Feature Box Right Title', 'circle'),
         'section'    => 'feature_boxes',
         'settings'   => 'feature_box_2_title',
+    )));
+    $wp_customize->add_setting('feature_box_2_color', array(
+        'default'     => '#008080',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'feature_box_2_color_c', array(
+        'label'        => __('Feature Box Right Color', 'circle'),
+        'section'    => 'feature_boxes',
+        'settings'   => 'feature_box_2_color',
     )));
     $wp_customize->add_setting('feature_box_number', array(
         'default'     => '3',
