@@ -80,6 +80,10 @@ p {
 	word-wrap: break-word;
 }
 
+.carousel-caption {
+	background-color: black;
+}
+
 .slide .item {
 	height: $content-min-height;
 	img {
