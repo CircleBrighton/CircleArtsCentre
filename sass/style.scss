@@ -82,6 +82,8 @@ p {
 
 .carousel-caption {
 	background-color: black;
+	opacity: 0.7;
+	@include border-radius(10px);
 }
 
 .slide .item {
