@@ -246,6 +246,7 @@ function circle_save_slide_meta($post_id, $post)
 
     $wpdocs_save_meta($post_id, $post, 'header', 'circle-slide-header');
     $wpdocs_save_meta($post_id, $post, 'content', 'circle-slide-content');
+    $wpdocs_save_meta($post_id, $post, 'bgcolor', 'circle-slide-bgcolor');
 }
 
 /**
@@ -262,6 +263,11 @@ function circle_display_slide_meta($post)
     <label for="circle-slide-header">Header: </label>
     <input type="text" name="circle-slide-header" id="circle-slide-header"
         value="<?php echo esc_attr(get_post_meta($post->ID, 'header', true)); ?>"/>
+</div>
+<div>
+    <label for="circle-slide-bgcolor">Background Color: </label>
+    <input type="color" name="circle-slide-bgcolor" id="circle-slide-bgcolor"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>"/>
 </div>
 <div>
 <?php

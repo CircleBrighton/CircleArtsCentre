@@ -46,7 +46,8 @@
         ['style' => 'height: '.get_theme_mod('slideshow_height', '').';']
     );
 ?>
-            <div class="carousel-caption">
+            <div class="carousel-caption"
+                    style="background-color: <?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>">
                 <h3><a class="deco-none" href="<?php the_permalink() ?>">
                     <?php echo get_post_meta($post->ID, 'header', true); ?>
                 </a></h3>
