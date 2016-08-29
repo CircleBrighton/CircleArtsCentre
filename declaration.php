@@ -211,6 +211,41 @@ for ($i = 0; $i < sizeof($names); $i++) :
  */
 function circle_save_slide_meta($post_id, $post)
 {
+    /* Verify the nonce before proceeding. */
+    if (!isset($_POST['circle_slide_nonce']) || !wp_verify_nonce($_POST['circle_slide_nonce'], basename(__FILE__))) {
+        return $post_id;
+    }
+
+    /* Get the post type object. */
+    $post_type = get_post_type_object($post->post_type);
+
+    /* Check if the current user has permission to edit the post. */
+    if (!current_user_can($post_type->cap->edit_post, $post_id)) {
+        return $post_id;
+    }
+
+    /* Provide handler function as closure */
+    $wpdocs_save_meta = function ($post_id, $post, $meta_key, $post_key) {
+        /* Get the posted data. */
+        $new_meta_value = (isset($_POST[$post_key]) ? $_POST[$post_key] : '');
+
+        /* Get the meta value of the custom field key. */
+        $meta_value = get_post_meta($post_id, $meta_key, true);
+
+        /* If a new meta value was added and there was no previous value, add it. */
+        if ($new_meta_value && $meta_value == '') {
+            add_post_meta($post_id, $meta_key, $new_meta_value, true);
+        } /* If the new meta value does not match the old value, update it. */
+        elseif ($new_meta_value && $new_meta_value != $meta_value) {
+            update_post_meta($post_id, $meta_key, $new_meta_value);
+        } /* If there is no new meta value but an old value exists, delete it. */
+        elseif ($new_meta_value == '' && $meta_value) {
+            delete_post_meta($post_id, $meta_key, $meta_value);
+        }
+    };
+
+    $wpdocs_save_meta($post_id, $post, 'header', 'circle-slide-header');
+    $wpdocs_save_meta($post_id, $post, 'content', 'circle-slide-content');
 }
 
 /**
@@ -221,15 +256,18 @@ function circle_save_slide_meta($post_id, $post)
  */
 function circle_display_slide_meta($post)
 {
-    wp_nonce_field(basename(__FILE__), 'circle_event_nonce');
+    wp_nonce_field(basename(__FILE__), 'circle_slide_nonce');
 ?>
 <div>
-    <label for="circle-slide-header">Date: </label>
+    <label for="circle-slide-header">Header: </label>
     <input type="text" name="circle-slide-header" id="circle-slide-header"
         value="<?php echo esc_attr(get_post_meta($post->ID, 'header', true)); ?>"/>
 </div>
 <div>
-    <?php wp_editor() ?>
+<?php
+    $content = get_post_meta($post->ID, 'content', true);
+    wp_editor($content, 'circle-slide-content', ['media_buttons' => true, 'textarea_name' => 'circle-slide-content']);
+?>
 </div>
 <?php
 }
