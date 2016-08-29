@@ -35,6 +35,8 @@ add_action('add_meta_boxes', 'circle_register_meta');
 
 add_action('save_post', 'circle_save_event_meta', 10, 2);
 
+add_action('save_post', 'circle_save_slide_meta', 10, 2);
+
 add_action('customize_register', 'circle_customize_register');
 
 add_action('admin_enqueue_scripts', 'circle_enqueue_admin_script');

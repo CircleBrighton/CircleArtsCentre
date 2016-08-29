@@ -86,15 +86,16 @@ function circle_register_post_type()
 }
 
 /**
- * Registers circle specific meta data box for event post type.
+ * Registers circle specific meta data box for event and slide post types.
  */
 function circle_register_meta()
 {
     add_meta_box('event-info', __('Event Info', 'textdomain'), 'circle_display_event_meta', 'circle_event');
+    add_meta_box('slide-content', __('Slide Content', 'textdomain'), 'circle_display_slide_meta', 'circle_slide');
 }
 
 /**
- * Hanldes circle specific meta data saving process.
+ * Hanldes circle specific meta data for event post type saving process.
  *
  * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
  * @param int $post_id Target event [post] id for saving circle specific meta data
@@ -144,7 +145,7 @@ function circle_save_event_meta($post_id, $post)
 }
 
 /**
- * Cicle speficic meta data box display callback.
+ * Cicle speficic meta data box display callback for event post type.
  *
  * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
  * @param WP_Post $post Current post object.
@@ -200,6 +201,39 @@ for ($i = 0; $i < sizeof($names); $i++) :
 
 <?php
 }
+
+/**
+ * Hanldes circle specific meta data for slide post type saving process.
+ *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
+ * @param int $post_id Target event [post] id for saving circle specific meta data
+ * @param WP_Post $post Target event [post] object for saving cricle specific meta data
+ */
+function circle_save_slide_meta($post_id, $post)
+{
+}
+
+/**
+ * Cicle speficic meta data box display callback for slide post type.
+ *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Post Documentation of WP_Post
+ * @param WP_Post $post Current post object.
+ */
+function circle_display_slide_meta($post)
+{
+    wp_nonce_field(basename(__FILE__), 'circle_event_nonce');
+?>
+<div>
+    <label for="circle-slide-header">Date: </label>
+    <input type="text" name="circle-slide-header" id="circle-slide-header"
+        value="<?php echo esc_attr(get_post_meta($post->ID, 'header', true)); ?>"/>
+</div>
+<div>
+    <?php wp_editor() ?>
+</div>
+<?php
+}
+
 
 /**
  * Register circle theme menus. circle theme provides
