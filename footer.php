@@ -36,8 +36,9 @@ switch (get_theme_mod('feature_box_number', '3')) {
         break;
 }
 ?>
-            <div class="thumbnail text-justify">
-                <div class="thumbnail bg-primary">
+        <div class="thumbnail text-justify">
+            <div class="thumbnail bg-primary"
+                style="background-color: <?php echo esc_attr(get_theme_mod('feature_box_'.$i.'_color', '')); ?>">
                 <h3 class="fg-white text-center">
                     <?php echo get_theme_mod('feature_box_'.$i.'_title', 'Title'); ?>
                 </h3>
