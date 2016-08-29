@@ -17,7 +17,7 @@
 <div id="news-slides" class="carousel slide" data-ride="carousel"
     data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>"
     data-wrap=<?php echo get_theme_mod('slideshow_wrap', true) ? "true" : "false" ?>>
-<?php $q = new WP_Query(array ('category_name' => 'Slide', 'post_type' => array('post', 'circle_event'))); ?>
+<?php $q = new WP_Query(['post_type' => 'circle_slide']); ?>
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#news-slides" data-slide-to="0" class="active"></li>
@@ -47,8 +47,10 @@
     );
 ?>
             <div class="carousel-caption">
-                <h3><a class="deco-none" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-                <?php wp_trim_words(the_excerpt(), 10); ?>
+                <h3><a class="deco-none" href="<?php the_permalink() ?>">
+                    <?php echo get_post_meta($post->ID, 'header', true); ?>
+                </a></h3>
+                <?php echo get_post_meta($post->ID, 'content', true); ?>
             </div>
         </div>
 <?php endwhile; ?>
