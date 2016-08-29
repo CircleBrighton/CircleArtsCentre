@@ -80,7 +80,7 @@ function circle_register_post_type()
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'slides'),
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'thumbnail'),
         )
     );
 }
