@@ -17,7 +17,7 @@
 <?php get_sidebar(); ?>
 <div id="main">
     <div class="row">
-        <div id="content" class="col-lg-10 col-md-8 col-xs-12">
+        <div id="content" class="col-md-8 col-xs-12">
 <?php
 if (is_home()) {
     get_template_part('template/welcome');
@@ -32,7 +32,7 @@ if (is_home()) {
 }
 ?>
         </div>
-        <div class="col-lg-2 col-md-4 col-xs-12">
+        <div class="col-md-4 col-xs-12">
             <ul class="nav nav-pills nav-stacked">
 <?php
 $q = new WP_Query(array ('post_type' => 'circle_aside'));
