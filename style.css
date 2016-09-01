@@ -12380,31 +12380,36 @@ p {
   left: 0px;
   right: 0px;
   bottom: 0px;
+  padding-bottom: 30px;
   padding-top: 0px;
-  padding-bottom: 10px;
 }
 
 /* line 93, sass/style.scss */
+.carousel-indicators {
+  bottom: 0px;
+}
+
+/* line 97, sass/style.scss */
 .slide .item {
   height: 450px;
 }
-/* line 95, sass/style.scss */
+/* line 99, sass/style.scss */
 .slide .item img {
   height: 450px;
   width: 100%;
 }
 
-/* line 101, sass/style.scss */
+/* line 105, sass/style.scss */
 .deco-none {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 105, sass/style.scss */
+/* line 109, sass/style.scss */
 .deco-none:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 110, sass/style.scss */
+/* line 114, sass/style.scss */
 .deco-none:hover {
   color: inherit;
   text-decoration: inherit;
@@ -12412,55 +12417,55 @@ p {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
-/* line 118, sass/style.scss */
+/* line 122, sass/style.scss */
 .alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 122, sass/style.scss */
+/* line 126, sass/style.scss */
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 128, sass/style.scss */
+/* line 132, sass/style.scss */
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 133, sass/style.scss */
+/* line 137, sass/style.scss */
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 138, sass/style.scss */
+/* line 142, sass/style.scss */
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 143, sass/style.scss */
+/* line 147, sass/style.scss */
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 147, sass/style.scss */
+/* line 151, sass/style.scss */
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 152, sass/style.scss */
+/* line 156, sass/style.scss */
 a img.aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 158, sass/style.scss */
+/* line 162, sass/style.scss */
 .wp-caption {
   background: #fff;
   border: 1px solid #f0f0f0;
@@ -12470,22 +12475,22 @@ a img.aligncenter {
   text-align: center;
 }
 
-/* line 166, sass/style.scss */
+/* line 170, sass/style.scss */
 .wp-caption.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 170, sass/style.scss */
+/* line 174, sass/style.scss */
 .wp-caption.alignleft {
   margin: 5px 20px 20px 0;
 }
 
-/* line 174, sass/style.scss */
+/* line 178, sass/style.scss */
 .wp-caption.alignright {
   margin: 5px 0 20px 20px;
 }
 
-/* line 178, sass/style.scss */
+/* line 182, sass/style.scss */
 .wp-caption img {
   border: 0 none;
   height: auto;
@@ -12495,7 +12500,7 @@ a img.aligncenter {
   width: auto;
 }
 
-/* line 187, sass/style.scss */
+/* line 191, sass/style.scss */
 .wp-caption p.wp-caption-text {
   font-size: 11px;
   line-height: 17px;
@@ -12504,7 +12509,7 @@ a img.aligncenter {
 }
 
 /* Text meant only for screen readers. */
-/* line 195, sass/style.scss */
+/* line 199, sass/style.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
@@ -12512,7 +12517,7 @@ a img.aligncenter {
   width: 1px;
   overflow: hidden;
 }
-/* line 202, sass/style.scss */
+/* line 206, sass/style.scss */
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;

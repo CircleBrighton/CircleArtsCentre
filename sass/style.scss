@@ -86,8 +86,12 @@ p {
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	padding-bottom: 30px;
 	padding-top: 0px;
-	padding-bottom: 10px;
+}
+
+.carousel-indicators {
+	bottom: 0px;
 }
 
 .slide .item {
