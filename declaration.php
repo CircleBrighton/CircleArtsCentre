@@ -52,7 +52,7 @@ function circle_register_post_type()
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'events'),
-            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+            'supports' => array('title', 'editor', 'thumbnail'),
         )
     );
 
