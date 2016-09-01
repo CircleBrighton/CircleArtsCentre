@@ -260,9 +260,13 @@ function circle_display_slide_meta($post)
     wp_nonce_field(basename(__FILE__), 'circle_slide_nonce');
 ?>
 <div>
-    <label for="circle-slide-header">Header: </label>
-    <input type="text" name="circle-slide-header" id="circle-slide-header"
-        value="<?php echo esc_attr(get_post_meta($post->ID, 'header', true)); ?>"/>
+<?php
+    $content = get_post_meta($post->ID, 'header', true);
+    wp_editor($content, 'circle-slide-header', ['media_buttons' => false,
+        'textarea_name' => 'circle-slide-header',
+        'textarea_rows' => 1
+    ]);
+?>
 </div>
 <div>
     <label for="circle-slide-bgcolor">Background Color: </label>
