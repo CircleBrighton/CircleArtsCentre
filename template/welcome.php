@@ -46,9 +46,9 @@
             <div class="carousel-caption"
                     style="background-color: <?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>">
                 <h3><a class="deco-none" href="<?php the_permalink() ?>">
-                    <?php echo get_post_meta($post->ID, 'header', true); ?>
+                    <?php echo circle_htmlp_trim_words(get_post_meta($post->ID, 'header', true), 10); ?>
                 </a></h3>
-                <?php echo get_post_meta($post->ID, 'content', true); ?>
+                <?php echo circle_htmlp_trim_words(get_post_meta($post->ID, 'content', true), 120); ?>
             </div>
         </div>
 <?php endwhile; ?>
