@@ -272,7 +272,7 @@ function circle_display_slide_meta($post)
 <div>
 <?php
     $content = get_post_meta($post->ID, 'content', true);
-    wp_editor($content, 'circle-slide-content', ['media_buttons' => true, 'textarea_name' => 'circle-slide-content']);
+    wp_editor($content, 'circle-slide-content', ['media_buttons' => false, 'textarea_name' => 'circle-slide-content']);
 ?>
 </div>
 <?php
