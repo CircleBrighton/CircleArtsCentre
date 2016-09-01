@@ -12356,12 +12356,12 @@ button.close {
 
 /* line 68, sass/style.scss */
 #main {
-  min-height: 600px;
+  min-height: 520px;
 }
 
 /* line 72, sass/style.scss */
 #content {
-  min-height: 510px;
+  min-height: 450px;
 }
 /* line 74, sass/style.scss */
 #content img {
@@ -12385,11 +12385,11 @@ p {
 
 /* line 89, sass/style.scss */
 .slide .item {
-  height: 510px;
+  height: 450px;
 }
 /* line 91, sass/style.scss */
 .slide .item img {
-  height: 510px;
+  height: 450px;
   width: 100%;
 }
 
