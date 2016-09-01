@@ -433,15 +433,6 @@ function circle_customize_register($wp_customize)
         'section'    => 'slideshow',
         'settings'   => 'slideshow_interval',
     )));
-    $wp_customize->add_setting('slideshow_initial', array(
-        'default'     => get_template_directory_uri().'/img/welcome.jpg',
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'slideshow_initial_c', array(
-        'label'        => __('SlideShow Initial', 'circle'),
-        'section'    => 'slideshow',
-        'settings'   => 'slideshow_initial',
-    )));
     $wp_customize->add_setting('slideshow_wrap', array(
         'default'     => true,
         'transport'   => 'refresh',

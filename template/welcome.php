@@ -17,29 +17,26 @@
 <div id="news-slides" class="carousel slide" data-ride="carousel"
     data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>"
     data-wrap=<?php echo get_theme_mod('slideshow_wrap', true) ? "true" : "false" ?>>
-<?php $q = new WP_Query(['post_type' => 'circle_slide']); ?>
+<?php $q = new WP_Query(['post_type' => 'circle_slide']);
+    $i = 0; ?>
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#news-slides" data-slide-to="0" class="active"></li>
 <?php while ($q->have_posts()) :
-    $q->the_post();
-    $i = 1; ?>
-        <li data-target="#news-slides" data-slide-to="<?php $i++ ?>"></li>
+    $q->the_post(); ?>
+        <li class=<?php echo $i == 0 ? "active" : "" ?>
+            data-target="#news-slides" data-slide-to="<?php echo $i++ ?>"></li>
 <?php endwhile; ?>
     </ol>
 
-<? rewind_posts(); ?>
+<?php rewind_posts();
+    $i = 0; ?>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active" style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
-            <img src="<?php echo get_theme_mod('slideshow_initial', '%s/img/welcome.jpg') ?>"
-                style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;"
-                alt="welcome">
-        </div>
 <?php while ($q->have_posts()) :
     $q->the_post(); ?>
-        <div class="item" style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
+        <div class="item <?php echo $i++ == 0 ? "active" : "" ?>"
+            style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
 <?php
     the_post_thumbnail(
         'post-thumbnail',
