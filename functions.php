@@ -17,8 +17,6 @@
  */
 add_theme_support('post-thumbnails');
 
-require('declaration.php');
-
 add_filter('excerpt_length', 'circle_excerpt_length');
 
 add_filter('excerpt_more', 'circle_excerpt_more');
@@ -44,3 +42,7 @@ add_action('admin_enqueue_scripts', 'circle_enqueue_admin_script');
 add_shortcode('events', 'circle_events_shortcode');
 
 add_action('widgets_init', 'circle_widgets_init');
+
+require_once('declaration.php');
+
+require_once('helper.php');
