@@ -421,41 +421,6 @@ function circle_customize_register($wp_customize)
         'settings'   => 'feature_box_number',
         'choices'    => ['1' => '1', '2' => '2', '3' => '3'],
     )));
-
-
-    /* SlideShow */
-    $wp_customize->add_section('slideshow', array(
-        'title'      => __('SlideShow', 'circle'),
-        'priority'   => 30,
-    ));
-    $wp_customize->add_setting('slideshow_interval', array(
-        'default'     => '5000',
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_interval_c', array(
-        'label'      => __('SlideShow Interval', 'circle'),
-        'section'    => 'slideshow',
-        'settings'   => 'slideshow_interval',
-    )));
-    $wp_customize->add_setting('slideshow_wrap', array(
-        'default'     => true,
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_wrap_c', array(
-        'label'      => __('SlideShow Wrap', 'circle'),
-        'type'       => 'checkbox',
-        'section'    => 'slideshow',
-        'settings'   => 'slideshow_wrap',
-    )));
-    $wp_customize->add_setting('slideshow_height', array(
-        'default'     => '450px',
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slideshow_height_c', array(
-        'label'      => __('SlideShow Height', 'circle'),
-        'section'    => 'slideshow',
-        'settings'   => 'slideshow_height',
-    )));
 }
 
 
@@ -679,5 +644,70 @@ new Vue({
   }
 })
 </script>
+<?php
+}
+
+/**
+ * Registers circle slide settings submenu.
+ */
+function circle_register_slide_settings_submenu()
+{
+    add_submenu_page(
+        'edit.php?post_type=circle_slide',
+        'Slide Settings',
+        'Settings',
+        'edit_posts',
+        'circle_slide_settings',
+        'circle_slide_settings_submenu_display'
+    );
+
+    register_setting('circle_slide_settings', 'slide_header_char_limit');
+    register_setting('circle_slide_settings', 'slide_content_char_limit');
+    register_setting('circle_slide_settings', 'slide_interval');
+    register_setting('circle_slide_settings', 'slide_wrap');
+    register_setting('circle_slide_settings', 'slide_height');
+}
+
+/**
+ * Circle event settings submenu display callback.
+ */
+function circle_slide_settings_submenu_display()
+{
+?>
+<div class="wrap">
+    <h1>Slide Settings</h1>
+    <form method="post" action="options.php">
+<?php
+settings_fields('circle_slide_settings');
+do_settings_sections('circle_slide_settings');
+?>
+        <div>
+            <label for="slide_header_char_limit">Slide Header Character Limit </label>
+            <input type="text" name="slide_header_char_limit" id="slide_header_char_limit"
+                value="<?php echo get_option("slide_header_char_limit", 10) ?>"/>
+        </div>
+        <div>
+            <label for="slide_content_char_limit">Slide Content Character Limit </label>
+            <input type="text" name="slide_content_char_limit" id="slide_content_char_limit"
+                value="<?php echo get_option("slide_content_char_limit", 120) ?>"/>
+        </div>
+        <div>
+            <label for="slide_interval">Slideshow Interval </label>
+            <input type="text" name="slide_interval" id="slide_interval"
+                value="<?php echo get_option("slide_interval", 5000) ?>"/>
+        </div>
+        <div>
+            <label for="slide_wrap">Slideshow Wrap </label>
+            <input type="checkbox" name="slide_wrap" id="slide_wrap"
+                <?php echo get_option("slide_wrap", true) ? 'checked' : '' ?>/>
+        </div>
+        <div>
+            <label for="slide_height">Slideshow Height </label>
+            <input type="text" name="slide_height" id="slide_height"
+                value="<?php echo get_option('slide_height', '450px') ?>"/>
+        </div>
+        <?php submit_button(); ?>
+  </form>
+</div>
 <?php
 }

@@ -27,6 +27,8 @@ add_action('init', 'circle_register_menu');
 
 add_action('admin_menu', 'circle_register_event_settings_submenu');
 
+add_action('admin_menu', 'circle_register_slide_settings_submenu');
+
 add_action('admin_menu', 'circle_register_footer_settings_menu');
 
 add_action('add_meta_boxes', 'circle_register_meta');

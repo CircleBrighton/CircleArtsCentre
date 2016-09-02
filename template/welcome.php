@@ -15,8 +15,8 @@
  */
 ?>
 <div id="news-slides" class="carousel slide" data-ride="carousel"
-    data-interval="<?php echo get_theme_mod('slideshow_interval', 5000) ?>"
-    data-wrap=<?php echo get_theme_mod('slideshow_wrap', true) ? "true" : "false" ?>>
+    data-interval="<?php echo get_option('slide_interval', 5000) ?>"
+    data-wrap=<?php echo get_option('slide_wrap', true) ? "true" : "false" ?>>
 <?php $q = new WP_Query(['post_type' => 'circle_slide']);
     $i = 0; ?>
     <!-- Indicators -->
@@ -36,19 +36,29 @@
 <?php while ($q->have_posts()) :
     $q->the_post(); ?>
         <div class="item <?php echo $i++ == 0 ? "active" : "" ?>"
-            style="height: <?php echo get_theme_mod('slideshow_height', '') ?>;">
+            style="height: <?php echo get_option('slide_height', '') ?>;">
 <?php
     the_post_thumbnail(
         'post-thumbnail',
-        ['style' => 'height: '.get_theme_mod('slideshow_height', '').';']
+        ['style' => 'height: '.get_option('slide_height', '').';']
     );
 ?>
             <div class="carousel-caption"
                     style="background-color: <?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>">
                 <h3><a class="deco-none" href="<?php the_permalink() ?>">
-                    <?php echo circle_htmlp_trim_words(get_post_meta($post->ID, 'header', true), 10); ?>
+<?php
+    echo circle_htmlp_trim_words(
+        get_post_meta($post->ID, 'header', true),
+        get_option('slide_header_char_limit', 10)
+    );
+?>
                 </a></h3>
-                <?php echo circle_htmlp_trim_words(get_post_meta($post->ID, 'content', true), 120); ?>
+<?php
+    echo circle_htmlp_trim_words(
+        get_post_meta($post->ID, 'content', true),
+        get_option('slide_content_char_limit', 120)
+    );
+?>
             </div>
         </div>
 <?php endwhile; ?>
