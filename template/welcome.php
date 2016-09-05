@@ -53,12 +53,14 @@
     );
 ?>
                 </a></h3>
+                <p>
 <?php
     echo circle_htmlp_trim_words(
         get_post_meta($post->ID, 'content', true),
         get_option('slide_content_char_limit', 120)
     );
 ?>
+                </p>
             </div>
         </div>
 <?php endwhile; ?>
