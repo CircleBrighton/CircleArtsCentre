@@ -14,7 +14,7 @@
  *
  */
 /**
- * truncateHtml can truncate a string up to a number of characters while preserving whole words and HTML tags
+ * This function can truncate a string up to a number of characters while preserving whole words and HTML tags
  *
  * @param string $text String to truncate.
  * @param integer $length Length of returned string, including ellipsis.
