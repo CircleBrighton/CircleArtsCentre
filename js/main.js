@@ -12,5 +12,8 @@ $(document).ready(function () {
     window.document.location = $(this).data('url')
   })
   $('.table-sortable').tablesorter()
+  $('.div-clickable').click(function () {
+    window.document.location = $(this).data('url')
+  })
 })
 
