@@ -43,24 +43,24 @@
         ['style' => 'height: '.get_option('slide_height', '').';']
     );
 ?>
-            <div class="carousel-caption"
+            <div class="carousel-caption div-clickable" data-url="<?php the_permalink() ?>"
                     style="background-color: <?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>">
-                <h3><a class="deco-none" href="<?php the_permalink() ?>">
+                <div>
 <?php
-    echo circle_htmlp_trim_words(
+    echo apply_filters('the_content', circle_htmlp_trim_words(
         get_post_meta($post->ID, 'header', true),
-        get_option('slide_header_char_limit', 10)
-    );
+        get_option('slide_header_char_limit', 50)
+    ));
 ?>
-                </a></h3>
-                <p>
+                </div>
+                <div>
 <?php
-    echo circle_htmlp_trim_words(
+    echo apply_filters('the_content', circle_htmlp_trim_words(
         get_post_meta($post->ID, 'content', true),
         get_option('slide_content_char_limit', 120)
-    );
+    ));
 ?>
-                </p>
+                </div>
             </div>
         </div>
 <?php endwhile; ?>
