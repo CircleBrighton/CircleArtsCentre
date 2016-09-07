@@ -32,7 +32,13 @@ switch (get_theme_mod('feature_box_number', '3')) {
         echo '<div class="col-md-3 col-md-offset-2">';
         break;
     case '3':
-        echo '<div class="col-md-3 col-md-offset-1 col-xs-4">';
+        if ($i == 0) {
+            echo '<div class="col-md-3 col-xs-4">';
+        } elseif ($i == 1) {
+            echo '<div class="col-md-9 col-xs-8"><div class="col-md-4 col-md-offset-2 col-xs-6">';
+        } elseif ($i == 2) {
+            echo '<div class="col-md-4 col-md-offset-2 col-xs-6">';
+        }
         break;
 }
 ?>
@@ -60,6 +66,11 @@ if (has_post_thumbnail()) {
             </div>
         </div>
 <?php endif; ?>
+<?php
+if (get_theme_mod('feature_box_number', '3') == '3' && $i == 2) {
+    echo '</div>';
+}
+?>
 <?php endfor; ?>
 </div>
 <hr>
