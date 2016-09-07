@@ -75,7 +75,7 @@ if (get_theme_mod('feature_box_number', '3') == '3' && $i == 2) {
 </div>
 <hr>
 <footer>
-    <?php echo apply_filters('the_content', get_option('footer_content')) ?>
+    <?php echo apply_filters('circle_the_footer', get_option('footer_content')) ?>
 </footer>
 </div>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.4.min.js"></script>
