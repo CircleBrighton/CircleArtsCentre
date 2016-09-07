@@ -48,3 +48,10 @@ add_action('widgets_init', 'circle_widgets_init');
 require_once('declaration.php');
 
 require_once('helper.php');
+
+add_filter( 'circle_the_footer', 'wptexturize'        );
+add_filter( 'circle_the_footer', 'convert_smilies'    );
+add_filter( 'circle_the_footer', 'convert_chars'      );
+add_filter( 'circle_the_footer', 'wpautop'            );
+add_filter( 'circle_the_footer', 'shortcode_unautop'  );
+add_filter( 'circle_the_footer', 'prepend_attachment' );
