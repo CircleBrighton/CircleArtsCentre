@@ -21,10 +21,10 @@
 <?php
 if (is_home()) {
     get_template_part('template/welcome');
-} elseif (is_singular('post') || is_singular('circle_aside') || is_singular('circle_slide')) {
-    get_template_part('template/post');
 } elseif (is_singular('circle_event')) {
     get_template_part('template/event');
+} elseif (is_singular()) {
+    get_template_part('template/post');
 } elseif (is_search()) {
     get_template_part('template/searchpage');
 } elseif (is_page()) {
