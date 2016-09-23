@@ -39,7 +39,7 @@
             style="height: <?php echo get_option('slide_height', '') ?>;">
 <?php
     the_post_thumbnail(
-        'post-thumbnail',
+        'medium_large',
         ['style' => 'height: '.get_option('slide_height', '').';']
     );
 ?>
