@@ -45,13 +45,17 @@ add_shortcode('events', 'circle_events_shortcode');
 
 add_action('widgets_init', 'circle_widgets_init');
 
+add_image_size('circle_slide', 780, 0, true);
+
+add_action('image_size_names_choose', 'circle_new_sizes');
+
 require_once('declaration.php');
 
 require_once('helper.php');
 
-add_filter( 'circle_the_footer', 'wptexturize'        );
-add_filter( 'circle_the_footer', 'convert_smilies'    );
-add_filter( 'circle_the_footer', 'convert_chars'      );
-add_filter( 'circle_the_footer', 'wpautop'            );
-add_filter( 'circle_the_footer', 'shortcode_unautop'  );
-add_filter( 'circle_the_footer', 'prepend_attachment' );
+add_filter('circle_the_footer', 'wptexturize');
+add_filter('circle_the_footer', 'convert_smilies');
+add_filter('circle_the_footer', 'convert_chars');
+add_filter('circle_the_footer', 'wpautop');
+add_filter('circle_the_footer', 'shortcode_unautop');
+add_filter('circle_the_footer', 'prepend_attachment');

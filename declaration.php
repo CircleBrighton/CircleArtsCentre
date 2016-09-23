@@ -669,6 +669,16 @@ function circle_register_slide_settings_submenu()
 }
 
 /**
+ * Registers circle specific sizes
+ */
+function circle_new_sizes($sizes)
+{
+    return array_merge($sizes, [
+        'circle_slide' => __('Circle Slide')
+    ]);
+}
+
+/**
  * Circle event settings submenu display callback.
  */
 function circle_slide_settings_submenu_display()
