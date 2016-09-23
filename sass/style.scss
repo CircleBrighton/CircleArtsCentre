@@ -72,10 +72,8 @@ $thumbnail-image-height: 250px;
 
 #content {
 	min-height: $content-min-height;
-	p {
-		img {
-			width: 100%;
-		}
+	img {
+		max-width: 100%;
 	}
 }
 
