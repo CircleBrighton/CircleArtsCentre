@@ -12396,7 +12396,7 @@ p {
 /* line 101, sass/style.scss */
 .slide .item img {
   height: 450px;
-  width: 100%;
+  margin: auto;
 }
 
 /* line 107, sass/style.scss */
