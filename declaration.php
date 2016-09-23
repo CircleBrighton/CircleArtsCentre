@@ -674,7 +674,8 @@ function circle_register_slide_settings_submenu()
 function circle_new_sizes($sizes)
 {
     return array_merge($sizes, [
-        'circle_slide' => __('Circle Slide')
+        'circle_slide' => __('Circle Slide'),
+        'circle_featured_image' => __('Circle Featured Image')
     ]);
 }
 

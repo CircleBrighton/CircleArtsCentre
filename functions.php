@@ -47,6 +47,8 @@ add_action('widgets_init', 'circle_widgets_init');
 
 add_image_size('circle_slide', 780, 0, true);
 
+add_image_size('circle_featured_image', 250, 210, true);
+
 add_action('image_size_names_choose', 'circle_new_sizes');
 
 require_once('declaration.php');

@@ -50,7 +50,7 @@ switch (get_theme_mod('feature_box_number', '3')) {
                 </h3>
 <?php
 if (has_post_thumbnail()) {
-    the_post_thumbnail('thumbnail');
+    the_post_thumbnail('circle_featured_image');
 }
 ?>
                 </div>

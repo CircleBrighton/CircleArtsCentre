@@ -12335,8 +12335,8 @@ button.close {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   border-radius: 50px;
-  height: 250px;
-  min-height: 250px;
+  height: 300px;
+  min-height: 300px;
 }
 
 /* line 34, sass/style.scss */
