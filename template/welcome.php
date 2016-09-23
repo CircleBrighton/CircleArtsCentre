@@ -37,31 +37,27 @@
     $q->the_post(); ?>
         <div class="item <?php echo $i++ == 0 ? "active" : "" ?>"
             style="height: <?php echo get_option('slide_height', '') ?>;">
-<?php
-    the_post_thumbnail(
-        'circle_slide'
-    );
-?>
+                <?php the_post_thumbnail('circle_slide'); ?>
             <div class="carousel-caption div-clickable" data-url="<?php the_permalink() ?>"
                     style="background-color: <?php echo esc_attr(get_post_meta($post->ID, 'bgcolor', true)); ?>">
-                <div>
+            <div>
 <?php
     echo apply_filters('the_content', circle_htmlp_trim_words(
         get_post_meta($post->ID, 'header', true),
         get_option('slide_header_char_limit', 50)
     ));
 ?>
-                </div>
-                <div>
+            </div>
+            <div>
 <?php
     echo apply_filters('the_content', circle_htmlp_trim_words(
         get_post_meta($post->ID, 'content', true),
         get_option('slide_content_char_limit', 120)
     ));
 ?>
-                </div>
             </div>
         </div>
+    </div>
 <?php endwhile; ?>
     </div>
 
