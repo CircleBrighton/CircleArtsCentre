@@ -39,8 +39,7 @@
             style="height: <?php echo get_option('slide_height', '') ?>;">
 <?php
     the_post_thumbnail(
-        'circle_slide',
-        ['style' => 'height: '.get_option('slide_height', '').';']
+        'circle_slide'
     );
 ?>
             <div class="carousel-caption div-clickable" data-url="<?php the_permalink() ?>"
