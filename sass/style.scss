@@ -28,6 +28,7 @@ Text Domain: Cricle
 @import "font-awesome";
 
 $content-min-height: 450px;
+$thumbnail-image-height: 250px;
 
 @mixin bg-color($name, $color) {
 	.#{$name} {
@@ -56,8 +57,8 @@ $content-min-height: 450px;
 
 	.thumbnail {
 		@include border-radius(50px);
-		height: 300px;
-		min-height: 300px;
+		height: $thumbnail-image-height;
+		min-height: $thumbnail-image-height;
 	}
 }
 
