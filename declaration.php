@@ -514,7 +514,7 @@ function circle_widgets_init()
         'id' => 'tweets',
         'before_widget' =>
         '<div class="cycle-slideshow latest-tweets" data-cycle-slides="div > ul > li"'.
-        'data-cycle-center-vert="true" data-cycle-fx="scrollHorz">',
+        'data-cycle-center-vert="true" data-cycle-delay="5" data-cycle-fx="scrollHorz">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="hidden">',
         'after_title' => '</h2>',
