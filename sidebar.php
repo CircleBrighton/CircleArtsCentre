@@ -57,6 +57,8 @@ wp_nav_menu(array(
         </div>
     </nav>
 <?php if (is_active_sidebar('tweets')) : ?>
-    <?php dynamic_sidebar('tweets'); ?>
+    <div class="latest-tweets-container well well-sm">
+        <?php dynamic_sidebar('tweets'); ?>
+    </div>
 <?php endif; ?>
 </div>

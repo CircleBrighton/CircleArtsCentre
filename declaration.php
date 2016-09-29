@@ -513,8 +513,8 @@ function circle_widgets_init()
         'name' => 'Tweets',
         'id' => 'tweets',
         'before_widget' =>
-        '<div class="well well-sm cycle-slideshow" data-cycle-slides="div > ul > li"'.
-        'data-cycle-center-horz="true" data-cycle-center-vert="true">',
+        '<div class="cycle-slideshow latest-tweets" data-cycle-slides="div > ul > li"'.
+        'data-cycle-center-vert="true" data-cycle-fx="scrollHorz">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="hidden">',
         'after_title' => '</h2>',

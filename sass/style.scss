@@ -43,10 +43,10 @@ $thumbnail-image-height: 300px;
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
 .thumbnail {
@@ -116,6 +116,82 @@ p {
 		text-decoration: inherit;
 	}
 }
+
+/* =Last Tweets
+-------------------------------------------------------------- */
+
+.latest-tweets-container {
+	height: 30px;
+	width: 100%;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	background-image: url(img/tw.jpg);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+
+	padding-left: 35px;
+}
+
+.latest-tweets {
+	/* style tweet list wrapper */	
+}
+
+.latest-tweets h3 {
+	/* style whatever you did with the header */
+}
+
+.latest-tweets ul {
+	/* style tweet list*/
+}
+
+.latest-tweets li {
+	/* style tweet item */
+	width: 100%;
+}
+
+.latest-tweets .tweet-text {
+	/* style main tweet text */
+	float: left;
+	margin-top: 0px;
+	padding-top: 5px;
+	padding-left: 50px;
+	color: #999999;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.latest-tweets .tweet-text a {
+	/* style links, hashtags and mentions */
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.latest-tweets .tweet-text .emoji {
+	/* style embedded emoji image in tweet */
+}
+
+.latest-tweets .tweet-details {
+	/* style datetime and link under tweet */
+	font-size: small;
+	text-align: right;
+	padding-top: 5px;
+	color: inherit;
+	text-decoration: inherit;
+	&:link {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	&:hover {
+		color: inherit;
+		text-decoration: inherit;
+	}
+}
+
 
 /* =WordPress Core
 -------------------------------------------------------------- */
