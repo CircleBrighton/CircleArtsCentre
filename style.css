@@ -12414,9 +12414,14 @@ p {
   text-decoration: inherit;
 }
 
+/* line 120, sass/style.scss */
+.div-clickable {
+  cursor: pointer;
+}
+
 /* =Last Tweets
 -------------------------------------------------------------- */
-/* line 123, sass/style.scss */
+/* line 127, sass/style.scss */
 .latest-tweets-container {
   height: 30px;
   width: 100%;
@@ -12429,28 +12434,28 @@ p {
   padding-left: 35px;
 }
 
-/* line 137, sass/style.scss */
+/* line 141, sass/style.scss */
 .latest-tweets {
   /* style tweet list wrapper */
 }
 
-/* line 141, sass/style.scss */
+/* line 145, sass/style.scss */
 .latest-tweets h3 {
   /* style whatever you did with the header */
 }
 
-/* line 145, sass/style.scss */
+/* line 149, sass/style.scss */
 .latest-tweets ul {
   /* style tweet list*/
 }
 
-/* line 149, sass/style.scss */
+/* line 153, sass/style.scss */
 .latest-tweets li {
   /* style tweet item */
   width: 100%;
 }
 
-/* line 154, sass/style.scss */
+/* line 158, sass/style.scss */
 .latest-tweets .tweet-text {
   /* style main tweet text */
   float: left;
@@ -12464,19 +12469,19 @@ p {
   line-height: 23px;
 }
 
-/* line 167, sass/style.scss */
+/* line 171, sass/style.scss */
 .latest-tweets .tweet-text a {
   /* style links, hashtags and mentions */
   color: inherit;
   text-decoration: inherit;
 }
 
-/* line 173, sass/style.scss */
+/* line 177, sass/style.scss */
 .latest-tweets .tweet-text .emoji {
   /* style embedded emoji image in tweet */
 }
 
-/* line 177, sass/style.scss */
+/* line 181, sass/style.scss */
 .latest-tweets .tweet-details {
   /* style datetime and link under tweet */
   font-size: small;
@@ -12485,12 +12490,12 @@ p {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 184, sass/style.scss */
+/* line 188, sass/style.scss */
 .latest-tweets .tweet-details:link {
   color: inherit;
   text-decoration: inherit;
 }
-/* line 189, sass/style.scss */
+/* line 193, sass/style.scss */
 .latest-tweets .tweet-details:hover {
   color: inherit;
   text-decoration: inherit;
@@ -12498,55 +12503,55 @@ p {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
-/* line 198, sass/style.scss */
+/* line 202, sass/style.scss */
 .alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 202, sass/style.scss */
+/* line 206, sass/style.scss */
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 208, sass/style.scss */
+/* line 212, sass/style.scss */
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 213, sass/style.scss */
+/* line 217, sass/style.scss */
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 218, sass/style.scss */
+/* line 222, sass/style.scss */
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 223, sass/style.scss */
+/* line 227, sass/style.scss */
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 227, sass/style.scss */
+/* line 231, sass/style.scss */
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 232, sass/style.scss */
+/* line 236, sass/style.scss */
 a img.aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 238, sass/style.scss */
+/* line 242, sass/style.scss */
 .wp-caption {
   background: #fff;
   border: 1px solid #f0f0f0;
@@ -12556,22 +12561,22 @@ a img.aligncenter {
   text-align: center;
 }
 
-/* line 246, sass/style.scss */
+/* line 250, sass/style.scss */
 .wp-caption.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 250, sass/style.scss */
+/* line 254, sass/style.scss */
 .wp-caption.alignleft {
   margin: 5px 20px 20px 0;
 }
 
-/* line 254, sass/style.scss */
+/* line 258, sass/style.scss */
 .wp-caption.alignright {
   margin: 5px 0 20px 20px;
 }
 
-/* line 258, sass/style.scss */
+/* line 262, sass/style.scss */
 .wp-caption img {
   border: 0 none;
   height: auto;
@@ -12581,7 +12586,7 @@ a img.aligncenter {
   width: auto;
 }
 
-/* line 267, sass/style.scss */
+/* line 271, sass/style.scss */
 .wp-caption p.wp-caption-text {
   font-size: 11px;
   line-height: 17px;
@@ -12590,7 +12595,7 @@ a img.aligncenter {
 }
 
 /* Text meant only for screen readers. */
-/* line 275, sass/style.scss */
+/* line 279, sass/style.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
@@ -12598,7 +12603,7 @@ a img.aligncenter {
   width: 1px;
   overflow: hidden;
 }
-/* line 282, sass/style.scss */
+/* line 286, sass/style.scss */
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
