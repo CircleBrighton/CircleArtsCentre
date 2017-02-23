@@ -41,15 +41,18 @@ if (is_int($index) && $index >= 0) {
 <table class="table table-bordered">
     <tr>
         <td>Date:</td>
-        <td><?php echo get_post_meta(get_post()->ID, 'date', true); ?>
+        <td><?php
+        $date = get_post_meta(get_post()->ID, 'date', true);
+        echo date(get_option('date_format'), strtotime($date))?>
+        </td>
     </tr>
     <tr>
         <td>Time:</td>
-        <td><?php echo get_post_meta(get_post()->ID, 'time', true); ?>
+        <td><?php echo get_post_meta(get_post()->ID, 'time', true); ?></td>
     </tr>
     <tr>
         <td>Price:</td>
-        <td><?php echo get_post_meta(get_post()->ID, 'price', true); ?>
+        <td><?php echo get_post_meta(get_post()->ID, 'price', true); ?></td>
     </tr>
 </table>
 <?php
