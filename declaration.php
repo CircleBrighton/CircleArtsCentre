@@ -480,7 +480,10 @@ $i = 0; ?>
 ?>
         <tr data-url="<?php the_permalink(); ?>">
             <td><?php echo $i ?></td>
-            <td><?php echo get_post_meta(get_the_ID(), 'date', true); ?></td>
+            <td><?php
+            $date = get_post_meta(get_post()->ID, 'date', true);
+            echo date(get_option('date_format'), strtotime($date))?>
+            </td>
             <td><?php the_title(); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'time', true); ?></td>
             <td><?php echo get_post_meta(get_the_ID(), 'price', true); ?></td>
