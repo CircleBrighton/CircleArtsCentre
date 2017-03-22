@@ -20,6 +20,4 @@
     <br>
     <h5><?php the_date() ?></h5></h1>
 </div>
-<?php
-echo apply_filters('the_content', get_post()->post_content);
-?>
+<?php the_content() ?>
