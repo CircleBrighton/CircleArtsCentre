@@ -37,7 +37,6 @@ if (is_int($index) && $index >= 0) {
             Buy Ticket
     </a>
     </h1>
-    <h5><?php the_date() ?></h5>
 </div>
 <table class="table table-bordered">
     <tr>

@@ -16,8 +16,6 @@
 ?>
 <?php the_post() ?>
 <div class="page-header">
-    <h1><?php the_title() ?>
-    <br>
-    <h5><?php the_date() ?></h5></h1>
+    <h1><?php the_title() ?></h1>
 </div>
 <?php the_content() ?>
