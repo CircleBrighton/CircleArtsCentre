@@ -457,7 +457,7 @@ $i = 0; ?>
     <thead>
         <tr>
             <th>#</th>
-            <th>Date</th>
+            <th data-sorter="shortDate">Date</th>
             <th>Name</th>
             <th>Time</th>
             <th>Price</th>
