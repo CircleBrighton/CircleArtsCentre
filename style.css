@@ -5,7 +5,7 @@ Theme URI:
 Author: Parham Alvani (@1995parham)
 Author URI: http://1995parham.me
 Description: Circle Arts Centre Wordpress Theme
-Version: 1.1
+Version: 7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
@@ -379,8 +379,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1469244312);
-  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1469244312#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1469244312) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1469244312) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1469244312) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1469244312#glyphicons_halflingsregular) format("svg");
+  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1490178483);
+  src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1490178483#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1490178483) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1490178483) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1490178483) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1490178483#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../lib/gems/2.3.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -8811,8 +8811,8 @@ button.close {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url(fonts/font-awesome/fontawesome-webfont.eot?v=4.6.2&1469771126);
-  src: url(fonts/font-awesome/fontawesome-webfont.eot?v=4.6.2&1469771126#iefix) format("embedded-opentype"), url(fonts/font-awesome/fontawesome-webfont.woff2?v=4.6.2&1469771126) format("woff2"), url(fonts/font-awesome/fontawesome-webfont.woff?v=4.6.2&1469771126) format("woff"), url(fonts/font-awesome/fontawesome-webfont.ttf?v=4.6.2&1469771126) format("truetype"), url(fonts/font-awesome/fontawesome-webfont.svg?v=4.6.2&1469771126#fontawesomeregular) format("svg");
+  src: url(fonts/font-awesome/fontawesome-webfont.eot?v=4.6.2&1490178483);
+  src: url(fonts/font-awesome/fontawesome-webfont.eot?v=4.6.2&1490178483#iefix) format("embedded-opentype"), url(fonts/font-awesome/fontawesome-webfont.woff2?v=4.6.2&1490178483) format("woff2"), url(fonts/font-awesome/fontawesome-webfont.woff?v=4.6.2&1490178483) format("woff"), url(fonts/font-awesome/fontawesome-webfont.ttf?v=4.6.2&1490178483) format("truetype"), url(fonts/font-awesome/fontawesome-webfont.svg?v=4.6.2&1490178483#fontawesomeregular) format("svg");
   font-weight: normal;
   font-style: normal;
 }
