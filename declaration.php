@@ -466,7 +466,7 @@ $i = 0; ?>
         </tr>
     </thead>
     <tbody>
-<?php while ($q->have_posts() && $i < $n) :
+<?php while ($q->have_posts()) :
     $q->the_post();
     $i++;
     $names = get_option('event_status_names', []);
