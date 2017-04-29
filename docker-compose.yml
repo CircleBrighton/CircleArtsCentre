@@ -1,0 +1,30 @@
+version: '2'
+services:
+  wordpress:
+    image: visiblevc/wordpress:latest
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - .:/app/wp-content/themes/CircleArtsCentre
+    environment:
+      DB_HOST: db # must match db service name below
+      DB_NAME: wordpress
+      DB_PASS: root # must match below
+      PLUGINS: >-
+        newsletter,
+        latest-tweets-widget,
+        featured-video-plus,
+        download-manager
+      THEMES: >-
+        [local]CircleArtsCentre
+      SERVER_NAME: 192.168.73.6:8080
+      WP_DEBUG: 'true'
+  db:
+    image: mysql:5.7 # or mariadb:10
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+volumes:
+  data: {}
