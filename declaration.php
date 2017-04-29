@@ -448,7 +448,7 @@ function circle_events_shortcode($attrs)
 {
     ob_start();
 ?>
-<?php $q = new WP_Query(array ('post_type' => 'circle_event'));
+<?php $q = new WP_Query(array ('post_type' => 'circle_event', 'posts_per_page' => -1));
 $i = 0; ?>
 <table class="table table-striped table-hover table-clickable table-sortable">
     <thead>
