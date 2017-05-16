@@ -49,6 +49,10 @@ $thumbnail-image-height: 300px;
 	border-radius: $radius;
 }
 
+.tagline {
+	display: none;
+}
+
 .thumbnail {
 	min-height: 500px;
 	height: 500px;
